@@ -1,18 +1,18 @@
 <?php
 header('Content-Type:text/html;charset = gbk');
-if($_POST && (preg_match("/^1[34578]\d{9}$/", $_POST["s_phone"]))){    //Í¨¹ýµã»÷Ìá½»°´Å¥Ö´ÐÐÊÂ¼þ
-include_once("../beijing/mail.inc.php");//ÓÊÏäÅäÖÃÎÄ¼þ
-include_once("../beijing/send_email.php");//·¢¼þÈË
-$mailto="mail1@gkfs120.com,mail2@gkfs120.com,mail3@gkfs120.com,mail4@gkfs120.com,mail5@gkfs120.com";//ÊÕ¼þÈËÐÅÏä
-//$mailto="1712080295@qq.com";//ÊÕ¼þÈËÐÅÏä
-//$mailto="315083585@qq.com";//ÊÕ¼þÈËÐÅÏä
-include_once("../beijing/0templets/t_yuyue.php");//·¢¼þÄÚÈÝ×Ö¶Î
+if($_POST && (preg_match("/^1[34578]\d{9}$/", $_POST["s_phone"]))){    //Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½á½»ï¿½ï¿½Å¥Ö´ï¿½ï¿½ï¿½Â¼ï¿½
+include_once("../beijing/mail.inc.php");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+include_once("../beijing/send_email.php");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//$mailto="mail1@gkfs120.com,mail2@gkfs120.com,mail3@gkfs120.com,mail4@gkfs120.com,mail5@gkfs120.com";//ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//$mailto="1712080295@qq.com";//ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+$mailto="563547352@qq.com";//ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+include_once("../beijing/0templets/t_yuyue.php");//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½
 $smtp->sendmail($mailto, $mailfrom, $mailsubject, $mailbody, $mailtype);
-//ÏÂÃæÎª²âÊÔÓÊ¼þÊÇ·ñ·¢ËÍ³É¹¦´úÂë£¬ÕýÊ½ÉÏÏßºóÇë×¢ÊÍ
+//ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ç·ï¿½ï¿½Í³É¹ï¿½ï¿½ï¿½ï¿½ë£¬ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ßºï¿½ï¿½ï¿½×¢ï¿½ï¿½
 /*echo "<script language=\"JavaScript\">alert(\"success\");</script>";*/
 exit();
-}else{   //·ñÔòÖ´ÐÐ´íÎó,»Øµ½×î½ü·ÃÎÊµÄÄÇ¸öÒ³Ãæ
-echo"<script> alert('¶Ô²»Æð£¡ÄúµÄ²Ù×÷ÓÐÎó.');history.back(-1);</script>";
+}else{   //ï¿½ï¿½ï¿½ï¿½Ö´ï¿½Ð´ï¿½ï¿½ï¿½,ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½Ç¸ï¿½Ò³ï¿½ï¿½
+echo"<script> alert('ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.');history.back(-1);</script>";
 exit;
 
 }

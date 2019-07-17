@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a65483ce-b1ed-40d1-b499-933103e3c088" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/inc/36dfdssdag.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/inc/36dfdssdag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/inc/6glrhssvsad.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/inc/6glrhssvsad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/inc/s_public.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/inc/s_public.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/web/Orderset/orderdo.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/web/Orderset/orderdo.inc.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,39 +17,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.mod.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/framework/model/user.mod.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="191" column="8" selection-start-line="191" selection-start-column="8" selection-end-line="191" selection-end-column="8" />
-            </state>
-          </provider>
+      <file leaf-file-name="scoreget.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Saleset/scoreget.inc.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="display.ctrl.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/source/account/display.ctrl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="165" column="5" lean-forward="true" selection-start-line="162" selection-start-column="4" selection-end-line="165" selection-end-column="5" />
-            </state>
-          </provider>
+      <file leaf-file-name="forms.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Saleset/forms.inc.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/template/web/common/header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="439">
-              <caret line="165" column="16" selection-start-line="165" selection-start-column="16" selection-end-line="165" selection-end-column="16" />
-            </state>
-          </provider>
+      <file leaf-file-name="orderdo.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Orderset/orderdo.inc.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="display.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Orderset/display.inc.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="base.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Diy/base.inc.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="homeset.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Diy/homeset.inc.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="fxorder.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Distributionset/fxorder.inc.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="display.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Commentset/display.inc.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="display.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Datashow/display.inc.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="bottomset.inc--new.php" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Desktop/sudu8_page/web/Shopset/bottomset.inc--new.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>password</find>
       <find>&lt; 返回系统</find>
+      <find>password</find>
     </findStrings>
     <dirStrings>
       <dir>E:\git\mendian_code\addons\sudu8_page</dir>
@@ -72,11 +99,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-141" />
-    <option name="y" value="158" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="408" />
+    <option name="y" value="131" />
     <option name="width" value="1852" />
-    <option name="height" value="1037" />
+    <option name="height" value="1100" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -94,6 +121,83 @@
               <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
               <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Datashow" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Distributionset" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Diy" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Orderset" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Saleset" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Shopset" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Storeset" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Userset" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
@@ -127,7 +231,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/addons/sudu8_page" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -153,15 +257,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563327901422</updated>
-      <workItem from="1563327902927" duration="1751000" />
+      <workItem from="1563327902927" duration="3203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1751000" />
+    <option name="totallyTimeSpent" value="3203000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="197" width="1852" height="1037" extended-state="0" />
+    <frame x="408" y="131" width="1852" height="1100" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32985657" />
@@ -206,12 +310,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/display.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3450" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/source/account/display.ctrl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="165" column="5" lean-forward="true" selection-start-line="162" selection-start-column="4" selection-end-line="165" selection-end-column="5" />
+        <state relative-caret-position="-300">
+          <caret line="156" column="5" selection-start-line="156" selection-start-column="5" selection-end-line="156" selection-end-column="5" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/display.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/news.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/newspl.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/registerRecord.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/userlv.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Storeset/hxy.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Storeset/display.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Shopset/base.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Shopset/company.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Saleset/delmoeny.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Saleset/couponrecord.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Saleset/scoreget.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Saleset/forms.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Orderset/orderdo.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Orderset/display.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Diy/base.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Diy/homeset.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Distributionset/fxorder.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Commentset/display.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Datashow/display.inc.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/sudu8_page/web/Shopset/bottomset.inc--new.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
