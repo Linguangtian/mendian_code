@@ -1,0 +1,142 @@
+{template 'web/common/header'}
+
+<div class="page">
+
+    <div class="page_content">
+        
+<style>
+.select_one {/*margin-bottom: 20px;width: 150px;text-align: center;*/margin-right: 20px;}
+.select_one_b{display: block; margin-bottom:5px;}
+.select_one img{width:150px;margin-bottom: 10px; height: 66px;display: none}
+.tabbar_img img{width:50px;height:50px}
+.colorpicker{z-index: 999;}
+.line{border-bottom: 1px dotted #eee;margin: -5px 3% 30px;}
+</style>
+<link rel="stylesheet" type="text/css" href="/addons/sudu8_page/static/js/colorpicker.css">
+<script src="/addons/sudu8_page/static/js/colorpicker.js"></script>
+<script>
+$(function(){
+  $('#colorSelector1').ColorPicker({
+    color: '#0000ff',
+    onShow: function (colpkr) {
+        $(colpkr).fadeIn(500);
+        return false;
+    },
+    onHide: function (colpkr) {
+        $(colpkr).fadeOut(500);
+        return false;
+    },
+    onChange: function (hsb, hex, rgb) {
+        $('#colorSelector1 div').css('backgroundColor', '#' + hex);
+        $('#base_color').val("#"+hex);
+    }
+  });
+  $('#colorSelector2').ColorPicker({
+    color: '#0000ff',
+    onShow: function (colpkr) {
+        $(colpkr).fadeIn(500);
+        return false;
+    },
+    onHide: function (colpkr) {
+        $(colpkr).fadeOut(500);
+        return false;
+    },
+    onChange: function (hsb, hex, rgb) {
+        $('#colorSelector2 div').css('backgroundColor', '#' + hex);
+        $('#base_color2').val("#"+hex);
+    }
+  });
+    $('#colorSelector3').ColorPicker({
+    color: '#ffcf3d',
+    onShow: function (colpkr) {
+        $(colpkr).fadeIn(500);
+        return false;
+    },
+    onHide: function (colpkr) {
+        $(colpkr).fadeOut(500);
+        return false;
+    },
+    onChange: function (hsb, hex, rgb) {
+        $('#colorSelector3 div').css('backgroundColor', '#' + hex);
+        $('#base_color_t').val("#"+hex);
+    }
+  });
+});
+</script>
+{if $opt == 'display'}
+<form class="form-horizontal" action="" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">全局DIY样式管理</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">小程序头底主色</label>
+                <div class="form-controls col-sm-2">
+                    <div id="colorSelector1"><div style="width: 34px;height: 34px;background: {$item['base_color']};float: left;border: 1px solid #ccc;border-right: 0;"></div></div>
+                    <input type="text" id="base_color" name="base_color" value="{$item['base_color']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off" style="width: 100px">
+                </div>
+                <div class="form-controls col-sm-3 help-block">包含顶部底色，底部TAB上线的颜色</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">小程序头底文字色</label>
+                <div class="form-controls col-sm-2">
+                    <label class="select_one">
+                        <input type="radio" name="base_tcolor"  value="#ffffff" {if $item['base_tcolor'] == '#ffffff'} checked{/if} />白色
+                    </label>
+                    <label class="select_one">
+                        <input type="radio" name="base_tcolor"  value="#000000" {if $item['base_tcolor'] == '#000000'} checked{/if} />黑色
+                    </label>
+                </div>
+                <div class="form-controls col-sm-3 help-block">顶部的文字颜色，建议与背景色相反</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">小程序突出颜色</label>
+                <div class="form-controls col-sm-2">
+                    <div id="colorSelector2"><div style="width: 34px;height: 34px;background: {$item['base_color2']};float: left;border: 1px solid #ccc;border-right: 0;"></div></div>
+                    <input type="text" id="base_color2" name="base_color2" value="{$item['base_color2']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off" style="width: 100px">
+                </div>
+                <div class="form-controls col-sm-3 help-block">点击拨号、栏目中文标题的颜色</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">默认样式标题颜色</label>
+                <div class="form-controls col-sm-2">
+                    <div id="colorSelector3"><div style="width: 34px;height: 34px;background: {$item['base_color_t']};float: left;border: 1px solid #ccc;border-right: 0;"></div></div>
+                    <input type="text" id="base_color_t" name="base_color_t" value="{$item['base_color_t']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off" style="width: 100px">
+                </div>
+                <div class="form-controls col-sm-4 help-block">头部为默认样式时生效，建议颜色#ffcf3d</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">首页选择</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">首页</label>
+                <div class="form-controls col-sm-2 style_list">
+                    <label class="select_one">
+                        <input type="radio" name="homepage" value="1" {if $item['homepage'] == '1'} checked{/if} />默认首页
+                    </label>
+                    <label class="select_one">
+                        <input type="radio" name="homepage" value="2" {if $item['homepage'] == '2'} checked{/if} />diy首页
+                    </label>
+                </div>
+                <div class="form-controls col-sm-4 help-block" style="padding-top: 1px">选择diy首页需在diy布局设置首页</div>
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            <input name="token" type="hidden" value="{$_W['token']}" />
+            <input type="submit" class="btn btn-primary col-lg-1" name="submit" value="提交" />
+        </div>
+    </div>
+</form>
+{/if}
+
+    </div>
+</div>
+

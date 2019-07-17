@@ -1,0 +1,202 @@
+{template 'common/header'}
+{if $op == 'display'}
+<form class="form-horizontal" action="" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">基本信息管理</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">首页样式</label>
+                <div class="form-controls col-sm-5">
+                    <label style="margin-right: 20px">
+                        <input type="radio" name="index_style" id="index_style1" value="header" {if $item['index_style'] == 'header'} checked{/if} />
+                        原样式
+                    </label>
+                    <label style="margin-right: 20px">
+                        <input type="radio" name="index_style" id="index_style2" value="slide" {if $item['index_style'] == 'slide'} checked{/if} />
+                        幻灯片
+                    </label>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">首页顶部样式</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">介绍页样式</label>
+                <div class="form-controls col-sm-5">
+                    <label style="margin-right: 20px">
+                        <input type="radio" name="about_style" id="about_style1" value="header" {if $item['about_style'] == 'header'} checked{/if} />
+                        原样式
+                    </label>
+                    <label style="margin-right: 20px">
+                        <input type="radio" name="about_style" id="about_style2" value="slide" {if $item['about_style'] == 'slide'} checked{/if} />
+                        幻灯片
+                    </label>
+                    <label>
+                        <input type="radio" name="about_style" id="about_style3" value="none" {if $item['about_style'] == 'none'} checked{/if} />
+                        不显示
+                    </label>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">介绍页面顶部样式</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">列表页样式</label>
+                <div class="form-controls col-sm-5">
+                    <label style="margin-right: 20px">
+                        <input type="radio" name="prolist_style" id="about_style1" value="header" {if $item['prolist_style'] == 'header'} checked{/if} />
+                        原样式
+                    </label>
+                    <label style="margin-right: 20px">
+                        <input type="radio" name="prolist_style" id="about_style2" value="slide" {if $item['prolist_style'] == 'slide'} checked{/if} />
+                        幻灯片
+                    </label>
+                    <label>
+                        <input type="radio" name="prolist_style" id="about_style3" value="none" {if $item['prolist_style'] == 'none'} checked{/if} />
+                        不显示
+                    </label>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">介绍页面顶部样式</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">幻灯片</label>
+                <div class="form-controls col-sm-5">
+                     {php echo tpl_form_field_multi_image('slide',$item['slide']);}
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">先传的排在后面</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">门店背景</label>
+                <div class="form-controls col-sm-5">
+                    {php echo tpl_form_field_image('banner', $item['banner'])}
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">【黑锐源码】建议750x330,不填有默认</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">门店logo</label>
+                <div class="form-controls col-sm-5">
+                    {php echo tpl_form_field_image('logo', $item['logo'])}
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">请上传门店logo（正方形）</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">门店名称</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" name="name" id="name" value="{$item['name']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">请输入门店名称</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">门店特色</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" name="desc" id="desc" value="{$item['desc']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">请输入一句话介绍</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">门店地址</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" name="address" id="address" value="{$item['address']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">请输入门店地址</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">营业时间</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" name="time" id="time" value="{$item['time']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">请输入营业时间</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">联系电话</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" name="tel" id="tel" value="{$item['tel']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">请输入联系电话</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">经纬度 <span style="color: #c00">误填反</span></label>
+                <div class="form-controls col-sm-2">
+                    <input type="text" name="latitude" id="latitude" value="{$item['latitude']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="form-controls col-sm-2 help-block" style="padding-left: 15px">纬度:30.88888</div>
+                <div class="form-controls col-sm-2">
+                    <input type="text" name="longitude" id="longitude" value="{$item['longitude']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="form-controls col-sm-3 help-block" style="padding-left: 15px">经度:120.6666 <a href="http://lbs.qq.com/tool/getpoint/" target="_blank" style="color:#428BCA"> 经纬度查询</a></div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">门店简介</label>
+                <div class="form-controls col-sm-8">
+                    <textarea class="form-control" rows="6" id="about" name="about" placeholder="">{$item['about']}</textarea>
+                    <div class="help-block">请输门店简介</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">门店栏目名</label>
+                <div class="form-controls col-sm-3">
+                    <input type="text" name="aboutCN" id="aboutCN" value="{$item['aboutCN']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="form-controls col-sm-1 help-block" style="padding-left: 15px">中文名称</div>
+                <div class="form-controls col-sm-3">
+                    <input type="text" name="aboutCNen" id="aboutCNen" value="{$item['aboutCNen']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="form-controls col-sm-1 help-block" style="padding-left: 15px">英文名称</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">首页介绍栏目名字</label>
+                <div class="form-controls col-sm-5">
+                    <label style="margin-right: 20px">
+                        <input type="radio" name="index_about_title" id="index_style1" value="block" {if $item['index_about_title'] == 'block'} checked{/if} />
+                        显示
+                    </label>
+                    <label style="margin-right: 20px">
+                        <input type="radio" name="index_about_title" id="index_style2" value="none" {if $item['index_about_title'] == 'none'} checked{/if} />
+                        隐藏
+                    </label>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">首页介绍栏目名字是否显示</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">产品栏目名</label>
+                <div class="form-controls col-sm-3">
+                    <input type="text" name="catename" id="catename" value="{$item['catename']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="form-controls col-sm-1 help-block" style="padding-left: 15px">中文名称</div>
+                <div class="form-controls col-sm-3">
+                    <input type="text" name="catenameen" id="catenameen" value="{$item['catenameen']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="form-controls col-sm-1 help-block" style="padding-left: 15px">英文名称</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">版权信息</label>
+                <div class="form-controls col-sm-3">
+                    <input type="text" name="copyright" id="copyright" value="{$item['copyright']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="form-controls col-sm-1 help-block" style="padding-left: 15px">技术支持</div>
+                <div class="form-controls col-sm-3">
+                    <input type="text" name="tel_b" id="tel_b" value="{$item['tel_b']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="form-controls col-sm-1 help-block" style="padding-left: 15px">技术电话</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            <input name="token" type="hidden" value="{$_W['token']}" />
+            <input type="submit" class="btn btn-primary col-lg-1" name="submit" value="提交" />
+        </div>
+    </div>
+</form>
+{/if}
+{template 'common/footer'}

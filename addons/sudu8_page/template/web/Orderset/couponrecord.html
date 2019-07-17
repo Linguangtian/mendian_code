@@ -1,0 +1,65 @@
+{template 'web/common/header'}
+
+<div class="page">
+
+    <div class="page_content">
+		
+
+		<div style="height:80px">
+
+			<h3 style="float: left;margin-top: 0;">优惠券领取记录</h3>
+
+		</div>
+
+		{if $opt == 'display'}
+			<form class="form-horizontal" action="" method="post">
+			    <table class="table we7-table table-hover article-list vertical-middle">
+			        <tr>
+			            <td>优惠券ID</td>
+			            <td>优惠券标题</td>
+			            <td>用户昵称</td>
+			            <td>手机号</td>
+			            <td>状态</td>
+			            <td class="text-right" >操作</td>
+			        </tr>
+			        {loop $coupon $item}
+			        <tr>
+			            <td>
+			                {$item['cid']}
+			            </td>
+			            <td>
+			                {$item['title']}
+			            </td>
+			            <td>
+			                <img src="{$item['avatar']}" style="width:35px;height: 35px;margin-right: 20px;border-radius:3px" alt="">{$item['nickname']}
+			            </td>
+						<td>
+			                {$item['mobile']}
+			            </td>
+			            <td>
+			                {if $item['flag'] == 0}
+			                    <span class="label  label-primary">未使用</span>
+			                {else if $item['flag'] == 1}
+			                    <span class="label  label-success">已使用</span>
+			                    
+			                {else}
+			                    <span class="label  label-danger">已过期</span>
+			                {/if}
+			            </td>
+			            <td class="text-right">
+			            	{if $item['flag'] == 1}
+			            	{else}
+			            	<a class="btn btn-success btn-sm"  onclick="return confirm('此操作不可恢复，确认这样操作吗？请谨慎！！！！'); return false;" href="{php echo $this->createWebUrl('Orderset', array('opt' => 'hx','op' => 'couponrecord', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $item['id']))}">核销</a>
+			            	{/if}
+
+			                <a class="btn btn-danger btn-sm" onclick="return confirm('此操作不可恢复，确认这样操作吗？请谨慎删除！！！！'); return false;" href="{php echo $this->createWebUrl('Orderset', array('opt' => 'delete','op' => 'couponrecord', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $item['id']))}">删除</a>
+			            </td>
+			        </tr>
+			        {/loop}
+			    </table>
+			</form>
+		{/if}
+
+	</div>
+
+</div>

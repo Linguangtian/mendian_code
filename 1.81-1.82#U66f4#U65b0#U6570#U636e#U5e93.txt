@@ -1,0 +1,10 @@
+将以下脚本文件复制到数据库执行，实现1.81版本到1.82版本更新。
+安装1.82版本的请忽略。
+
+ALTER TABLE `ims_account_wxapp`  MODIFY  `auth_refresh_token` varchar(255) DEFAULT NULL；
+ALTER TABLE `ims_mc_mass_record`  MODIFY  `msg_id` varchar(50) NOT NULL；
+ALTER TABLE `ims_mc_mass_record`  MODIFY `msg_data_id` varchar(50) NOT NULL；
+ALTER TABLE `ims_uni_settings`  MODIFY  `sync_member` tinyint(1) NOT NULL,；
+ALTER TABLE `ims_uni_verifycode`  MODIFY   `failed_count` int(10) DEFAULT NULL；
+ALTER TABLE `ims_wechat_news`  MODIFY  `need_open_comment` tinyint(1) NOT NULL；
+ALTER TABLE `ims_wechat_news`  MODIFY  `only_fans_can_comment` tinyint(1) NOT NULL；

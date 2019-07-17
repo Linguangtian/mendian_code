@@ -1,0 +1,177 @@
+{template 'web/common/header'}
+<div class="page">
+    <div class="page_content">
+		<form class="form-horizontal" action="" method="post">
+		    <div class="panel panel-default">
+		        <div class="panel-heading">
+		            <h3 class="panel-title">小程序设置</h3>
+		        </div>
+		        <div class="panel-body">
+					<div class="form-group">
+		                <label for="" class="control-label col-sm-2" style="margin-right:45px">appId</label>
+		                <div class="form-controls col-sm-5">
+		                    <input type="text" name="key" id="key" value="{$wxapp['key']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
+		                </div>
+		                <div class="col-sm-1"></div>
+		                <div class="form-controls col-sm-3 help-block"></div>
+		            </div>
+		            <div class="form-group">
+		                <label for="" class="control-label col-sm-2" style="margin-right:45px">appSecret</label>
+		                <div class="form-controls col-sm-5">
+		                    <input type="text" name="secret" id="secret" value="{$wxapp['secret']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
+		                </div>
+		                <div class="col-sm-1"></div>
+		                <div class="form-controls col-sm-3 help-block"></div>
+		            </div>
+		        </div>
+		    </div>
+		    <div class="panel panel-default">
+		        <div class="panel-heading">
+		            <h3 class="panel-title">支付设置</h3>
+		        </div>
+		        <div class="panel-body">
+		            <div class="form-group">
+		                <label for="" class="control-label col-sm-2" style="margin-right:45px">身份选择</label>
+		                <div class="form-controls col-sm-4 style_list">
+		                    <label class="select_one">
+		                        <input type="radio" name="identity" value="1" {if $datas}{if $datas['identity']==1} checked="checked" {/if} checked="checked" {/if} onclick="identitys(1)"/>普通商户
+		                    </label>
+		                    <label class="select_one" style="margin-left:20px">
+		                        <input type="radio" name="identity" value="2" {if $datas['identity']==2} checked{/if} onclick="identitys(2)"/>服务商子商户
+		                    </label>
+		                </div>
+		                <div class="form-controls col-sm-4 help-block" style="padding-top: 1px">选择相应的身份进行支付设置</div>
+		            </div>
+		            <div class="form-group">
+		                <label for="" class="control-label col-sm-2" style="margin-right:45px">商户号</label>
+		                <div class="form-controls col-sm-4">
+		                    <input type="text" name="mchid" id="mchid" value="{$datas['mchid']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
+		                </div>
+		                <div class="col-sm-1"></div>
+		                <div class="form-controls col-sm-3 help-block">商户号</div>
+		            </div>
+		            <div class="form-group">
+		                <label for="" class="control-label col-sm-2" style="margin-right:45px">微信支付秘钥</label>
+		                <div class="form-controls col-sm-4">
+		                    <input type="text" name="signkey" id="signkey" value="{$datas['signkey']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
+		                </div>
+		                <div class="col-sm-1"></div>
+		                <div class="form-controls col-sm-3 help-block">支付秘钥</div>
+		            </div>
+		            <div class="form-group" id="sub_mchids" style="{if $datas['identity']==2}display: block;{else}display: none{/if}">
+		                <label for="" class="control-label col-sm-2" style="margin-right:45px">子商户号</label>
+		                <div class="form-controls col-sm-4">
+		                    <input type="text" name="sub_mchid" id="sub_mchid" value="{$datas['sub_mchid']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
+		                </div>
+		                <div class="col-sm-1"></div>
+		                <div class="form-controls col-sm-3 help-block">商户号</div>
+		            </div>
+
+		            <div class="form-group">
+		                <label for="" class="control-label col-sm-2" style="margin-right:45px">企业付款设置(apiclient_cert.pem)</label>
+		                <div class="form-controls col-sm-5"  style="position: relative;">
+		                    <textarea name="certtext" class="form-control" rows="10">{$certkey['certtext']}</textarea>
+		                    <div class="hidetext" style="width: 100%;height: 100%;position: absolute;left: 0;top:0;border:1px solid #eee;padding: 10px;box-sizing: border-box;background: #fff;color:#aaa">已隐藏内容，点击查看或编辑</div>
+		                </div>
+		                <div class="form-controls col-sm-3 help-block" style="margin-left: 45px">可暂不填，使用文本编辑器打开apiclient_cert.pem文件，将文件的全部内容复制进来</div>
+		            </div>
+
+		            <div class="form-group">
+		                <label for="" class="control-label col-sm-2" style="margin-right:45px">企业付款设置(apiclient_key.pem)</label>
+		                <div class="form-controls col-sm-5">
+		                    <textarea name="keytext" class="form-control" rows="10">{$certkey['keytext']}</textarea>
+		                    <div class="hidetext" style="width: 100%;height: 100%;position: absolute;left: 0;top:0;border:1px solid #eee;padding: 10px;box-sizing: border-box;background: #fff;color:#aaa">已隐藏内容，点击查看或编辑</div>
+		                </div>
+		                <div class="form-controls col-sm-3 help-block" style="margin-left: 45px">可暂不填，使用文本编辑器打开apiclient_key.pem文件，将文件的全部内容复制进来</div>
+		            </div>
+
+		            <!-- <div class="form-group">
+		                <label for="" class="control-label col-sm-2" style="margin-right:45px">企业付款设置(rootca.pem)</label>
+		                <div class="form-controls col-sm-8">
+		                    <textarea name="catext" class="form-control" rows="10">{$item['catext']}</textarea>
+		                </div>
+		            </div> -->
+		        </div>
+		    </div>
+		    <script>
+				function identitys(i){
+					if(i==1){
+						$("#sub_mchids").hide();
+					}else if(i==2){
+						$("#sub_mchids").show();
+					}
+				}
+			</script>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">全局参数配置</h3>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">文章评论</label>
+                <div class="form-controls col-sm-5">
+                    <label class="select_one">
+                        <input type="radio" name="commA" value="1" {if $item['commA'] == '1'} checked{/if} />开启
+                    </label>
+                    <label class="select_one">
+                        <input type="radio" name="commA" value="0" {if $item['commA'] == '0'} checked{/if} />不开启
+                    </label>
+                </div>
+                <div class="form-controls col-sm-4 help-block" style="padding-top: 1px">可在每篇文章中单独控制</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">文章评论审核</label>
+                <div class="form-controls col-sm-5">
+                    <label class="select_one">
+                        <input type="radio" name="commAs" value="1" {if $item['commAs'] == '1'} checked{/if} />审核后显示
+                    </label>
+                    <label class="select_one">
+                        <input type="radio" name="commAs" value="0" {if $item['commAs'] == '0'} checked{/if} />直接显示
+                    </label>
+                </div>
+                <div class="form-controls col-sm-4 help-block" style="padding-top: 1px">可在每篇文章中单独控制</div>
+            </div>
+            <div class="line"></div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">商品评论</label>
+                <div class="form-controls col-sm-5">
+                    <label class="select_one">
+                        <input type="radio" name="commP" value="1" {if $item['commP'] == '1'} checked{/if} />开启
+                    </label>
+                    <label class="select_one">
+                        <input type="radio" name="commP" value="0" {if $item['commP'] == '0'} checked{/if} />不开启
+                    </label>
+                </div>
+                <div class="form-controls col-sm-4 help-block" style="padding-top: 1px">可在单个商品中单独控制</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">商品评论审核</label>
+                <div class="form-controls col-sm-5">
+                    <label class="select_one">
+                        <input type="radio" name="commPs" value="1" {if $item['commPs'] == '1'} checked{/if} />审核后显示
+                    </label>
+                    <label class="select_one">
+                        <input type="radio" name="commPs" value="0" {if $item['commPs'] == '0'} checked{/if} />直接显示
+                    </label>
+                </div>
+                <div class="form-controls col-sm-4 help-block" style="padding-top: 1px">可在单个商品中单独控制</div>
+            </div>
+        </div>
+    </div>
+		    <div class="form-group">
+		        <div class="col-sm-12">
+		            <input name="token" type="hidden" value="{$_W['token']}" />
+		            <input type="submit" class="btn btn-primary col-lg-1" name="submit" value="提交" />
+		        </div>
+		    </div>
+		</form>
+
+	</div>
+
+</div>
+<script type="text/javascript">
+	$('.hidetext').click(function(){
+		$(this).hide();
+	})
+</script>

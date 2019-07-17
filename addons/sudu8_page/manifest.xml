@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://bbs.bcb5.com" versionCode="0.6,0.7,0.8,1.0">
+	<application setting="false">
+		<name><![CDATA[万能门店小程序]]></name>
+		<identifie><![CDATA[sudu8_page]]></identifie>
+		<version><![CDATA[7.3.4]]></version>
+		<type><![CDATA[biz]]></type>
+		<ability><![CDATA[本地商户门店小程序，不错吧比官方微信门店功能更强大]]></ability>
+		<description><![CDATA[本地商户门店小程序，不错吧比官方微信门店功能更强大]]></description>
+		<author><![CDATA[不错吧社区]]></author>
+		<url><![CDATA[http://bbs.bcb5.com]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+		<supports>
+		<item type="wxapp" />
+		</supports>
+	</platform>
+	<bindings>
+		<menu>
+			<entry title="数据总览" do="Datashow" state="" direct="false" />
+			<entry title="基础设置" do="base" state="" direct="false" />
+		</menu>
+	</bindings>
+	<permissions>
+	</permissions>
+	<install><![CDATA[do_install.php]]></install>
+	<uninstall><![CDATA[do_uninstall.php]]></uninstall>
+	<upgrade><![CDATA[do_upgrade.php]]></upgrade>
+</manifest>

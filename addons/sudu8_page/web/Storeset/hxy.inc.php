@@ -1,0 +1,2 @@
+<?php
+ return include self::template("\x77\x65\142\x2f\x53\x74\x6f\x72\145\x73\x65\x74\57\150\x78\171");

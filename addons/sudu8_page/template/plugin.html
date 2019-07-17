@@ -1,0 +1,42 @@
+{template 'common/header'}
+<style>
+.abc{overflow:hidden;margin-top:10px;bottom:0px;}
+.abc li{float:left;margin:0 20px 20px 0;width: 100%;}
+.abc li a{display:block;height:102px;padding:15px 15px 17px 90px;border:1px solid #e7e7eb;cursor:pointer;position:relative;zoom:1;}
+.abc li a:hover{text-decoration:none;background:#f7f7f7;}
+.abc li .icon{position:absolute;left:17px;top:17px;width:60px;height:60px;overflow:hidden;}
+.abc li .title{height:26px;overflow:hidden;margin:0 58px 4px 0;color:#222222;font-size:16px;}
+.abc li .desc,.abc .col-sm-6 li .status{color:#8d8d8d;font-size:12px;}
+.abc li .desc{height:38px;overflow:hidden;}
+.abc li .status{color:#8d8d8d;position:absolute;top:19px;right:18px;}
+</style>
+  <div class="panel panel-default">
+	<div class="panel-heading">插件中心</div>
+	<div class="panel-body abc">
+{loop $panel $mid=>$ms}
+		<div class="col-sm-6 col-xs-12">
+			<li status="1" pid="4">
+				<a href="{$ms['url']}" target="_black">
+					<img class="icon" src="{$ms['logo']}">
+					<h4 class="title">{$ms['title']} {if $ms['label']}<span class="label label-danger">{$ms['label']}</span>{/if}</h4>
+					<p class="desc">{$ms['desc']}</p>
+				</a>
+			</li>
+		</div>
+{/loop}
+    </div>
+  </div>
+<script type="text/javascript">require(['bootstrap'],function($){$('[data-toggle="tooltip"]').tooltip();});</script>
+{template 'common/footer'}
+
+
+
+
+
+
+
+
+
+
+
+
