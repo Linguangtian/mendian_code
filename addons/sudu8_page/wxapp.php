@@ -3,7 +3,7 @@
  * 万能门店小程序模块小程序接口定义
  *
  * @author sudu8
- * @url 
+ * @url
  */
 defined('IN_IA') or exit('Access Denied');
 define("HTTPSHOST",$_W['attachurl']);
@@ -43,7 +43,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			if(stristr($store['storeHot'][$i]['logo'], 'http')){
 				$store['storeHot'][$i]['logo'] = $store['storeHot'][$i]['logo'];
 			}else{
-				$store['storeHot'][$i]['logo'] = HTTPSHOST.$store['storeHot'][$i]['logo']; 
+				$store['storeHot'][$i]['logo'] = HTTPSHOST.$store['storeHot'][$i]['logo'];
 			}
 		}
 		return $this->result(0, 'success', $store);
@@ -95,9 +95,9 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	     return $strEncode;
 	 }
 
-	public function doPageUseupdate(){ 
+	public function doPageUseupdate(){
 		global $_GPC, $_W;
-		$uniacid = $_W['uniacid']; 
+		$uniacid = $_W['uniacid'];
 		$openid =  $_GPC['openid'];
 		$user = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :id and uniacid = :uniacid" , array(':id' => $openid ,':uniacid' => $_W['uniacid']));
 		$data = array(
@@ -107,9 +107,9 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			"nickname" => $this->emoji_encode($_GPC['nickname']),
 			"avatar" => $_GPC['avatarUrl'],
 			"gender" => $_GPC['gender'],
-			"resideprovince" => $_GPC['province'], 
+			"resideprovince" => $_GPC['province'],
 	    	"residecity" => $_GPC['city'],
-	    	"nationality" => $_GPC['country'] 
+	    	"nationality" => $_GPC['country']
     	);
 		if($user){
 			pdo_update('sudu8_page_user', $data, array('openid' => $openid ,'uniacid' => $uniacid));
@@ -134,7 +134,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	/*多栏目开始*/
 	public function doPagechangelist(){
 		global $_GPC, $_W;
-		$uniacid = $_W['uniacid']; 
+		$uniacid = $_W['uniacid'];
 		$cid = $_GPC['cid']?$_GPC['cid']:'0';
 		$multi_id = $_GPC['multi_id'];
 		$pindex = max(1, intval($_GPC['page']));
@@ -184,7 +184,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	}
 	public function doPagelistArt_duo(){
 		global $_GPC, $_W;
-		$uniacid = $_W['uniacid']; 
+		$uniacid = $_W['uniacid'];
 		// $showArt = $_GPC['showArt'];
 		$multi_id = $_GPC['multi_id'];
 		$data['cate'] = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_multicate')." WHERE id = :id" , array(':id' => $multi_id));
@@ -232,7 +232,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	// 获取全局情况
 	public function dopageglobaluserinfo(){
 		global $_GPC, $_W;
-		$uniacid = $_W['uniacid']; 
+		$uniacid = $_W['uniacid'];
 		$openid =  $_GPC['openid'];
 		$newuserinfo = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :id and uniacid = :uniacid" , array(':id' => $openid ,':uniacid' => $uniacid));
 		$newuserinfo['nickname'] = rawurldecode($newuserinfo['nickname']);
@@ -270,6 +270,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$baseInfo['commAs'] =$config['commAs'];
 		$baseInfo['commP'] =$config['commP'];
 		$baseInfo['commPs'] =$config['commPs'];
+		$baseInfo['xiaofeigu'] =$config['xiaofeigu'];
 		$baseInfo['serverBtn'] =$config['serverBtn'];
 		if($baseInfo['serverBtn']!=0){
 			$baseInfo['serverBtn']=1;
@@ -413,6 +414,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$baseInfo['commAs'] =$config['commAs'];
 		$baseInfo['commP'] =$config['commP'];
 		$baseInfo['commPs'] =$config['commPs'];
+		$baseInfo['xiaofeigu'] =$config['xiaofeigu'];
 		$baseInfo['serverBtn'] =$config['serverBtn'];
 		$baseInfo['duomerchants'] =$config['duomerchants'];
 		//背景图
@@ -452,7 +454,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	  			$baseInfo['slide'][$i]['url'] = $slide[$i]['url'];
 
 			}
-			
+
 			//var_dump($baseInfo['slide']);
 		}
 		//开屏广告
@@ -520,9 +522,9 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		//视频
 		if($baseInfo['video']){
 			// include 'videoInfo.php';
-            // $videoInfo = new videoInfo();  
+            // $videoInfo = new videoInfo();
             if(strpos($baseInfo['video'],".html")!==false){
-				$videodata = $this->getVideoInfo($baseInfo['video']);  
+				$videodata = $this->getVideoInfo($baseInfo['video']);
     		}else{
             	$videodata = $baseInfo['video'];
     		}
@@ -611,7 +613,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 					$fxsinfo = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :openid and uniacid = :uniacid" , array(':openid' => $fxsid ,':uniacid' => $_W['uniacid']));
 					$p_fxs = $fxsinfo['parent_id'];  //分销商的上级
 					$p_p_fxs = $fxsinfo['p_parent_id']; //分销商的上上级
-					// 判断启用几级分销 
+					// 判断启用几级分销
 					$fx_cj = $guiz['fx_cj'];
 					// 分别做判断
 					if($fx_cj == 1){
@@ -622,28 +624,28 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 					}
 					if($fx_cj == 3){
 						$uuser = pdo_update("sudu8_page_user",array("parent_id"=>$fxsid,"p_parent_id"=>$p_fxs,"p_p_parent_id"=>$p_p_fxs),array("openid"=>$openid,'uniacid' => $_W['uniacid']));
-					}	
+					}
 				}
 			}
 		}
 		*/
-	
 
-      	
+
+
 		return $this->result(0, 'success', $baseInfo);
 	}
 
-  	
+
   	public function doPageselectShopList(){
      global $_GPC, $_W;
         $uniacid = $_W['uniacid'];
-      
+
         $option1 = $_GPC['option1'];
         $option2 = $_GPC['option2'];
         $option3 = $_GPC['option3'];
         $le = $_GPC['latitude'];
         $ne = $_GPC['longitude'];
-        
+
         $sql = "select id,uniacid,name,logo,tel,address,(2 * 6378.137 * ASIN(SQRT(POW(SIN(PI()*(".$le."-latitude)/360),2)+COS(PI()*".$le."/180)* COS(latitude * PI()/180)*POW(SIN(PI()*(".$ne."-longitude)/360),2)))) as distance FROM  ".tablename('sudu8_page_shops_shop') ." WHERE uniacid = :uniacid and flag =1";
 
         $options = array(':uniacid' => $uniacid);
@@ -653,18 +655,18 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
             $sql .= ' and cid like "%'.$cid.'%"';
             // $options[':cid'] = $cid;
        	}
-        
+
         if($option3 == '优选商家'){
             $sql .= ' and hot = :hot';
             $options[':hot'] = 1;
         }
-        
+
         if($option2 == '综合排序'){
             $sql .= ' order by star desc';
         }
-        
+
         if($option2 == '距离最近'){
-            $sql .= ' ORDER BY distance ASC';        
+            $sql .= ' ORDER BY distance ASC';
         }
        	$shop_size = pdo_fetchcolumn("SELECT num FROM ".tablename('sudu8_page_shops_set') . "WHERE uniacid = :uniacid", array(':uniacid' => $uniacid));
        	if(!empty($shop_size)){
@@ -680,10 +682,10 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         	}
             $res['distance'] = $this->beautifyDistance($res['distance']);
         }
-        
+
         return $this->result(0, 'success', $lists);
     }
-  
+
     public function beautifyDistance($distance)
     {
         if ($distance < 1) {
@@ -694,7 +696,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
             return "{$d}km";
         }
     }
-  	
+
 	public function doPageAbout(){
 		global $_GPC, $_W;
 		$uniacid = $_W['uniacid'];
@@ -708,7 +710,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				if(stristr($aboutInfo['slide'][$i], 'http')){
 					$aboutInfo['slide'][$i] = $aboutInfo['slide'][$i];
 				}else{
-					$aboutInfo['slide'][$i] = HTTPSHOST.$aboutInfo['slide'][$i]; 
+					$aboutInfo['slide'][$i] = HTTPSHOST.$aboutInfo['slide'][$i];
 				}
 			}
 		}
@@ -821,11 +823,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				$ProductsDetail['thumbimg'] = HTTPSHOST.$ProductsDetail['thumb'];
 			}
 		}
-		
+
 		if($ProductsDetail['type'] == "showProMore"){
 			$ProductsDetail['price'] = pdo_getcolumn("sudu8_page_duo_products_type_value", array("pid"=>$ProductsDetail['id']), "min(price)");
 		}
-		
+
 		if(intval($ProductsDetail['pro_flag'])>0){
 			$ProductsDetail['navlist'] = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_art_navlist')." WHERE cid = :cid and uniacid = :uniacid and flag = 1 order by num desc" , array(':cid' => intval($ProductsDetail['pro_flag']) ,':uniacid' => $uniacid));
 			$ProductsDetail['navlistnum'] = count($ProductsDetail['navlist']);
@@ -844,7 +846,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			//include ROOT_PATH.'videoInfo.php';
             //$videoInfo = new videoInfo();
             if(strpos($ProductsDetail['video'],".html")!==false){
-				$videodata = $this->getVideoInfo($ProductsDetail['video']);  
+				$videodata = $this->getVideoInfo($ProductsDetail['video']);
     		}else{
             	$videodata = $ProductsDetail['video'];
     		}
@@ -1136,7 +1138,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			  $mail->AddAddress($v);
 			}
 			$mail->Subject = date("m-d",time())." - ".$_GPC['name'];
-			$mail->isHTML(true); 
+			$mail->isHTML(true);
 			$mail->Body    = "<div style='height:40px;line-height:40px;font-size:16px;font-weight:bold;background:#7030A0;color:#fff;text-indent:10px;'>详细内容：</div><div style='line-height:30px;padding:15px;background:#f6f6f6'>".$row_name.$row_tel.$row_wechat.$row_address.$row_t5.$row_t6.$row_date.$row_time.$row_single.$row_s2.$row_checkbox.$row_c2.$row_content.$row_con2."<div style='line-height:40px;margin-top:10px;text-align:center;color:#888;font-size:12px'>".$row_mail_name."</div></div>";
 			if(!$mail->send()) {
 			    $result = "send_err";
@@ -1276,7 +1278,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			if($row['type']=="showPro" && $row['is_more'] == 1){
 				$row['type'] = "showPro_lv";
 			}
-		} 
+		}
 		// 获取最大推荐书
 		$listConf = pdo_fetch("SELECT sptj_max,sptj_max_sp FROM ".tablename('sudu8_page_base')." WHERE uniacid = :uniacid "  , array(':uniacid' => $uniacid));
 		$max_pt = $listConf['sptj_max'];
@@ -1375,7 +1377,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 					// 	}
 					// }
 					foreach ($index_cate[$key]['list'] as  $key3=>&$row3){
-						
+
 						$index_cate[$key]['list'][$key3]['ctime'] = date("y-m-d H:i:s",$index_cate[$key]['list'][$key3]['ctime']);
 						if(stristr($row3['thumb'], 'http')){
 			  				$index_cate[$key]['list'][$key3]['thumb'] = $row3['thumb'];
@@ -1560,7 +1562,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 						}else{
 			  				$v['thumb'] = HTTPSHOST.$v['thumb'];
 						}
-						if($v['type']=="showPro"){  
+						if($v['type']=="showPro"){
 							if($v['is_more']==1){
 								$v['gurl'] = "sudu8_page/showPro/showPro?id=".$v['id'];
 							}
@@ -1636,7 +1638,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$type = $_GPC['types'] ? $_GPC['types'] : 'showPro';
 
 		$pro = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_products')." WHERE id = :id and uniacid = :uniacid" , array(':id' => $id ,':uniacid' => $uniacid));
-		
+
 		$pro['sale_end_time_copy'] = $pro['sale_end_time'];
 		$pro['sale_end_time'] = intval($pro['sale_end_time']);
 		if($pro['sale_end_time'] != 0){
@@ -1645,7 +1647,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				$pro['sale_end_time'] = 0;
 			}
 		}
-		
+
 		if($pro['sale_time'] > time()){
 			$pro['timetobegin'] = ($pro['sale_time'] - time()) * 1000;
 		}else{
@@ -1756,7 +1758,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$pro['is_sale'] = 1;
 		}else{
 			if($pro['sale_time'] > $now){
-				$pro['is_sale'] = 0;			
+				$pro['is_sale'] = 0;
 			}else{
 				$pro['is_sale'] = 1;
 			}
@@ -1797,7 +1799,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$more_type_num = unserialize($pro['more_type_num']);
 			$pro['more_type_num'] = $more_type_num;
 		}
-		
+
 		if($pro['pro_flag_data_name']){
 			$pro['pro_flag_data_name'] = explode(";", $pro['pro_flag_data_name']);
 			$pro['afterdays'] = intval($pro['pro_flag_data_name'][1]);
@@ -1836,9 +1838,9 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		}
 
 
-		// 
-		// 
-		// 
+		//
+		//
+		//
 		// if($formset!=0&&$formset!=""){
 		// 	$forms = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_formlist')." WHERE id = :id" , array(':id' => $formset));
 		// 	$forms2 = unserialize($forms['tp_text']);
@@ -1857,7 +1859,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		// echo "</pre>";
 		// die();
 		// var_dump($pro);exit;
-		// 
+		//
 
 		if($pro['tableis'] == 1 && $pro['tableid']){
 			$table_info = pdo_get("sudu8_page_table", array("uniacid"=>$uniacid, "id"=>$pro['tableid']));
@@ -1901,7 +1903,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				"price" => $pro['price'],
 				"yhq" => $_GPC['youhui'],
 				"true_price" => $_GPC['zhifu'],
-				"creattime" =>time(), 
+				"creattime" =>time(),
 				"flag"=>0,
 				"pro_user_name"=>$_GPC['pro_name'],
 				"pro_user_tel"=>$_GPC['pro_tel'],
@@ -2015,7 +2017,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				"product"=>$pro['title'],
 				"yhq" => $_GPC['youhui'],
 				"true_price" => $_GPC['zhifu'],
-				"creattime" =>time(), 
+				"creattime" =>time(),
 				"flag"=>0,
 				"pro_user_name"=>$_GPC['pro_name'],
 				"pro_user_tel"=>$_GPC['pro_tel'],
@@ -2089,7 +2091,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 							$syl = $pro['pro_kc'];
 							$flags = false;
 						}
- 					}	
+ 					}
 				}
 			}
 		}else{
@@ -2106,7 +2108,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 					if( $my_num + $absnum > $pro['pro_xz'] || $absnum > $pro['pro_kc']){
 						$syl = $pro['pro_kc'];
 						$flags = false;
-					}	
+					}
 				}else{
 					$flags = true;
 				}
@@ -2145,7 +2147,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				"num" => $_GPC['count'],
 				"yhq" => $_GPC['youhui'],
 				"true_price" => $_GPC['zhifu'],
-				"creattime" =>time(), 
+				"creattime" =>time(),
 				"flag"=>0,
 				"pro_user_name"=>$_GPC['pro_name'],
 				"pro_user_tel"=>$_GPC['pro_tel'],
@@ -2191,7 +2193,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				"num" => $_GPC['count'],
 				"yhq" => $_GPC['youhui'],
 				"true_price" => $_GPC['zhifu'],
-				"creattime" =>time(), 
+				"creattime" =>time(),
 				"flag"=>0,
 				"pro_user_name"=>$_GPC['pro_name'],
 				"pro_user_tel"=>$_GPC['pro_tel'],
@@ -2260,7 +2262,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         		$dikou_jf = $dikou_jf;
         	}
         }else{						//商品设置的最大可使用积分 < 我自己的积分
-        	$dikou_jf = $jf_pro;    
+        	$dikou_jf = $jf_pro;
         	if($dikou_jf*1000 > $orders['true_price']*1000){         //最终抵扣金钱和商品价格进行比较[抵扣钱大于订单钱]
         		$dikou_jf = $orders['true_price'];
         	}else{										   //抵扣钱<=订单钱
@@ -2339,19 +2341,19 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$new_orders['pro_flag_add'] = $pro['pro_flag_add'];
 		$new_orders['pro_flag_data'] = $pro['pro_flag_data'];
 		$new_orders['modify_date_begin'] = date("Y-m-d", time());
-		
+
 		if($pro['pro_flag_data_name']){
 			$pro['pro_flag_data_name'] = explode(";", $pro['pro_flag_data_name']);
 			$new_orders['afterdays'] = intval($pro['pro_flag_data_name'][1]);
 			$new_orders['beforedays'] = intval($pro['pro_flag_data_name'][2]);
 			$new_orders['modifydays'] = intval($pro['pro_flag_data_name'][3]);
 			$new_orders['pro_flag_data_name'] = $pro['pro_flag_data_name'][0];
-			
+
 			if($new_orders['modifydays'] > 0 && (time() + $new_orders['modifydays'] * 3600 * 24) <= $orders['appoint_date']){
 				$new_orders['modify_date_begin'] = date("Y-m-d", time() + $new_orders['modifydays'] * 24 * 3600);
-				$new_orders['can_modify'] = 1; 
+				$new_orders['can_modify'] = 1;
 			}else{
-				$new_orders['can_modify'] = 0; 
+				$new_orders['can_modify'] = 0;
 			}
 		}
 
@@ -2535,7 +2537,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$res = pdo_update('sudu8_page_order', $data, array('order_id' => $id ,'uniacid' => $uniacid));
 
 		}else if($pro['pro_kc']>=0 && $pro['is_more']==0){
-			$now = time();   
+			$now = time();
 			if($orders['overtime']<$now ){   //订单过期
 				if($orders['reback'] == 0){
 					$ndata['pro_kc'] = $pro['pro_kc']+$orders['num'];
@@ -2616,62 +2618,62 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		}
 	}
 			//不带报头的curl
-	public function _requestPost($url, $data, $ssl=true) {  
-            //curl完成  
-            $curl = curl_init();  
-            //设置curl选项  
-            curl_setopt($curl, CURLOPT_URL, $url);//URL  
-            $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0 FirePHP/0.7.4';  
-            curl_setopt($curl, CURLOPT_USERAGENT, $user_agent);//user_agent，请求代理信息  
-            curl_setopt($curl, CURLOPT_AUTOREFERER, true);//referer头，请求来源  
-            curl_setopt($curl, CURLOPT_TIMEOUT, 30);//设置超时时间  
-            //SSL相关  
-            if ($ssl) {  
-                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);//禁用后cURL将终止从服务端进行验证  
-                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);//检查服务器SSL证书中是否存在一个公用名(common name)。  
-            }  
-            // 处理post相关选项  
-            curl_setopt($curl, CURLOPT_POST, true);// 是否为POST请求  
-            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);// 处理请求数据  
-            // 处理响应结果  
-            curl_setopt($curl, CURLOPT_HEADER, false);//是否处理响应头  
-            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);//curl_exec()是否返回响应结果  
-            // 发出请求  
+	public function _requestPost($url, $data, $ssl=true) {
+            //curl完成
+            $curl = curl_init();
+            //设置curl选项
+            curl_setopt($curl, CURLOPT_URL, $url);//URL
+            $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0 FirePHP/0.7.4';
+            curl_setopt($curl, CURLOPT_USERAGENT, $user_agent);//user_agent，请求代理信息
+            curl_setopt($curl, CURLOPT_AUTOREFERER, true);//referer头，请求来源
+            curl_setopt($curl, CURLOPT_TIMEOUT, 30);//设置超时时间
+            //SSL相关
+            if ($ssl) {
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);//禁用后cURL将终止从服务端进行验证
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);//检查服务器SSL证书中是否存在一个公用名(common name)。
+            }
+            // 处理post相关选项
+            curl_setopt($curl, CURLOPT_POST, true);// 是否为POST请求
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);// 处理请求数据
+            // 处理响应结果
+            curl_setopt($curl, CURLOPT_HEADER, false);//是否处理响应头
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);//curl_exec()是否返回响应结果
+            // 发出请求
             $response = curl_exec($curl);
-            if (false === $response) {  
-                echo '<br>', curl_error($curl), '<br>';  
-                return false;  
-            }  
-            curl_close($curl);  
-            return $response;  
+            if (false === $response) {
+                echo '<br>', curl_error($curl), '<br>';
+                return false;
+            }
+            curl_close($curl);
+            return $response;
     }
 	public function _requestGetcurl($url){
-    	//curl完成  
-        $curl = curl_init();  
-        //设置curl选项  
-		$header = array(  
+    	//curl完成
+        $curl = curl_init();
+        //设置curl选项
+		$header = array(
 			"authorization: Basic YS1sNjI5dmwtZ3Nocmt1eGI2Njp1TlQhQVFnISlWNlkySkBxWlQ=",
 			"content-type: application/json",
 			"cache-control: no-cache",
-			"postman-token: cd81259b-e5f8-d64b-a408-1270184387ca" 
+			"postman-token: cd81259b-e5f8-d64b-a408-1270184387ca"
 		);
 		curl_setopt($curl, CURLOPT_HEADER, 1);
-		curl_setopt($curl, CURLOPT_HTTPHEADER  , $header); 
-        curl_setopt($curl, CURLOPT_URL, $url);//URL  
+		curl_setopt($curl, CURLOPT_HTTPHEADER  , $header);
+        curl_setopt($curl, CURLOPT_URL, $url);//URL
         curl_setopt($curl, CURLOPT_HEADER, 0);             // 0：不返回头信息
-		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);   
-        curl_setopt($curl, CURLOPT_TIMEOUT, 30);//设置超时时间  
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false); 
-        // 发出请求  
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 30);//设置超时时间
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        // 发出请求
         $response = curl_exec($curl);
-        if (false === $response) {  
-            echo '<br>', curl_error($curl), '<br>';  
-            return false;  
-        }  
-        curl_close($curl);  
+        if (false === $response) {
+            echo '<br>', curl_error($curl), '<br>';
+            return false;
+        }
+        curl_close($curl);
         $forms = stripslashes(html_entity_decode($response));
 		$forms = json_decode($forms,TRUE);
-        return $forms;  
+        return $forms;
     }
 	//取消订单
 	public function doPageDpass(){
@@ -2745,7 +2747,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$OrdersList['allnum'] = count($alls);
 		return $this->result(0, 'success', $OrdersList);
 	}
-	
+
 
 	//支付流程
 	public function doPageweixinpay(){
@@ -2821,11 +2823,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				$app = pdo_fetch("SELECT * FROM ".tablename('account_wxapp')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
 				$paycon = pdo_fetch("SELECT * FROM ".tablename('uni_settings')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
 				$datas = unserialize($paycon['payment']);
-				include 'WeixinPay.php';  
-				$appid=$app['key'];  
+				include 'WeixinPay.php';
+				$appid=$app['key'];
 				$openid= $_GPC['openid'];
-				$mch_id=$datas['wechat']['mchid'];  
-				$key=$datas['wechat']['signkey']; 
+				$mch_id=$datas['wechat']['mchid'];
+				$key=$datas['wechat']['signkey'];
 
 				if(isset($datas['wechat']['identity'])){
 					$identity = $datas['wechat']['identity'];
@@ -2839,13 +2841,13 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 					$sub_mchid = 0;
 				}
 
-		
+
 
 				$out_trade_no = $_GPC['order_id'];  //订单号
 				$body = "商品支付";
 				$total_fee = $_GPC['price']*100;
-				$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);  
-				$return=$weixinpay->pay();  
+				$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);
+				$return=$weixinpay->pay();
 				return $this->result(0, 'success',$return);
 			}else{
 				$data = array("message"=>"库存不足！");
@@ -2855,11 +2857,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$app = pdo_fetch("SELECT * FROM ".tablename('account_wxapp')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
 			$paycon = pdo_fetch("SELECT * FROM ".tablename('uni_settings')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
 			$datas = unserialize($paycon['payment']);
-			include 'WeixinPay.php';  
-			$appid=$app['key'];  
+			include 'WeixinPay.php';
+			$appid=$app['key'];
 			$openid= $_GPC['openid'];
-			$mch_id=$datas['wechat']['mchid'];  
-			$key=$datas['wechat']['signkey'];  
+			$mch_id=$datas['wechat']['mchid'];
+			$key=$datas['wechat']['signkey'];
 			if(isset($datas['wechat']['identity'])){
 				$identity = $datas['wechat']['identity'];
 			}else{
@@ -2876,8 +2878,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$out_trade_no = $_GPC['order_id'];  //订单号
 			$body = "商品支付";
 			$total_fee = $_GPC['price']*100;
-			$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);  
-			$return=$weixinpay->pay();  
+			$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);
+			$return=$weixinpay->pay();
 			return $this->result(0, 'success',$return);
 		}
 	}
@@ -2967,7 +2969,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			  $mail->AddAddress($v);
 			}
 			$mail->Subject = "新表单 - ".date("Y-m-d H:i:s",time());
-			$mail->isHTML(true); 
+			$mail->isHTML(true);
 			$mail->Body = "<div style='height:40px;line-height:40px;font-size:16px;font-weight:bold;background:#7030A0;color:#fff;text-indent:10px;'>表单详情：</div><div style='line-height:30px;padding:15px;background:#f6f6f6'>".$row_title.$row_type.$row_oid.$forms_con."<div style='line-height:40px;margin-top:10px;text-align:center;color:#888;font-size:12px'>".$row_mail_name."</div></div>";
 			if(!$mail->send()) {
 			    $result = "send_err";
@@ -3041,7 +3043,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			  $mail->AddAddress($v);
 			}
 			$mail->Subject = "新表单 - ".date("Y-m-d H:i:s",time());
-			$mail->isHTML(true); 
+			$mail->isHTML(true);
 			$mail->Body = "<div style='height:40px;line-height:40px;font-size:16px;font-weight:bold;background:#7030A0;color:#fff;text-indent:10px;'>表单详情：</div><div style='line-height:30px;padding:15px;background:#f6f6f6'>".$row_title.$row_type.$row_oid.$forms_con."<div style='line-height:40px;margin-top:10px;text-align:center;color:#888;font-size:12px'>".$row_mail_name."</div></div>";
 			if(!$mail->send()) {
 			    $result = "send_err";
@@ -3127,7 +3129,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			  $mail->AddAddress($v);
 			}
 			$mail->Subject = "新订单 - ".date("Y-m-d H:i:s",time());
-			$mail->isHTML(true); 
+			$mail->isHTML(true);
 			if($ord['is_more'] == 1){
 				$mail->Body    = "<div style='height:40px;line-height:40px;font-size:16px;font-weight:bold;background:#7030A0;color:#fff;text-indent:10px;'>订单详情：</div><div style='line-height:30px;padding:15px;background:#f6f6f6'>".$row_oid.$row_pro.$row_prc."<div style='line-height:40px;margin-top:10px;text-align:center;color:#888;font-size:12px'>".$row_mail_name."</div></div>";
 			}else{
@@ -3185,7 +3187,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			  $mail->AddAddress($v);
 			}
 			$mail->Subject = "新订单 - ".date("Y-m-d H:i:s",time());
-			$mail->isHTML(true); 
+			$mail->isHTML(true);
 			$mail->Body    = "<div style='height:40px;line-height:40px;font-size:16px;font-weight:bold;background:#7030A0;color:#fff;text-indent:10px;'>订单详情：</div><div style='line-height:30px;padding:15px;background:#f6f6f6'>".$row_oid.$row_pro.$row_prc.$row_nam.$row_tel.$row_add.$row_time.$row_txt."<div style='line-height:40px;margin-top:10px;text-align:center;color:#888;font-size:12px'>".$row_mail_name."</div></div>";
 			//var_dump($mail->Body);
 			if(!$mail->send()) {
@@ -3244,7 +3246,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		  $mail->AddAddress($v);
 		}
 		$mail->Subject = "新订单 - ".date("Y-m-d H:i:s",time());
-		$mail->isHTML(true); 
+		$mail->isHTML(true);
 		$mail->Body    = "<div style='height:40px;line-height:40px;font-size:16px;font-weight:bold;background:#7030A0;color:#fff;text-indent:10px;'>订单详情：</div><div style='line-height:30px;padding:15px;background:#f6f6f6'>".$row_oid.$row_pro.$row_prc."<div style='line-height:40px;margin-top:10px;text-align:center;color:#888;font-size:12px'>".$row_mail_name."</div></div>";
 		if(!$mail->send()) {
 		    $result = "send_err";
@@ -3305,7 +3307,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		  $mail->AddAddress($v);
 		}
 		$mail->Subject = "新订单 - ".date("Y-m-d H:i:s",time());
-		$mail->isHTML(true); 
+		$mail->isHTML(true);
 		$mail->Body    = "<div style='height:40px;line-height:40px;font-size:16px;font-weight:bold;background:#7030A0;color:#fff;text-indent:10px;'>订单详情：</div><div style='line-height:30px;padding:15px;background:#f6f6f6'>".$row_oid.$row_pro.$row_prc."<div style='line-height:40px;margin-top:10px;text-align:center;color:#888;font-size:12px'>".$row_mail_name."</div></div>";
 		if(!$mail->send()) {
 		    $result = "send_err";
@@ -3386,7 +3388,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
             }
             if($res['etime']!=0){
             	$res['etime'] = date("Y-m-d",$res['etime']);
-            }	
+            }
 		}
 		return $this->result(0, 'success', $coupon);
 	}
@@ -3398,7 +3400,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		if($openid){
 			$user = pdo_fetch("SELECT * from".tablename('sudu8_page_user')." WHERE uniacid = :uniacid and openid = :openid" , array(':uniacid' => $uniacid,":openid" => $openid));
 		}
-		$uid = $user['id']; 
+		$uid = $user['id'];
 		$coupon = pdo_fetch("SELECT * from".tablename('sudu8_page_coupon')." WHERE uniacid = :uniacid and id = :id" , array(':uniacid' => $_W['uniacid'],":id" => $id));
 		$data = array(
 			"uniacid" => $uniacid,
@@ -3462,7 +3464,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 					pdo_update("sudu8_page_coupon_user",$kdata,array("id"=>$res['id']));
             	}
             	$arrs['etime'] = date("Y-m-d",$arrs['etime']);
-            }	
+            }
 		}
 		// 重新获取过滤后的我的优惠券
 		$yhqs =  pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_coupon_user')." WHERE uniacid = :uniacid and uid = :id  ".$tiaojian." ORDER BY id DESC" , array(':uniacid' => $_W['uniacid'],":id" => $uid));
@@ -3473,7 +3475,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
             }
             if($arrss['etime']!=0){
             	$arrss['etime'] = date("Y-m-d",$arrss['etime']);
-            }	
+            }
             $res['coupon']= $arrss;
 		}
 		return $this->result(0, 'success', $yhqs);
@@ -3604,11 +3606,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 			$arry = $store['list'];
 			for ( $i = 0; $i < count($arry); $i++) {
-			   for ($j = $i + 1; $j < count($arry); $j++) {   
-			    if ($arry[$i]['kms']> $arry[$j]['kms']) {   
-			    	$new = $arry[$i];   
-			     	$arry[$i] = $arry[$j];   
-			     	$arry[$j] = $new;   
+			   for ($j = $i + 1; $j < count($arry); $j++) {
+			    if ($arry[$i]['kms']> $arry[$j]['kms']) {
+			    	$new = $arry[$i];
+			     	$arry[$i] = $arry[$j];
+			     	$arry[$j] = $new;
 			    }
 			   }
 			}
@@ -3634,11 +3636,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 			$arry = $store['list'];
 			for ( $i = 0; $i < count($arry); $i++) {
-			   for ($j = $i + 1; $j < count($arry); $j++) {   
-			    if ($arry[$i]['kms']> $arry[$j]['kms']) {   
-			    	$new = $arry[$i];   
-			     	$arry[$i] = $arry[$j];   
-			     	$arry[$j] = $new;   
+			   for ($j = $i + 1; $j < count($arry); $j++) {
+			    if ($arry[$i]['kms']> $arry[$j]['kms']) {
+			    	$new = $arry[$i];
+			     	$arry[$i] = $arry[$j];
+			     	$arry[$j] = $new;
 			    }
 			   }
 			}
@@ -3674,14 +3676,14 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		   	$res['kms'] = $formatted;
 		}
 		$arry = $store['list'];
-		for ( $i = 0; $i < count($arry); $i++) {   
-		   for ($j = $i + 1; $j < count($arry); $j++) {   
-		    if ($arry[$i]['kms']> $arry[$j]['kms']) {   
-		    	$new = $arry[$i];   
-		     	$arry[$i] = $arry[$j];   
-		     	$arry[$j] = $new;   
-		    }   
-		   }   
+		for ( $i = 0; $i < count($arry); $i++) {
+		   for ($j = $i + 1; $j < count($arry); $j++) {
+		    if ($arry[$i]['kms']> $arry[$j]['kms']) {
+		    	$new = $arry[$i];
+		     	$arry[$i] = $arry[$j];
+		     	$arry[$j] = $new;
+		    }
+		   }
 		}
 		$store['list'] = $arry;
 		return $this->result(0, 'success', $store);
@@ -3824,11 +3826,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$app = pdo_fetch("SELECT * FROM ".tablename('account_wxapp')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
 		$paycon = pdo_fetch("SELECT * FROM ".tablename('uni_settings')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
 		$datas = unserialize($paycon['payment']);
-		include 'WeixinPay.php';  
-		$appid=$app['key'];  
+		include 'WeixinPay.php';
+		$appid=$app['key'];
 		$openid= $_GPC['openid'];
-		$mch_id=$datas['wechat']['mchid'];  
-		$key=$datas['wechat']['signkey'];  
+		$mch_id=$datas['wechat']['mchid'];
+		$key=$datas['wechat']['signkey'];
 		if(isset($datas['wechat']['identity'])){
 			$identity = $datas['wechat']['identity'];
 		}else{
@@ -3845,9 +3847,9 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$out_trade_no = $order_id;  //订单号
 		$body = "商品支付";
 		$total_fee = $_GPC['price']*100;
-		$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);  
+		$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);
 
-		$return=$weixinpay->pay(); 
+		$return=$weixinpay->pay();
 		$return['order_id'] = $order_id;
 		return $this->result(0, 'success',$return);
 	}
@@ -3870,12 +3872,12 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$data['username'] = $xinxi['username'];
 		$data['usertel'] = $xinxi['usertel'];
 		$data['address'] = $xinxi['address'];
-		$data['usertime'] = $xinxi['userdate']." ".$xinxi['usertime']; 
-		$data['userbeiz'] = $xinxi['userbeiz']; 
+		$data['usertime'] = $xinxi['userdate']." ".$xinxi['usertime'];
+		$data['userbeiz'] = $xinxi['userbeiz'];
 		//获得用户信息
 		$user = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :id and uniacid = :uniacid" , array(':id' => $openid ,':uniacid' => $uniacid));
 		$money_u = $user['money'];
-		$score_u = $user['score']; 
+		$score_u = $user['score'];
 		$kdata['money'] = $money_u - $my_pay_money;
 		$kdata['score'] = $score_u - $score;
 		$data['order_id'] = $order_id;
@@ -3944,11 +3946,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         if($jf_pro >= $jf_money){   //商品设置的最大可使用积分 >= 我自己的积分
         	$dikou_jf = $jf_money;
         }else{						//商品设置的最大可使用积分 < 我自己的积分
-        	$dikou_jf = $jf_pro;    
+        	$dikou_jf = $jf_pro;
         }
 		// 积分金钱转积分数
 		$jf_score = ($dikou_jf/$jf_gz['money'])*$jf_gz['scroe'];
-		$shangjbase['user_money'] = $money; 
+		$shangjbase['user_money'] = $money;
 		$shangjbase['dk_money'] = $dikou_jf;   //抵扣的金钱
 		$shangjbase['dk_score'] = $jf_score;   //抵扣的积分
 		$shangjbase['jf_gz'] = $jf_gz; //积分规则
@@ -4060,11 +4062,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         $app = pdo_fetch("SELECT * FROM ".tablename('account_wxapp')." WHERE uniacid = :uniacid" , array(':uniacid' => $uniacid));
 		$paycon = pdo_fetch("SELECT * FROM ".tablename('uni_settings')." WHERE uniacid = :uniacid" , array(':uniacid' => $uniacid));
 		$datas = unserialize($paycon['payment']);
-        include 'WeixinPay.php';  
-		$appid=$app['key'];  
+        include 'WeixinPay.php';
+		$appid=$app['key'];
 		$openid= $openid;
-		$mch_id=$datas['wechat']['mchid'];  
-		$key=$datas['wechat']['signkey'];  
+		$mch_id=$datas['wechat']['mchid'];
+		$key=$datas['wechat']['signkey'];
 		if(isset($datas['wechat']['identity'])){
 			$identity = $datas['wechat']['identity'];
 		}else{
@@ -4081,8 +4083,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$out_trade_no = $order_id;  //订单号
 		$body = "账户充值";
 		$total_fee = $money*100;
-		$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);  
-		$return=$weixinpay->pay();  
+		$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);
+		$return=$weixinpay->pay();
 		$return['order_id'] = $order_id;
 		return $this->result(0, 'success',$return);
 	}
@@ -4153,13 +4155,13 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	        		}
 	        	}
         	}
-        	
+
         }else{        //没有充值规则
         	$new_money = $new_money + 0;
         	$new_score = $new_score + 0;
         }
-        $data['money'] = $new_money; 
-        $data['score'] = $new_score; 
+        $data['money'] = $new_money;
+        $data['score'] = $new_score;
         $res = pdo_update('sudu8_page_user', $data, array('openid' => $openid ,'uniacid' => $uniacid));
         // 充值成功后生成流水
         $gghmoney = $new_money*1 - $my_money*1; //增加规格后的money
@@ -4267,12 +4269,12 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$data['username'] = $xinxi['username'];
 		$data['usertel'] = $xinxi['usertel'];
 		$data['address'] = $xinxi['address'];
-		$data['usertime'] = $xinxi['userdate']." ".$xinxi['usertime']; 
-		$data['userbeiz'] = $xinxi['userbeiz']; 
+		$data['usertime'] = $xinxi['userdate']." ".$xinxi['usertime'];
+		$data['userbeiz'] = $xinxi['userbeiz'];
 		//获得用户信息
 		$user = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :id and uniacid = :uniacid" , array(':id' => $openid ,':uniacid' => $uniacid));
 		$money_u = $user['money'];
-		$score_u = $user['score']; 
+		$score_u = $user['score'];
 		$kdata['money'] = $money_u - $my_pay_money;
 		$kdata['score'] = $score_u - $score;
 		$data['order_id'] = $order_id;
@@ -4290,8 +4292,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		if($printer){
 			if(intval($printer['status']) == 1){
 				$content = '';
-				$content .= '下单时间：'.date('Y-m-d H:i:s',time()).'\r\n';  
-				$content .= '订单号：'.$order_id.'\r\n';  
+				$content .= '下单时间：'.date('Y-m-d H:i:s',time()).'\r\n';
+				$content .= '订单号：'.$order_id.'\r\n';
 				var_dump($data['zh']);                    //打印内容
 				if($data['zh'] != 0){
 					$content .= '<center>'.$data['zh'].'</center>\r\n';
@@ -4328,7 +4330,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				$print->action_print(intval($printer['uid']),$printer['nid'],$content,$apiKey,$msign);
 			}
 		}
-	} 
+	}
 	public function doPageHxmm(){
 		global $_GPC, $_W;
         $uniacid = $_W['uniacid'];
@@ -4339,11 +4341,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         	return $this->result(0, 'success',0);
         }else{
         	$data['custime'] = time();
-            $data['flag'] = 2; 
+            $data['flag'] = 2;
             $res = pdo_update('sudu8_page_order', $data, array('order_id' => $order_id));
             return $this->result(0, 'success',1);
         }
-	} 
+	}
 	public function doPageHxyhq(){
 		global $_GPC, $_W;
         $uniacid = $_W['uniacid'];
@@ -4354,11 +4356,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         	return $this->result(0, 'success',0);
         }else{
         	$data['utime'] = time();
-            $data['flag'] = 1; 
+            $data['flag'] = 1;
             $res = pdo_update('sudu8_page_coupon_user', $data, array('id' => $youhqid));
             return $this->result(0, 'success',1);
         }
-	} 
+	}
 	public function doPageWxupimg(){
 		global $_GPC, $_W;
         $uniacid = $_W['uniacid'];
@@ -4620,7 +4622,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				'creattime' => time()
 			);
 			if($numflag == 1 && $typeflag == 1){  //符合增加积分的规则
-				$data['score'] = $newscore;	
+				$data['score'] = $newscore;
 				$shareData['score'] = $share_score;
 				$shareData['notice'] = 0;
 				$res = pdo_update('sudu8_page_user', $data, array('openid' => $openid,"uniacid"=>$uniacid));
@@ -4687,19 +4689,19 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         $products['minprice'] = $minprice;
         $products['kc'] = $kcl;
         $products['xsl'] = $xsl;
-        $imgarr = unserialize($products['text']); 
+        $imgarr = unserialize($products['text']);
         foreach ($imgarr as $key2 => &$reb) {
         	$reb = HTTPSHOST.$reb;
         }
         $products['imgtext'] = $imgarr;
         $types = $proarr[0]['comment'];
         //构建规格组
-        $typesarr = explode(",", $types);  
+        $typesarr = explode(",", $types);
         // 构建规格组json
         $typesjson = [];
         foreach ($typesarr as $key => &$rec) {
             $str = "type".($key+1);
-            $ziji = pdo_fetchall("SELECT ".$str." FROM ".tablename('sudu8_page_duo_products_type_value') ." WHERE pid = :pid  group by ".$str." order by id asc", array(':pid'=>$id));    
+            $ziji = pdo_fetchall("SELECT ".$str." FROM ".tablename('sudu8_page_duo_products_type_value') ." WHERE pid = :pid  group by ".$str." order by id asc", array(':pid'=>$id));
             $xarr = array();
             foreach ($ziji as $key => $res) {
                 array_push($xarr, $res[$str]);
@@ -4722,7 +4724,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		if($guiz['sxj_gx']==1 && $userinfo['parent_id'] == '0' && $fxsid != '0' && $userinfo['fxs'] !=2 && $fxsinfo['fxs']==2){
 			$p_fxs = $fxsinfo['parent_id'];  //分销商的上级
 			$p_p_fxs = $fxsinfo['p_parent_id']; //分销商的上上级
-			// 判断启用几级分销 
+			// 判断启用几级分销
 			$fx_cj = $guiz['fx_cj'];
 			// 分别做判断
 			if($fx_cj == 1){
@@ -4733,7 +4735,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 			if($fx_cj == 3){
 				$uuser = pdo_update("sudu8_page_user",array("parent_id"=>$fxsid,"p_parent_id"=>$p_fxs,"p_p_parent_id"=>$p_p_fxs),array("openid"=>$openid,'uniacid' => $_W['uniacid']));
-			}	
+			}
 		}
 		$adata['guiz'] = pdo_fetch("SELECT one_bili,two_bili,three_bili,uniacid FROM ".tablename('sudu8_page_fx_gz')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
 		$adata['shouc'] = $shouc;
@@ -4843,7 +4845,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				$i = $index+1;
 				$kk = "type".$i;
 				$str .= $rec.":".$proinfo[$kk].",";
-			} 
+			}
 			$str = substr($str, 0, strlen($str)-1);
 			$proinfo['ggz'] = $str;
 			$res['proinfo'] = $proinfo;
@@ -4965,7 +4967,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		global $_GPC, $_W;
 		$uniacid = $_W['uniacid'];
 		$openid = $_GPC['openid'];
-		$id = $_GPC['id']; 
+		$id = $_GPC['id'];
 		$address = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_duo_products_address') ." WHERE openid = :openid and id = :id", array(':openid'=>$openid,':id'=>$id));
 		return $this->result(0, 'success', $address);
 	}
@@ -4992,7 +4994,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				}
 			}else{
 				$forms2 = "NULL";
-			} 
+			}
 			$yunfei['forms'] = $forms2;
 		}
 		return $this->result(0, 'success', $yunfei);
@@ -5036,7 +5038,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$zhmoney = ($score * $gzmoney)/$gzscore;
 			$moneycl = floor($zhmoney);
 			//消费掉的积分
-			$jf = $moneycl * $gzscore; 
+			$jf = $moneycl * $gzscore;
 		}
 		$data["moneycl"] = $moneycl;
 		$data["jf"] = $jf;
@@ -5073,10 +5075,10 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$zhmoney = ($score * $gzmoney)/$gzscore;
 		}
 		$moneycl = floor($zhmoney);
-		$jf = $moneycl * $gzscore; 
+		$jf = $moneycl * $gzscore;
 		return $this->result(0, "success", array("moneycl"=>$moneycl, "jf"=>$jf, "gzscore"=>$gzscore, "gzmoney"=>$gzmoney));
 	}
-	
+
 	//创建订单
 	public function dopageduosetorder(){
 		global $_GPC, $_W;
@@ -5113,7 +5115,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				$i = $index+1;
 				$kk = "type".$i;
 				$str .= $rec.":".$proproinfo[$kk].",";
-			} 
+			}
 			$newproinfo['ggz'] = $str;
 			$res['proinfo'] = $newproinfo;
 		}
@@ -5159,7 +5161,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 			if($fx_cj == 3){
 				$uuser = pdo_update("sudu8_page_user",array("parent_id"=>$fxsid,"p_parent_id"=>$p_fxs,"p_p_parent_id"=>$p_p_fxs),array("openid"=>$openid,'uniacid' => $_W['uniacid']));
-			}	
+			}
 		}
 		return $this->result(0, 'success', $order_id);
 	}
@@ -5215,7 +5217,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			//积分抵扣
 			if($dkscore != '0' && !empty($dkscore)){
 				$jfgz = pdo_get("sudu8_page_rechargeconf", array("uniacid"=>$uniacid));
-				$payprice -= floatval($dkscore) * floatval($jfgz['money']) / floatval($jfgz['scroe']); 
+				$payprice -= floatval($dkscore) * floatval($jfgz['money']) / floatval($jfgz['scroe']);
 			}
 
 			//判断算出来的价格与实付价格是否相等
@@ -5223,7 +5225,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				foreach ($jsdatass as $key12 => &$res) {
 					$probaseinfo = pdo_fetch("SELECT id,title,thumb FROM ".tablename('sudu8_page_products')." WHERE id = :id and uniacid = :uniacid" , array(':id' => $res['baseinfo'] ,':uniacid' => $_W['uniacid']));
 					$proproinfo = pdo_fetch("SELECT id,price,thumb,comment,type1,type2,type3,kc FROM ".tablename('sudu8_page_duo_products_type_value')." WHERE id = :id" , array(':id' => $res['proinfo']));
-					
+
 					$newproinfo['id'] = $probaseinfo['id'];
 					$newproinfo['title'] = $probaseinfo['title'];
 					$newproinfo['thumb'] = $probaseinfo['thumb'];
@@ -5239,7 +5241,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 						$i = $index+1;
 						$kk = "type".$i;
 						$str .= $rec.":".$proproinfo[$kk].",";
-					} 
+					}
 					if($res['num'] > $proproinfo['kc']){
 						return $this->result(0, 'success', array('errcode' => 2, 'err' => '库存不足！', 'title'=>$probaseinfo['title'].'('.chop($str,',').')', 'kc'=>$proproinfo['kc']));
 					}
@@ -5322,7 +5324,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			//积分抵扣
 			if($dkscore != '0' && !empty($dkscore)){
 				$jfgz = pdo_get("sudu8_page_rechargeconf", array("uniacid"=>$uniacid));
-				$payprice -= floatval($dkscore) * floatval($jfgz['money']) / floatval($jfgz['scroe']); 
+				$payprice -= floatval($dkscore) * floatval($jfgz['money']) / floatval($jfgz['scroe']);
 			}
 
 			//判断算出来的价格与实付价格是否相等
@@ -5454,7 +5456,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 						return $this->result(0, 'success', array('err' => 3, 'message' => '该优惠券已过期'));
 					}
         		}
-        		
+
         		$kucun = pdo_getcolumn("sudu8_page_products", array("uniacid"=>$uniacid, "id"=>$order['pid']), "pro_kc");
         		if($order['num'] > $kucun){
     				return $this->result(0, 'success', array('err' => 4, 'message' => "库存不足！剩余".$kucun."件"));
@@ -5467,8 +5469,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 
         	return $this->result(0, 'success', array('err' => 1,'message'=>'价格出错'));
         }
-        
-		
+
+
 	}
 
 	//保存微信统一下单接口返回的prepayid，可以发三次模板消息
@@ -5523,7 +5525,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		if($types == 'duo'){
 			pdo_update("sudu8_page_duo_products_order", $data, array("uniacid"=>$uniacid, "order_id"=>$order_id));
 		}
-		
+
 	}
 
 	//获取微信支付所需要的参数（所有订单公用接口）   $out_trade_no为订单号, $price必须是微信支付的金额!!!  $types标志订单类型 多规格为'duo'
@@ -5535,9 +5537,9 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         $paycon = pdo_get("uni_settings", array("uniacid"=>$uniacid));
         $datas = unserialize($paycon['payment']);
         include_once 'WeixinPay.php';
-        $appid=$app['key'];   
-        $mch_id=$datas['wechat']['mchid']; 
-        $key=$datas['wechat']['signkey']; 
+        $appid=$app['key'];
+        $mch_id=$datas['wechat']['mchid'];
+        $key=$datas['wechat']['signkey'];
 
         if(isset($datas['wechat']['identity'])){
             $identity = $datas['wechat']['identity'];
@@ -5553,8 +5555,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 
         $body = "商品支付";
         $total_fee = $payprice * 100;
-        $weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid,$info);  
-        return $weixinpay->pay();  
+        $weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid,$info);
+        return $weixinpay->pay();
 	}
 
 	//支付完成回调（所有订单公用接口）
@@ -5585,7 +5587,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 
         	//更新积分
         	if($order['jf']){
-        		$score = floatval($user['score']) - floatval($order['jf']);	
+        		$score = floatval($user['score']) - floatval($order['jf']);
         		if($score < 0) $score = 0;
   				$data['score'] = $score;
         	}
@@ -5632,7 +5634,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         			$scoretomoney = pdo_get("sudu8_page_rechargeconf", array("uniacid" => $uniacid));
         			$scoreback = $total_price * $scoreback / 100;
         			$scoreback = floor($scoreback * intval($scoretomoney['scroe']) / intval($scoretomoney['money']));
-        			       			
+
         		}else{
         			$scoreback = floor($total_num * floatval($scoreback));
         		}
@@ -5652,7 +5654,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
     					"creattime" => time()
      				);
      				pdo_insert("sudu8_page_score", $scoreback_data);
-    			} 
+    			}
         	}
 
         	//金钱流水
@@ -5695,7 +5697,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         	//发送邮件提醒to商家
         	$this->sendMailToAdmin($orderid);
         	return $this->result(0, 'success', array('message'=>'成功'));
-        	
+
         }
 
         if($types == "miaosha"){
@@ -5715,7 +5717,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 
         	//更新积分
         	if($order['dkscore']){
-        		$score = floatval($user['score']) - floatval($order['dkscore']);	
+        		$score = floatval($user['score']) - floatval($order['dkscore']);
         		if($score < 0) $score = 0;
   				$data['score'] = $score;
         	}
@@ -5741,7 +5743,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         			$scoretomoney = pdo_get("sudu8_page_rechargeconf", array("uniacid" => $uniacid));
         			$scoreback = floatval($order['price']) * intval($order['num']) * $scoreback / 100;
         			$scoreback = floor($scoreback * intval($scoretomoney['scroe']) / intval($scoretomoney['money']));
-        			       			
+
         		}else{
         			$scoreback = floor(intval($order['num']) * floatval($scoreback));
         		}
@@ -5761,7 +5763,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
     					"creattime" => time()
      				);
      				pdo_insert("sudu8_page_score", $scoreback_data);
-    			} 
+    			}
         	}
 
         	//金钱流水
@@ -5801,7 +5803,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         		'fprice' => $order['true_price']
         	);
         	$this->sendTplMessage($flag2, $openid, $formId, 'duo_zf', $data8);
-        
+
         	//发送邮件提醒to商家
         	$this->sendMailToAdmin($orderid, "miaosha");
         	return $this->result(0, 'success', array('message'=>'成功'));
@@ -5854,7 +5856,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				}
 				if($fx_cj == 3){
 					$uuser = pdo_update("sudu8_page_user",array("parent_id"=>$fxsid,"p_parent_id"=>$p_fxs,"p_p_parent_id"=>$p_p_fxs),array("openid"=>$openid,'uniacid' => $_W['uniacid']));
-				}	
+				}
 			}
 		}
 
@@ -5995,10 +5997,10 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$val = $guiz['fxs_sz_val'];
 			if($guiz['fxs_sz'] == 3){
 				if($types == "duo"){
-					$times = pdo_fetchcolumn("SELECT count(*) FROM ".tablename("sudu8_page_duo_products_order")." WHERE uniacid = :uniacid and openid = :openid and flag in (1,2,4)", 
+					$times = pdo_fetchcolumn("SELECT count(*) FROM ".tablename("sudu8_page_duo_products_order")." WHERE uniacid = :uniacid and openid = :openid and flag in (1,2,4)",
 							array(":uniacid"=>$uniacid, ":openid"=>$openid));
 				}else if($types == "miaosha"){
-					$times = pdo_fetchcolumn("SELECT count(*) FROM ".tablename("sudu8_page_order")." WHERE uniacid = :uniacid and openid = :openid and flag in (1,2,4)", 
+					$times = pdo_fetchcolumn("SELECT count(*) FROM ".tablename("sudu8_page_order")." WHERE uniacid = :uniacid and openid = :openid and flag in (1,2,4)",
 							array(":uniacid"=>$uniacid, ":openid"=>$openid));
 				}
 				if($times >= $val){
@@ -6007,10 +6009,10 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 			if($guiz['fxs_sz'] == 4){
 				if($types == "duo"){
-					$total_price = pdo_fetchcolumn("SELECT sum(price) FROM ".tablename("sudu8_page_duo_products_order")." WHERE uniacid = :uniacid and openid = :openid and flag in (1,2,4)", 
+					$total_price = pdo_fetchcolumn("SELECT sum(price) FROM ".tablename("sudu8_page_duo_products_order")." WHERE uniacid = :uniacid and openid = :openid and flag in (1,2,4)",
 							array(":uniacid"=>$uniacid, ":openid"=>$openid));
 				}else if($types == "miaosha"){
-					$total_price = pdo_fetchcolumn("SELECT sum(true_price) FROM ".tablename("sudu8_page_order")." WHERE uniacid = :uniacid and openid = :openid and flag in (1,2,4)", 
+					$total_price = pdo_fetchcolumn("SELECT sum(true_price) FROM ".tablename("sudu8_page_order")." WHERE uniacid = :uniacid and openid = :openid and flag in (1,2,4)",
 							array(":uniacid"=>$uniacid, ":openid"=>$openid));
 				}
 				if($total_price > $val){
@@ -6101,7 +6103,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
                 	}
                     $response = $this->_requestPost($url_m, $post_info);
                     // file_put_contents(__DIR__."/debug2.txt",$response);
-                    
+
     			}
     		}
     	}
@@ -6144,7 +6146,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				$row_prc.= "邮编：".$address['postalcode']."<br />";
 			}
 		}
-		
+
 		if($types == "miaosha"){
 			$ord = pdo_get("sudu8_page_order", array("uniacid"=>$uniacid, "order_id"=>$order_id));
 			$row_oid = "订单编号（秒杀）：".$ord['order_id']."<br />";
@@ -6168,7 +6170,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		  $mail->AddAddress($v);
 		}
 		$mail->Subject = "新订单 - ".date("Y-m-d H:i:s",time());
-		$mail->isHTML(true); 
+		$mail->isHTML(true);
 		$mail->Body    = "<div style='height:40px;line-height:40px;font-size:16px;font-weight:bold;background:#7030A0;color:#fff;text-indent:10px;'>订单详情：</div><div style='line-height:30px;padding:15px;background:#f6f6f6'>".$row_oid.$row_pro.$row_prc."<div style='line-height:40px;margin-top:10px;text-align:center;color:#888;font-size:12px'>".$row_mail_name."</div></div>";
 		if(!$mail->send()) {
 		    $result = "send_err";
@@ -6191,10 +6193,10 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				'flag' => 7
 			);
 
-			$result = pdo_update("sudu8_page_duo_products_order", $data, array("uniacid"=>$uniacid, "order_id"=>$order_id));	
+			$result = pdo_update("sudu8_page_duo_products_order", $data, array("uniacid"=>$uniacid, "order_id"=>$order_id));
 		}
-		
-		return $this->result(0, 'success', array("result"=>$result)); 
+
+		return $this->result(0, 'success', array("result"=>$result));
 	}
 
 	public function doPagetuikuan(){
@@ -6215,7 +6217,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	            $app = pdo_get("account_wxapp", array("uniacid"=>$uniacid));
 	            $paycon = pdo_get("uni_settings", array("uniacid"=>$uniacid));
 	            $datas = unserialize($paycon['payment']);
-	            $appid = $app['key'];  
+	            $appid = $app['key'];
 	            $mch_id = $datas['wechat']['mchid'];
 	            $zfkey = $datas['wechat']['signkey'];
 	            $refund_fee = intval($order['payprice'] * 100);
@@ -6231,7 +6233,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	            $order = pdo_get("sudu8_page_duo_products_order", array("uniacid"=>$uniacid, "th_orderid"=>$out_refund_no));
 
 	            pdo_query("UPDATE ".tablename("sudu8_page_user")." SET money = money + ".$order['price']." WHERE uniacid = :uniacid and id = :id", array(":uniacid"=>$uniacid, ":id"=>$order["uid"]));
-	            
+
 	            if($order['coupon']){
 	                pdo_update("sudu8_page_coupon_user", array("flag"=>0), array("uniacid"=>$uniacid, "uid"=>$order['uid'], "id"=>$order['coupon']));
 	            }
@@ -6296,13 +6298,13 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$out_refund_no = date("Y",$now).date("m",$now).date("d",$now).date("H",$now).date("i",$now).date("s",$now).rand(1000,9999);
         	pdo_update("sudu8_page_order", array("th_orderid"=>$out_refund_no), array("uniacid"=>$uniacid, "order_id"=>$order_id));
 			$order = pdo_get("sudu8_page_order", array("uniacid"=>$uniacid, "order_id"=>$order_id));
-			
+
 			if($order['pay_price'] > 0){
 				require_once(IA_ROOT."/addons/sudu8_page/WeixinRefund.php");
 				$app = pdo_get("account_wxapp", array("uniacid"=>$uniacid));
 	            $paycon = pdo_get("uni_settings", array("uniacid"=>$uniacid));
 	            $datas = unserialize($paycon['payment']);
-	            $appid = $app['key'];  
+	            $appid = $app['key'];
 	            $mch_id = $datas['wechat']['mchid'];
 	            $zfkey = $datas['wechat']['signkey'];
 	            $refund_fee = intval($order['pay_price'] * 100);
@@ -6317,7 +6319,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				$order = pdo_get("sudu8_page_order", array("uniacid"=>$uniacid, "th_orderid"=>$out_refund_no));
 
 				pdo_query("UPDATE ".tablename("sudu8_page_user")." SET money = money + ".$order['true_price']." WHERE uniacid = :uniacid and id = :id", array(":uniacid"=>$uniacid, ":id"=>$order["uid"]));
-	            
+
 	            if($order['coupon']){
 	                pdo_update("sudu8_page_coupon_user", array("flag"=>0), array("uniacid"=>$uniacid, "uid"=>$order['uid'], "id"=>$order['coupon']));
 	            }
@@ -6386,10 +6388,10 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			else{
 				$result = pdo_update("sudu8_page_order", array("flag" => 6, "form_id"=>$formId), array("uniacid"=>$uniacid, "order_id"=>$order_id));
 			}
-		}			
+		}
 
 		return $this->result(0, "success", array("flag" => 0, "message" => "申请成功！"));
-		
+
 
 	}
 
@@ -6401,7 +6403,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$out_refund_no = $_GPC['out_refund_no'];
 		// file_put_contents(__DIR__."/debug3.txt", $out_refund_no);
 		$types = $_GPC['types'];
-		
+
 		if($types == 'duo' || $types == 'duoqx'){
 			if($types == 'duo'){
 				pdo_update("sudu8_page_duo_products_order", array("flag"=>8), array("uniacid"=>$uniacid, "th_orderid"=>$out_refund_no));
@@ -6411,7 +6413,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 	        $order = pdo_get("sudu8_page_duo_products_order", array("uniacid"=>$uniacid, "th_orderid"=>$out_refund_no));
 	        if($order['price'] > $order['payprice']){
-	            $addmoney = round(floatval($order['price'])-floatval($order['payprice']), 2); 
+	            $addmoney = round(floatval($order['price'])-floatval($order['payprice']), 2);
 	            pdo_query("UPDATE ".tablename("sudu8_page_user")." SET money = money + ".$addmoney." WHERE uniacid = :uniacid and id = :id", array(":uniacid"=>$uniacid, ":id"=>$order["uid"]));
 	        }
 	        if($order['coupon']){
@@ -6471,10 +6473,10 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	        $order = pdo_get("sudu8_page_order", array("uniacid"=>$uniacid, "th_orderid"=>$out_refund_no));
 
 	        if($order['true_price'] > $order['pay_price']){
-	            $addmoney = round(floatval($order['true_price'])-floatval($order['pay_price']), 2); 
+	            $addmoney = round(floatval($order['true_price'])-floatval($order['pay_price']), 2);
 	            pdo_query("UPDATE ".tablename("sudu8_page_user")." SET money = money + ".$addmoney." WHERE uniacid = :uniacid and id = :id", array(":uniacid"=>$uniacid, ":id"=>$order["uid"]));
 	        }
-	            
+
             if($order['coupon']){
                 pdo_update("sudu8_page_coupon_user", array("flag"=>0), array("uniacid"=>$uniacid, "uid"=>$order['uid'], "id"=>$order['coupon']));
             }
@@ -6536,7 +6538,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 
 			if($order['true_price'] > $order['pay_price']){
-	            $addmoney = round(floatval($order['true_price'])-floatval($order['pay_price']), 2); 
+	            $addmoney = round(floatval($order['true_price'])-floatval($order['pay_price']), 2);
 	            pdo_query("UPDATE ".tablename("sudu8_page_user")." SET money = money + ".$addmoney." WHERE uniacid = :uniacid and id = :id", array(":uniacid"=>$uniacid, ":id"=>$order["uid"]));
 	        }
 
@@ -6599,7 +6601,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$order = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_duo_products_order')." WHERE openid = :openid and order_id = :order_id" , array(':openid' => $openid ,':order_id' => $order_id));
 
 		$jsdata = unserialize($order['jsondata']);
-		
+
 			$fmsg = "";
 		foreach ($jsdata as $key => &$res) {
 			pdo_update("sudu8_page_duo_products_gwc",array("flag"=>2),array("id"=>$res['id']));
@@ -6612,22 +6614,22 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			pdo_update("sudu8_page_products",array("sale_tnum"=>$newpronum),array("id"=>$pvid));
 			// 减去对应的库存
 			$spid = $res['proinfo']['id'];
-			$spnum = $res['proinfo']['kc']; 
+			$spnum = $res['proinfo']['kc'];
 			$kc = $spnum - $num;
 			// if($kc<0){
 			// 	$kc=0;
 			// }
-			// 
+			//
 			// pdo_update("sudu8_page_duo_products_type_value",array("kc"=>$kc),array("id"=>$spid));
 
 			$pro_val = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_duo_products_type_value') ." WHERE id = :id", array(':id'=>$spid));
 			$fmsg .= "产品：".$pro['title']." 购买数：".$num." 购买规格：".$pro_val['type1']." ".$pro_val['type2']." ".$pro_val['type3']." "." 购买价格：".$pro_val['price']."元 ";
 			//加销量
-			$salenum = $pro_val['salenum'] + 1; 
+			$salenum = $pro_val['salenum'] + 1;
 			pdo_update("sudu8_page_duo_products_type_value",array("kc"=>$kc,"salenum" => $salenum),array("id"=>$spid));
 			// Db::table('ims_sudu8_page_duo_products_type_value')->where('id',$spid)->update(array("kc"=>$kc,"salenum" => $salenum));
 
-			
+
 		}
 
 		$applet = pdo_fetch("SELECT * FROM ".tablename('account_wxapp')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
@@ -6689,7 +6691,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			"score" => $true_price,
 			"message" => "消费",
 			"creattime" => time()
-		);	
+		);
 		if($true_price>0){
 			pdo_insert("sudu8_page_money",$xfmoney);
 		}
@@ -6730,7 +6732,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 			if($fx_cj == 3){
 				$uuser = pdo_update("sudu8_page_user",array("parent_id"=>$fxsid,"p_parent_id"=>$p_fxs,"p_p_parent_id"=>$p_p_fxs),array("openid"=>$openid,'uniacid' => $_W['uniacid']));
-			}	
+			}
 		}
 		// 重新获取该用户信息
 		$userinfo_new = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :openid and uniacid = :uniacid" , array(':openid' => $openid ,':uniacid' => $_W['uniacid']));
@@ -6887,6 +6889,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	}
 	// 多规格的订单
 	public function dopageduoorderlist(){
+
 		global $_GPC, $_W;
 		$uniacid = $_W['uniacid'];
 		$openid = $_GPC['openid'];
@@ -6970,7 +6973,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	            	$v['baseinfo']['thumb'] = HTTPSHOST . $v['baseinfo']['thumb'];
 	            }
             }
-            
+
             $res['creattime'] = date("Y-m-d H:i:s",$res['creattime']);
             $res['hxtime'] = $res['hxtime'] == 0?"未核销":date("Y-m-d H:i:s",$res['hxtime']);
             // $res['userinfo'] = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :openid and uniacid = :uniacid" , array(':openid' => $openid ,':uniacid' => $_W['uniacid']));
@@ -7010,9 +7013,9 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$time = time();
 		$orders = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_duo_products_order')." WHERE uniacid = :uniacid and openid = :openid and flag = 0" , array(':uniacid' => $_W['uniacid'],':openid' => $openid));
 		foreach ($orders as $key => &$res) {
-			$overtime = $res['creattime'] + (30*60); 
+			$overtime = $res['creattime'] + (30*60);
 		}
-	} 
+	}
 	// 多规格订单详情
 	public function dopageduoorderinfo(){
 		global $_GPC, $_W;
@@ -7073,7 +7076,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		if($parent_id=='0' || !$user){
 			$fxs = "总店";
 		}else{
-			$fxsinfo = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :openid and uniacid = :uniacid" , array(':openid' => $parent_id ,':uniacid' => $_W['uniacid']));	
+			$fxsinfo = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :openid and uniacid = :uniacid" , array(':openid' => $parent_id ,':uniacid' => $_W['uniacid']));
 			$fxs = rawurldecode($fxsinfo['nickname']);
 		}
 		$data['gz'] = $gz;
@@ -7097,7 +7100,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$arr['zuidi'] = 0;
 		//我的团队数据
 		$team_counts = pdo_fetch("SELECT count(*) as n FROM ".tablename('sudu8_page_user')." WHERE  uniacid = :uniacid and (parent_id = :id or p_parent_id = :pid or p_p_parent_id = :ppid)" , array(':uniacid' => $_W['uniacid'],':id' => $openid ,':pid' => $openid ,':ppid' => $openid));
-		$arr['team_counts'] = $team_counts['n']; 
+		$arr['team_counts'] = $team_counts['n'];
 		// 分销订单
 		$order_counts = pdo_fetch("SELECT count(*) as n FROM ".tablename('sudu8_page_fx_ls')." WHERE uniacid = :uniacid  and (parent_id = :openid1 or p_parent_id = :openid2 or p_p_parent_id = :openid3) " , array(':uniacid' => $_W['uniacid'], ':openid1'=>$openid,':openid2'=>$openid,':openid3'=>$openid));
 		$arr['order_counts'] = $order_counts['n'];
@@ -7179,7 +7182,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		}
 		$data['user'] = $user;
 		$data['cj'] = $guiz['fx_cj'];
-		return $this->result(0, 'success', $data); 
+		return $this->result(0, 'success', $data);
 	}
 	// 分销订单数据统计
 	public function dopagefxcount(){
@@ -7194,7 +7197,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			"twocount" => $orders2['n'],
 			"threecount" => $orders3['n'],
 		);
-		return $this->result(0, 'success', $data); 
+		return $this->result(0, 'success', $data);
 	}
 	// 分销订单
 	public function dopagefxdingd(){
@@ -7213,7 +7216,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$v = 0;
 			$bili = 0;
 			// 根据订单号去订单里面去jsondata
-			$orderinfo = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_duo_products_order')." WHERE uniacid = :uniacid and order_id = :order_id" , array(':uniacid' => $_W['uniacid'],':order_id' => $res['order_id']));		
+			$orderinfo = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_duo_products_order')." WHERE uniacid = :uniacid and order_id = :order_id" , array(':uniacid' => $_W['uniacid'],':order_id' => $res['order_id']));
 			$jsdata = unserialize($orderinfo['jsondata']);
 			$one_bili = $jsdata[0]['one_bili'];
 			$two_bili = $jsdata[0]['two_bili'];
@@ -7238,8 +7241,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 			$res['creattime'] = date("Y-m-d H:i",$res['creattime']);
 			$res['v'] = $v;
-		} 
-		return $this->result(0, 'success', $orders); 
+		}
+		return $this->result(0, 'success', $orders);
 	}
 
 	// 新分校订单-更改订单状态
@@ -7259,7 +7262,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			foreach ($orders as $key => &$value) {
 				$this->dopagegivemoney($openid, $value['order_id']);
 			}
-		}	
+		}
 
 		//更新单规格分销订单状态
 		$dan_orders = pdo_fetchAll("SELECT a.* FROM ".tablename("sudu8_page_fx_ls")." as a JOIN ".tablename("sudu8_page_order")." as b on a.order_id = b.order_id and a.uniacid = b.uniacid WHERE a.uniacid = 
@@ -7272,7 +7275,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 		}
 
-		return $this->result(0, 'success', 'ok'); 
+		return $this->result(0, 'success', 'ok');
 	}
 	// 新分销订单
 	public function dopagefxdingdan(){
@@ -7292,7 +7295,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			foreach ($fxorders as $key => &$value) {
 				$this->dopagegivemoney($openid, $value['order_id']);
 			}
-		}	
+		}
 
 		//更新单规格分销订单状态
 		$dan_orders = pdo_fetchAll("SELECT a.* FROM ".tablename("sudu8_page_fx_ls")." as a JOIN ".tablename("sudu8_page_order")." as b on a.order_id = b.order_id and a.uniacid = b.uniacid WHERE a.uniacid = 
@@ -7325,7 +7328,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			if($res['p_p_parent_id'] == $openid){
 				$v = 3;
 			}
-			
+
 			$order = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_duo_products_order')." WHERE uniacid = :uniacid and order_id = :orderid" , array(':uniacid' => $uniacid,':orderid'=>$res['order_id']));
 			if($order){
 				$res['datas'] = unserialize($order['jsondata']);
@@ -7363,8 +7366,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			}
 			$res['creattime'] = date("Y-m-d H:i",$res['creattime']);
 			$res['v'] = $v;
-		} 
-		return $this->result(0, 'success', $orders); 
+		}
+		return $this->result(0, 'success', $orders);
 	}
 
 	// 我的账户
@@ -7380,8 +7383,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$wfmoney+=$res['money']*1;
 		}
 		$data['userinfo'] = $userinfo;
-		$data['wfmoney'] = $wfmoney; 
-		return $this->result(0, 'success', $data); 
+		$data['wfmoney'] = $wfmoney;
+		return $this->result(0, 'success', $data);
 	}
 	// 向我的上级返钱操作['并生成流水记录']
 	public function dopagegivemoney($openid,$orderid){
@@ -7487,7 +7490,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         //pdo_update("sudu8_page_duo_products_order",array("flag"=>2),array('order_id'=>$orderid));
 		$fxsorder = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_fx_ls')." WHERE uniacid = :uniacid and order_id = :orderid" , array(':uniacid' => $uniacid,':orderid'=>$orderid));
         if($fxsorder){
-            $this->dopagegivemoney($openid,$orderid);
+            $this->dopagegivemoney($o商品评论审核enid,$orderid);
         }
 	}
 	// 我要提现申请
@@ -7499,14 +7502,14 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$guiz = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_fx_gz')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
 		$data['userinfo'] = $userinfo;
 		$data['guiz'] = $guiz;
-		return $this->result(0, 'success', $data); 
+		return $this->result(0, 'success', $data);
 	}
 	// 获取分销商规则
 	public function dopagehuoqfxsgz(){
 		global $_GPC, $_W;
 		$uniacid = $_W['uniacid'];
 		$guiz = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_fx_gz')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
-		return $this->result(0, 'success', $guiz); 
+		return $this->result(0, 'success', $guiz);
 	}
    	// 分销商提现了
    	public function dopagefxstixian(){
@@ -7523,7 +7526,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			"zfbxm"=>$_GPC['zfbxm'],
 			"creattime" => time()
 		);
-		pdo_insert("sudu8_page_fx_tx",$data); 
+		pdo_insert("sudu8_page_fx_tx",$data);
 		// 申请提现的同时减去提现的数据
 		$userinfo = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE openid = :openid and uniacid = :uniacid" , array(':openid' => $openid ,':uniacid' => $_W['uniacid']));
 		$fx_money = $userinfo['fx_money'];
@@ -7545,7 +7548,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		foreach ($txjl as $key => &$res) {
 			$res['creattime'] = date("Y-m-d H:i:s",$res['creattime']);
 		}
-		return $this->result(0, 'success', $txjl); 
+		return $this->result(0, 'success', $txjl);
    	}
    	// 付费视频操作
    	public function dopagevideozhifu(){
@@ -7583,7 +7586,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				"score" => $mykoumoney,
 				"message" => "视频消费",
 				"creattime" => time()
-			);	
+			);
 			if($mykoumoney>0){
 				pdo_insert("sudu8_page_money",$kdata);
 			}
@@ -7595,10 +7598,10 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	        $app = pdo_fetch("SELECT * FROM ".tablename('account_wxapp')." WHERE uniacid = :uniacid" , array(':uniacid' => $uniacid));
 			$paycon = pdo_fetch("SELECT * FROM ".tablename('uni_settings')." WHERE uniacid = :uniacid" , array(':uniacid' => $uniacid));
 			$datas = unserialize($paycon['payment']);
-	        include 'WeixinPay.php';  
-			$appid=$app['key'];  
+	        include 'WeixinPay.php';
+			$appid=$app['key'];
 			$openid= $openid;
-			$mch_id=$datas['wechat']['mchid'];  
+			$mch_id=$datas['wechat']['mchid'];
 			$key=$datas['wechat']['signkey'];
 			if(isset($datas['wechat']['identity'])){
 				$identity = $datas['wechat']['identity'];
@@ -7616,14 +7619,14 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$out_trade_no = $order_id;  //订单号
 			$body = "账户充值";
 			$total_fee = $money*100;
-			$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);  
+			$weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee,$identity,$sub_mchid);
 
 
 			// $out_trade_no = $order_id;  //订单号
 			// $body = "账户充值";
 			// $total_fee = $money*100;
-			// $weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee);  
-			$return=$weixinpay->pay();  
+			// $weixinpay = new WeixinPay($appid,$openid,$mch_id,$key,$out_trade_no,$body,$total_fee);
+			$return=$weixinpay->pay();
 			$return['order_id'] = $order_id;
 
 			return $this->result(0, 'success', $return);
@@ -7662,8 +7665,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			"score" => $money + $mykoumoney,
 			"message" => "视频消费",
 			"creattime" => time()
-		);	
-		
+		);
+
 		pdo_insert("sudu8_page_money",$xfmoney);
 
 		$count = pdo_getcolumn("sudu8_page_video_pay", array("uniacid"=>$uniacid, "openid"=>$openid, "pid"=>$id), "count(*)");
@@ -7763,7 +7766,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		        				$list[$kk]['linktype'] = "page";
 		        				$list[$kk]['sale_num'] = intval($vv['sale_num']) + intval($vv['sale_tnum']);
 		        				$list[$kk]['price'] = floatval($list[$kk]['price']);
-		        				
+
 			        			if(strpos($vv['thumb'],'http') === false && $vv['thumb'] != ""){
 		        					$list[$kk]['thumb'] = HTTPSHOST.$vv['thumb'];
 		        				}
@@ -8044,12 +8047,12 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		        					$list[$kk]['price'] = min(array_column(pdo_fetchall("SELECT price FROM ".tablename('sudu8_page_duo_products_type_value') ." WHERE pid = :pid", array(':pid'=>$vv['id'])),'price'));
 		        					$list[$kk]['sale_num'] = $sale_num;
 		        					$list[$kk]['linkurl'] = "/sudu8_page/showProMore/showProMore?id=".$vv['id'];
-		        				
+
 		        				}
 			        			if(strpos($vv['thumb'],'http') === false && $vv['thumb'] != ""){
 			        					$list[$kk]['thumb'] = HTTPSHOST.$vv['thumb'];
 			        			}
-			        			
+
 		        				$list[$kk]['price'] = floatval($list[$kk]['price']);
 		        			}
 
@@ -8111,21 +8114,21 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		        		$count = count($v['data']);
 		        		$data['items'][$k]['count'] = $count;
 		        	}
-		        	
+
 		        	if($v['id'] == "video"){
 		        		$videourl = $v['params']['videourl'];
 		        		if($videourl){
 		        			if(strpos($videourl,".mp4")!==false){
 		        				$videodata = $videourl;
 			        		}else{
-				            	$videodata = $this->getVideoInfo($videourl);  
+				            	$videodata = $this->getVideoInfo($videourl);
 			        		}
 					        $data['items'][$k]['params']['videourl'] = $videodata;
 		        		}
 		        	}
 		        	if($v['id'] == "yhq"){
 						$counts_yhq = $v['style']['counts'];
-						$data['items'][$k]['coupon'] = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_coupon')." WHERE `flag` = 1 and `uniacid` = {$uniacid} limit 0,{$counts_yhq}"); 
+						$data['items'][$k]['coupon'] = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_coupon')." WHERE `flag` = 1 and `uniacid` = {$uniacid} limit 0,{$counts_yhq}");
 		        	}
 		        	if($v['id'] == "xnlf"){
 						$avatars = pdo_fetchall("SELECT avatar FROM ".tablename('sudu8_page_user')." WHERE `uniacid` = {$uniacid} and `avatar` != '' ORDER BY id DESC LIMIT 0,5");
@@ -8163,7 +8166,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$data['copyright']['copyimg'] = HTTPSHOST.$data['copyright']['copyimg'];
         return $this->result(0, 'success',$data);
         // echo json_encode($data);
-	}	
+	}
 	public function getVideoInfo($video)
     {
 
@@ -8232,8 +8235,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	        	"path" => $sharepath,
 	        	"width" => '80'
 	        );
-			$datas=json_encode($data);  
-	        $result = $this->_Postrequest($ewmurl,$datas); 
+			$datas=json_encode($data);
+	        $result = $this->_Postrequest($ewmurl,$datas);
 	        $root = ATTACHMENT_ROOT;
 			$path = "images/{$uniacid}/".date('Y/m/');
 			$newpath = $root.$path;
@@ -8255,35 +8258,35 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	        pdo_update("sudu8_page_user",array("ewm"=>$crsjk),array("openid"=>$openid,"uniacid"=>$uniacid));
 		return $this->result(0, 'success',$imgpath);
 	}
-	function _Postrequest($url, $data, $ssl=true) {  
-        //curl完成   
-        $curl = curl_init();  
-        //设置curl选项  
-        curl_setopt($curl, CURLOPT_URL, $url);//URL  
-        $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0 FirePHP/0.7.4';  
-        curl_setopt($curl, CURLOPT_USERAGENT, $user_agent);//user_agent，请求代理信息  
-        curl_setopt($curl, CURLOPT_AUTOREFERER, true);//referer头，请求来源  
-        curl_setopt($curl, CURLOPT_TIMEOUT, 30);//设置超时时间  
-        //SSL相关  
-        if ($ssl) {  
-            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);//禁用后cURL将终止从服务端进行验证  
-            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);//检查服务器SSL证书中是否存在一个公用名(common name)。  
-        }  
-        // 处理post相关选项  
-        curl_setopt($curl, CURLOPT_POST, true);// 是否为POST请求  
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);// 处理请求数据  
-        // 处理响应结果  
-        curl_setopt($curl, CURLOPT_HEADER, false);//是否处理响应头  
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);//curl_exec()是否返回响应结果  
-        // 发出请求  
+	function _Postrequest($url, $data, $ssl=true) {
+        //curl完成
+        $curl = curl_init();
+        //设置curl选项
+        curl_setopt($curl, CURLOPT_URL, $url);//URL
+        $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101 Firefox/38.0 FirePHP/0.7.4';
+        curl_setopt($curl, CURLOPT_USERAGENT, $user_agent);//user_agent，请求代理信息
+        curl_setopt($curl, CURLOPT_AUTOREFERER, true);//referer头，请求来源
+        curl_setopt($curl, CURLOPT_TIMEOUT, 30);//设置超时时间
+        //SSL相关
+        if ($ssl) {
+            curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);//禁用后cURL将终止从服务端进行验证
+            curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);//检查服务器SSL证书中是否存在一个公用名(common name)。
+        }
+        // 处理post相关选项
+        curl_setopt($curl, CURLOPT_POST, true);// 是否为POST请求
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);// 处理请求数据
+        // 处理响应结果
+        curl_setopt($curl, CURLOPT_HEADER, false);//是否处理响应头
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);//curl_exec()是否返回响应结果
+        // 发出请求
         $response = curl_exec($curl);
-        if (false === $response) {  
-            echo '<br>', curl_error($curl), '<br>';  
-            return false;  
-        }  
-        curl_close($curl);  
-        return $response;  
-    }  
+        if (false === $response) {
+            echo '<br>', curl_error($curl), '<br>';
+            return false;
+        }
+        curl_close($curl);
+        return $response;
+    }
     // 下载完后删除服务器上面的图片
     public function dopageimgscdd(){
     	global $_GPC, $_W;
@@ -8316,7 +8319,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		if($guiz['sxj_cj']!=4 && $guiz['sxj_gx']==1 && $userinfo['parent_id'] == '0' && $fxsid != '0' && $userinfo['fxs'] !=2 && $fxsinfo['fxs']==2){
 			$p_fxs = $fxsinfo['parent_id'];  //分销商的上级
 			$p_p_fxs = $fxsinfo['p_parent_id']; //分销商的上上级
-			// 判断启用几级分销 
+			// 判断启用几级分销
 			$fx_cj = $guiz['fx_cj'];
 			// 分别做判断
 			if($fx_cj == 1){
@@ -8429,14 +8432,14 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		foreach ($arrs as $key => &$res) {
 			array_push($arrdata, $res['arrkey']);
 		}
-		return $this->result(0, 'success',$arrdata);  
+		return $this->result(0, 'success',$arrdata);
     }
     // 获取优惠券开启设置
     public function dopagecouponset(){
     	global $_GPC, $_W;
 		$uniacid = $_W['uniacid'];
-		$arrdata = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_coupon_set')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid'])); 
-		return $this->result(0, 'success',$arrdata); 
+		$arrdata = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_coupon_set')." WHERE uniacid = :uniacid" , array(':uniacid' => $_W['uniacid']));
+		return $this->result(0, 'success',$arrdata);
     }
     // 302到图片
     public function dopagegetimg(){
@@ -8471,7 +8474,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$array = get_object_vars($jsondecode);//转换成数组
 		$sessionKey = $array['session_key'];
 
-		return $this->result(0, 'success', $sessionKey); 
+		return $this->result(0, 'success', $sessionKey);
     }
 
     public function dopagejiemi(){
@@ -8489,12 +8492,12 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$encryptedData=$_GPC['encryptedData'];
 		$iv = $_GPC['iv'];
 		include_once "wxBizDataCrypt.php";
-		$pc = new WXBizDataCrypt($appid, $sessionKey); 
+		$pc = new WXBizDataCrypt($appid, $sessionKey);
 		$errCode = $pc->decryptData($encryptedData, $iv, $data);
 			//$this->debug($sessionKey.PHP_EOL.$encryptedData.PHP_EOL.$iv.PHP_EOL); //写入文件
 		$arrdata = json_decode($data,TRUE);
 		$tel = $arrdata['phoneNumber'];
-		
+
 		return $this->result(0, 'success', $tel);
     }
 
@@ -8514,15 +8517,15 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$encryptedData=$_GPC['encryptedData'];
 		$iv = $_GPC['iv'];
 		include_once "wxBizDataCrypt.php";
-		$pc = new WXBizDataCrypt($appid, $sessionKey); 
+		$pc = new WXBizDataCrypt($appid, $sessionKey);
 		$errCode = $pc->decryptData($encryptedData, $iv, $data);
 			//$this->debug($sessionKey.PHP_EOL.$encryptedData.PHP_EOL.$iv.PHP_EOL); //写入文件
 		$arrdata = json_decode($data, TRUE);
 		$tel = $arrdata['phoneNumber'];
-		
+
 		return $this->result(0, 'success', $tel);
     }
-    
+
     public function doPagejiemiUserinfo(){
     	global $_GPC, $_W;
 		$uniacid = $_W['uniacid'];
@@ -8532,11 +8535,11 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$encryptedData=$_GPC['encryptedData'];
 		$iv = $_GPC['iv'];
 		include_once "wxBizDataCrypt.php";
-		$pc = new WXBizDataCrypt($appid, $sessionKey); 
+		$pc = new WXBizDataCrypt($appid, $sessionKey);
 		$errCode = $pc->decryptData($encryptedData, $iv, $data);
 			//$this->debug($sessionKey.PHP_EOL.$encryptedData.PHP_EOL.$iv.PHP_EOL); //写入文件
 		$arrdata = json_decode($data, TRUE);
-		
+
 		return $this->result(0, 'success', $arrdata);
     }
 
@@ -8564,8 +8567,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$fxsid = $_GPC['fxsid'];  //分享人
 		$id = $_GPC['id'];
 		$types = $_GPC['types'];
-		$today = strtotime(date("Y-m-d"),time());  
-		$end = $today+60*60*24; 
+		$today = strtotime(date("Y-m-d"),time());
+		$end = $today+60*60*24;
 		//判断今天有没有帮忙获取积分过
 		$is_get = pdo_fetch("SELECT id FROM ".tablename('sudu8_page_pro_score_get')." WHERE uniacid = :uniacid and pid = :id and clickopenid = :openid and creattime > :btime and creattime < :etime" , array(':uniacid' => $uniacid,':id' => $id,':openid'=>$openid,':btime' => $today,':etime'=>$end));
 		if($is_get){
@@ -8573,7 +8576,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			exit;
 		}
 		if($types != "PT"){
-			$pro = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_products')." WHERE uniacid = :uniacid and id = :id" , array(':uniacid' => $uniacid,':id' => $id)); 
+			$pro = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_products')." WHERE uniacid = :uniacid and id = :id" , array(':uniacid' => $uniacid,':id' => $id));
 		}
 		// 开启了点击给上级积分规则
 		if($pro['get_share_gz'] == 1){
@@ -8630,8 +8633,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$pindex = max(1, intval($_GPC['page']));
 		$psize = 10;
 		$userinfo = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE uniacid = :uniacid and openid = :openid", array(':uniacid' => $uniacid,':openid' => $openid));
-		$counts = pdo_fetch("SELECT count(*) as n FROM ".tablename('sudu8_page_score')." WHERE uniacid = :uniacid and uid = :uid and creattime > ".$time , array(':uniacid' => $uniacid,':uid' => $userinfo['id'])); 
-		$list = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_score')." WHERE uniacid = :uniacid and uid = :uid and creattime > ".$time." order by creattime desc LIMIT ".($pindex - 1) * $psize.",".$psize , array(':uniacid' => $uniacid,':uid' => $userinfo['id'])); 
+		$counts = pdo_fetch("SELECT count(*) as n FROM ".tablename('sudu8_page_score')." WHERE uniacid = :uniacid and uid = :uid and creattime > ".$time , array(':uniacid' => $uniacid,':uid' => $userinfo['id']));
+		$list = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_score')." WHERE uniacid = :uniacid and uid = :uid and creattime > ".$time." order by creattime desc LIMIT ".($pindex - 1) * $psize.",".$psize , array(':uniacid' => $uniacid,':uid' => $userinfo['id']));
 		foreach ($list as $key => &$res) {
 			$clickuser = pdo_fetch("SELECT nickname FROM ".tablename('sudu8_page_user')." WHERE uniacid = :uniacid and id = :id", array(':uniacid' => $uniacid,':id' => $res['uuid']));
 			$res['message'] = '好友'.$clickuser['nickname']."点击送积分";
@@ -8646,7 +8649,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		}
 		$adata['isover'] = $isover;
 		$adata['lists'] = $list;
-		return $this->result(0, 'success',$adata); 
+		return $this->result(0, 'success',$adata);
 	}
 	// 获取我的积分流水记录
 	public function dopagegetmymoneylist(){
@@ -8657,8 +8660,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$pindex = max(1, intval($_GPC['page']));
 		$psize = 10;
 		$userinfo = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_user')." WHERE uniacid = :uniacid and openid = :openid", array(':uniacid' => $uniacid,':openid' => $openid));
-		$counts = pdo_fetch("SELECT count(*) as n FROM ".tablename('sudu8_page_money')." WHERE uniacid = :uniacid and uid = :uid and creattime > ".$time , array(':uniacid' => $uniacid,':uid' => $userinfo['id'])); 
-		$list = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_money')." WHERE uniacid = :uniacid and uid = :uid and creattime > ".$time." order by creattime desc LIMIT ".($pindex - 1) * $psize.",".$psize , array(':uniacid' => $uniacid,':uid' => $userinfo['id'])); 
+		$counts = pdo_fetch("SELECT count(*) as n FROM ".tablename('sudu8_page_money')." WHERE uniacid = :uniacid and uid = :uid and creattime > ".$time , array(':uniacid' => $uniacid,':uid' => $userinfo['id']));
+		$list = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_money')." WHERE uniacid = :uniacid and uid = :uid and creattime > ".$time." order by creattime desc LIMIT ".($pindex - 1) * $psize.",".$psize , array(':uniacid' => $uniacid,':uid' => $userinfo['id']));
 		foreach ($list as $key => &$res) {
 			$res['creattime'] = date("Y-m-d H:i:s",$res['creattime']);
 		}
@@ -8671,13 +8674,13 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		}
 		$adata['isover'] = $isover;
 		$adata['lists'] = $list;
-		return $this->result(0, 'success',$adata); 
+		return $this->result(0, 'success',$adata);
 	}
 	// 获取所有栏目
 	public function dopageallCatep(){
 		global $_GPC, $_W;
 		$uniacid = $_W['uniacid'];
-		$allcate = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_cate')." WHERE uniacid = :uniacid and cid = 0 and statue = 1 order by num desc " , array(':uniacid' => $uniacid)); 
+		$allcate = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_cate')." WHERE uniacid = :uniacid and cid = 0 and statue = 1 order by num desc " , array(':uniacid' => $uniacid));
 		foreach($allcate as $k => $v){
 			if($v['type']=="showArt" || $v['type']=="showPic" ||$v['type']=="showWxapps"){
 				$allcate[$k]['url'] = "/sudu8_page/listPic/listPic?cid=".$v['id'];
@@ -8685,7 +8688,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				$allcate[$k]['url'] = "/sudu8_page/listPro/listPro?cid=".$v['id'];
 			}
 		}
-		$allcate_son = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_cate')." WHERE uniacid = :uniacid and cid = :cid and statue = 1 order by num desc " , array(':uniacid' => $uniacid,':cid' => $allcate[0]['id'])); 
+		$allcate_son = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_cate')." WHERE uniacid = :uniacid and cid = :cid and statue = 1 order by num desc " , array(':uniacid' => $uniacid,':cid' => $allcate[0]['id']));
 		foreach($allcate_son as $k => $v){
 			if(strpos($v['catepic'],'http') === false){
 				$allcate_son[$k]["catepic"] = HTTPSHOST.$v["catepic"];
@@ -8693,7 +8696,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		}
 		$result['list'] = $allcate;
 		$result['son'] = $allcate_son;
-		return $this->result(0, 'success',$result); 
+		return $this->result(0, 'success',$result);
 	}
 	// 获取子栏目
 	public function dopagegetcateson(){
@@ -8705,10 +8708,10 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			if(strpos($v['catepic'],'http') === false){
 				$allcate_son[$k]["catepic"] = HTTPSHOST.$v["catepic"];
 			}
-		} 
-		return $this->result(0, 'success',$allcate_son); 
+		}
+		return $this->result(0, 'success',$allcate_son);
 	}
-  	
+
   	//开通vip
   	public function doPageregisterVIP(){
   		global $_GPC, $_W;
@@ -8759,9 +8762,9 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			$res = pdo_insert("sudu8_page_vip_apply", $vipdata);
 
 			if($res){
-				return $this->result(0, 'success', 1); 
+				return $this->result(0, 'success', 1);
 			}else{
-				return $this->result(0, 'success', 2); 
+				return $this->result(0, 'success', 2);
 			}
 		}
   	}
@@ -8773,7 +8776,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 
 		$openid = $_GPC['openid'];
 
-		$info = pdo_fetch("SELECT realname,mobile,birth,address,vipid,vipcreatetime FROM ".tablename('sudu8_page_user')." WHERE uniacid = :uniacid and openid = :openid", 
+		$info = pdo_fetch("SELECT realname,mobile,birth,address,vipid,vipcreatetime FROM ".tablename('sudu8_page_user')." WHERE uniacid = :uniacid and openid = :openid",
 						array(':uniacid'=>$uniacid, ':openid'=>$openid));
 		$info['address'] = $info['address'];
 		$info['year'] = date('Y', $info['vipcreatetime']);
@@ -8781,7 +8784,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 		$weeks = ['MON','TUE','WED','THUR','FRI','SAT','SUN'];
 		$index = date('w', $info['vipcreatetime']);
 		$info['week'] = $weeks[$index];
-		return $this->result(0, 'success', $info); 
+		return $this->result(0, 'success', $info);
   	}
 
   	//检查会员卡设置
@@ -8875,7 +8878,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 				if($temp){
 					return $this->result(0, 'success', false);
 				}
-			}	
+			}
   		}
 
 		return $this->result(0, 'success', true);
@@ -8915,8 +8918,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
                 $info['voice'] = HTTPSHOST.$info['voice'];
         }
 
-        
-        
+
+
 
         $info['visitor'] = unserialize($info['visitor']);
     	$nowvisitor = $info['visitor'];
@@ -8942,7 +8945,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
         	}
         }
         $info['expand'] = $expand;
-        
+
         $info['visitor'] = $visitors;
 
         $data = array(
@@ -9055,7 +9058,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
   		$baseInfo['tabbar_tc'] = $staffset['tabbar_tc'];
   		$baseInfo['tabbar_tca'] = $staffset['tabbar_tca'];
   		$baseInfo['color_bar'] = "1px solid ".$staffset['color_bar'];
-  		
+
         $baseInfo['tabbar'] = unserialize($staffset['tabbar']);
 		$baseInfo['tabnum'] = $staffset['tabnum'];
 		for ($i=0; $i<=4; $i++) {
@@ -9166,8 +9169,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 					"message" => "分享获得积分",
 					"creattime" => time()
 				);
-				
-				
+
+
 	  			//判断保存操作的次数, 超过设定的次数返回提示
 	  			$savecount = pdo_fetchcolumn("SELECT count(*) FROM ".tablename("sudu8_page_staff_record")." WHERE uniacid = :uniacid and operid = :operid and type= :type and to_days(from_unixtime(`createtime`)) = to_days(now())", array(":uniacid"=>$uniacid, ":operid"=>$oper['id'], ":type" => 'save'));
 
@@ -9192,7 +9195,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	  				}else{
 	  					return $this->result(0, 'success', 1);
 	  				}
-	  				
+
 	  			}else{
 	  				if($savecount < $staffset['save_pcount']){
 	  					pdo_insert('sudu8_page_staff_record', $data);
@@ -9204,7 +9207,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	  					pdo_insert("sudu8_page_score",$xfscore);
 	  					return $this->result(0, 'success', 3);  //抽奖次数上限
 	  				}else{
-	  					return $this->result(0, 'success', 1);  
+	  					return $this->result(0, 'success', 1);
 	  				}
 
 	  			}
@@ -9213,7 +9216,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	  		}
   		}
 
-  		
+
 
   	}
 
@@ -9268,7 +9271,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 					"message" => "分享获得积分",
 					"creattime" => time()
 				);
-				
+
 	  			//判断保存操作的次数, 超过设定的次数返回提示
 	  			$savecount = pdo_fetchcolumn("SELECT count(*) FROM ".tablename("sudu8_page_staff_record")." WHERE uniacid = :uniacid and operid = :operid and type= :type and to_days(from_unixtime(`createtime`)) = to_days(now())", array(":uniacid"=>$uniacid, ":operid"=>$oper['id'], ":type" => 'share'));
 
@@ -9294,7 +9297,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	  				}else{
 	  					return $this->result(0, 'success', 1);
 	  				}
-	  				
+
 	  			}else{
 	  				if($savecount < $staffset['share_pcount']){
 	  					pdo_insert('sudu8_page_staff_record', $data);
@@ -9306,7 +9309,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	  					pdo_insert("sudu8_page_score",$xfscore);
 	  					return $this->result(0, 'success', 3);  //抽奖次数上限
 	  				}else{
-	  					return $this->result(0, 'success', 1);  
+	  					return $this->result(0, 'success', 1);
 	  				}
 
 	  			}
@@ -9325,12 +9328,12 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 			//查找出当前表中的活动
 			$activity = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_lottery_activity')." WHERE uniacid = :uniacid and status = 1 and to_days(from_unixtime(`begin`)) < to_days(now()) and to_days(from_unixtime(`end`)) > to_days(now()) order by id desc limit 1" , array(':uniacid' => $uniacid));
 			return $this->result(0, 'success', $activity['id']);
-		     
+
 		} else {
-		    return $this->result(0, 'success', -1); 
+		    return $this->result(0, 'success', -1);
 
 		}
-		
+
 	}
 
 	//zan
@@ -9371,7 +9374,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
   				pdo_insert("sudu8_page_staff_zans",$staff_zan);
   			}
 
-  			return $this->result(0, 'success', $data); 
+  			return $this->result(0, 'success', $data);
 
   		}else{ //取消赞
 
@@ -9387,7 +9390,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
   				'zan' => $staffinfo['zan'],
   				'result' => 0
   			);
-  			return $this->result(0, 'success', $data1); 
+  			return $this->result(0, 'success', $data1);
   		}
 	}
 
@@ -9404,7 +9407,7 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
                 $staff['pic'] = HTTPSHOST.$staff['pic'];
             }
 
-  		return $this->result(0, 'success', $staff); 
+  		return $this->result(0, 'success', $staff);
 	}
 
 	//生成动态名片二维码分享
@@ -9446,8 +9449,8 @@ class Sudu8_pageModuleWxapp extends WeModuleWxapp {
 	        	"path" => $sharepath,
 	        	"width" => '80'
 	        );
-			$datas=json_encode($data);  
-	        $result = $this->_Postrequest($ewmurl,$datas); 
+			$datas=json_encode($data);
+	        $result = $this->_Postrequest($ewmurl,$datas);
 	        $root = ATTACHMENT_ROOT;
 			$path = "images/{$uniacid}/".date('Y/m/');
 			$newpath = $root.$path;

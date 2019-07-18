@@ -31,7 +31,7 @@
 
 		            <td width="10%">身份</td>
 
-		            <td width="10%">积分 / 余额</td>
+		            <td width="10%">积分 / 余额 / 消费股</td>
 
 		            <td width="10%">订单 / 优惠券</td>
 
@@ -76,6 +76,8 @@
 		                    积分：{$item['score']}
 		                    <br/>
 		                    余额：{$item['money']}
+							<br/>
+		                    消费股：{$item['xiaofeigu']}
 
 		                </td>
 
@@ -297,6 +299,18 @@
 								<a class="hycz" style="color: #44abf7;">充值</a>
 							</label>
 						</div>
+
+
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2">消费股</label>
+					<label class="form-controls col-sm-6 color-000 pt-7">
+						{$item['xiaofeigu']}
+						<a class="hycz" style="color: #44abf7;">充值</a>
+					</label>
+				</div>
+
+
+
 						<div class="form-group">
 							<label for="" class="control-label col-sm-2">注册时间</label>
 							<label class="form-controls col-sm-6 color-000 pt-7">	
@@ -351,6 +365,7 @@
 				<ul class="hycz_ul1 clearfix">
 					<li class="czjf active">充值积分</li>
 					<li class="czye">充值余额</li>
+					<li class="czxf">消费股</li>
 				</ul>
 				<div class="czjfa">
 					<div class="form-group">
@@ -418,16 +433,58 @@
 					</div>
 					
 				</div>
+
+				<div class="czxfg" style="display: none;">
+					<div class="form-group">
+						<label class="col-sm-2 control-label" style="text-align: right;font-weight: 700;" for="">当前消费股：</label>
+						<div class="col-sm-9 col-xs-12" style="margin-top: 7px;">
+							{$item['xiaofeigu']}
+						</div>
+						<input name="xiaofeigu_now" type="hidden" value="{$item['xiaofeigu']}">
+					</div>
+					<div class="form-group hycz_change">
+						<label class="col-sm-2 control-label" style="text-align: right;font-weight: 700;" for="">变化：</label>
+						<div class="col-sm-9 col-xs-12">
+							<label class="radio-inline" style="margin-top: 7px;">
+								<input type="radio" name="xfg_change" id="" value="1" checked/>
+								增加
+							</label>
+							<label class="radio-inline" style="margin-top: 7px;">
+								<input type="radio" name="xfg_change" id="" value="2" />
+								减少
+							</label>
+							<!--<label class="radio-inline" style="margin-top: 7px;">
+								<input type="radio" name="xfg_change" id="" value="2" />
+								最终余额
+							</label>-->
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" style="text-align: right;font-weight: 700;" for="">充值数目：</label>
+						<div class="col-sm-9 col-xs-12">
+							<input class="bjshxx" type="text" name="xfgNum" id="" value="" />
+						</div>
+					</div>
+
+				</div>
 			</div>
 			<div class="odac_foot">
 				<input name="token" type="hidden" value="{$_W['token']}" />
 				<input type="submit" name="score" id="submit_czjf" value="确认充值积分" />
 				<input type="submit" name="money" id="submit_czye" value="确认充值余额" />
+				<input type="submit" style="display: none;" name="xiaofeigu" id="submit_xfg" value="确认充值消费股" />
 				<span class="hycz_close">关闭</span>
 			</div>
 
 		</div>
 	</form>
+
+
+
+
+
+
+
 	<script type="text/javascript">
 		$(function(){
 
@@ -530,20 +587,56 @@
 	
 	$('.czjf').click(function(){
 		$('.czjf').addClass('active')
+        $('.czxf').removeClass('active')
 		$('.czjfa').show();
 		$('.czyea').hide();
-		$('.czye').removeClass('active');
+        $('.czxfg').hide();
+		$('.czye').removeClass('active')
 		$('#submit_czjf').show()
 		$('#submit_czye').hide()
+        $('#submit_xfg').hide()
 	})
 	$('.czye').click(function(){
 		$('.czjf').removeClass('active')
+		$('.czxf').removeClass('active')
+
+
 		$('.czjfa').hide();
+		$('.czxfg').hide();
+
 		$('.czyea').show();
 		$('.czye').addClass('active')
 		$('#submit_czjf').hide()
+		$('#submit_xfg').hide()
+
 		$('#submit_czye').show()
 	})
+
+
+	//操作消费股按钮
+    $('.czxf').click(function(){
+                $('.czxf').addClass('active')
+                $('.czxfg').show();
+                $('#submit_xfg').show()
+
+
+
+                $('.czye').removeClass('active')
+                $('.czjf').removeClass('active')
+
+                $('.czjfa').hide()
+                $('.czyea').hide()
+
+                $('#submit_czjf').hide()
+                $('#submit_czye').hide()
+
+
+
+	})
+
+
+
+
 	var delete_fxsact =(windowheight-134)/2
 	$('.delete_fxsac').css('margin-top',delete_fxsact);
 	$('.delete_fxs').click(function(){

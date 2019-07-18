@@ -1,2 +1,89 @@
 <?php
- goto PFQrp; PFQrp: load()->func("\164\x70\x6c"); goto p5GG2; A2TNd: $data3["\x75\x6e\151\x61\x63\151\x64"] = $uniacid; goto lT6Mn; AgGfg: sNiLm: goto q9i2B; XdtDI: $aaa["\x77\145\x63\x68\x61\164"] = $wechat; goto xeuPv; tfN8r: $result = pdo_update("\x73\x75\144\165\x38\137\160\x61\x67\145\137\x62\141\x73\145", $data, array("\x75\156\151\x61\143\x69\x64" => $uniacid)); goto pMPaJ; GPHmp: $certkey = pdo_fetch("\123\105\114\x45\x43\x54\40\52\40\106\x52\117\x4d\x20" . tablename("\x73\x75\x64\165\x38\137\x70\141\147\145\137\x66\x78\137\x67\x7a") . "\x20\x57\x48\x45\122\x45\40\165\156\151\x61\143\151\144\x20\75\x20\72\165\156\151\141\x63\151\x64", array("\72\165\156\151\141\x63\151\144" => $uniacid)); goto JRZP4; i627J: b5odJ: goto O1g4Y; HVvI9: $data["\x63\157\156\x66\151\147"] = $config; goto tfN8r; hsn4P: $_GPC["\143\x6f\155\x6d\x50"] = 0; goto x58WT; kExSx: if (!mkdir($path)) { goto QanyD; } goto uwXAo; KNth_: $config["\x63\157\155\155\101\x73"] = $_GPC["\143\x6f\155\x6d\101\x73"]; goto x3TUa; OsHUD: avX82: goto YlMDo; gYI2b: $wxapp = pdo_fetch("\x53\105\x4c\x45\103\124\40\x2a\40\106\x52\x4f\115\x20" . tablename("\141\143\x63\157\x75\156\x74\x5f\x77\170\x61\160\160") . "\40\x57\110\x45\122\105\40\165\x6e\x69\x61\143\151\144\x20\75\40\x3a\165\x6e\x69\141\143\x69\144", array("\x3a\x75\x6e\151\x61\x63\151\144" => $uniacid)); goto zfDY0; F_j7u: $config["\143\157\x6d\x6d\101"] = $_GPC["\x63\x6f\155\x6d\101"]; goto KNth_; pDQj_: $res2 = pdo_update("\x75\156\x69\137\x73\145\x74\x74\151\x6e\x67\x73", $data2, array("\165\156\151\x61\x63\x69\x64" => $uniacid)); goto FqLYB; CbHLG: $item["\143\157\x6d\x6d\120\163"] = $config["\143\x6f\155\155\x50\x73"]; goto GPHmp; p5GG2: global $_GPC, $_W; goto qKr4j; x3TUa: $config["\143\x6f\155\x6d\120"] = $_GPC["\x63\157\x6d\155\x50"]; goto gf58A; QhyQh: eRd7H: goto F_j7u; BYRDS: joUgc: goto CLEdN; D94NB: AB8wL: goto qZxF4; fS5FM: message("\350\257\267\345\x85\x88\345\xa1\253\345\x86\231\xe5\237\272\347\xa1\x80\xe4\277\xa1\346\x81\xaf\41", $this->createWebUrl("\123\x68\157\160\163\x65\x74", array("\x6f\160" => "\144\x69\163\x70\154\141\171", "\x63\141\x74\145\151\144" => $_GPC["\143\x61\164\x65\151\x64"], "\143\150\x69\x64" => $_GPC["\143\150\151\144"])), "\145\x72\x72\157\162"); goto HOZgm; PNEtw: EYRwV: goto Dldr6; nQEz1: QanyD: goto BYRDS; js1M_: $path = ROOT_PATH . "\x43\x65\x72\x74"; goto M_vDC; m3i1b: mkdir($upath); goto IKib9; lT6Mn: pdo_insert("\163\165\x64\165\x38\137\x70\141\x67\145\x5f\146\x78\x5f\x67\172", $data3); goto LAk2W; IKib9: EApgP: goto nQEz1; Y0_sC: ThPDw: goto fWfn7; qloys: $data2["\x75\x6e\x69\x61\143\x69\x64"] = $uniacid; goto uFqYy; DuG1w: $datas = unserialize($paycon["\160\x61\171\x6d\x65\156\x74"])["\x77\x65\143\x68\x61\164"]; goto RY3or; jjYfj: if (!(!empty($cert) && !empty($key))) { goto pxcaI; } goto DkuY_; CLEdN: file_put_contents($cert_path, $cert); goto dW80D; xeuPv: $data2["\x70\x61\x79\155\x65\x6e\x74"] = serialize($aaa); goto pDQj_; YlMDo: $cert = $_GPC["\x63\x65\162\x74\x74\x65\x78\164"]; goto lwGjT; ZMBqf: JgBt_: goto nbqEp; MKJbY: if (!is_null($_GPC["\x63\x6f\155\x6d\120\x73"])) { goto eRd7H; } goto OtkQ_; ixDLI: $res2 = pdo_insert("\x75\x6e\151\x5f\163\145\164\164\151\x6e\147\163", $data2); goto OsHUD; I5r48: if (file_exists($upath)) { goto EApgP; } goto m3i1b; dW80D: file_put_contents($key_path, $key); goto pr3OI; PpDcW: rjmhm: goto qloys; fWfn7: $wxappdata["\165\x6e\x69\x61\x63\151\144"] = $uniacid; goto JwW8C; j8m8i: $res1 = pdo_update("\141\x63\x63\157\x75\156\164\x5f\167\x78\141\x70\160", $wxappdata, array("\165\x6e\x69\x61\x63\x69\x64" => $uniacid)); goto NAYwe; q9i2B: if (!is_null($_GPC["\143\x6f\155\x6d\101\x73"])) { goto G6UHQ; } goto PGd0p; zEfax: if (empty($item["\x75\x6e\x69\141\x63\x69\144"])) { goto JgBt_; } goto HVvI9; I4X9E: if (!is_null($_GPC["\143\157\155\155\x41"])) { goto sNiLm; } goto yYcHG; FqLYB: goto avX82; goto PpDcW; gM6dL: x9cGx: goto jj6j6; uFqYy: $aaa = array(); goto h9sI1; LAk2W: goto gaCyG; goto D94NB; M_vDC: if (!file_exists($path)) { goto SKxGp; } goto ELgIj; NAYwe: goto Nf9Y4; goto Y0_sC; Dldr6: message("\345\xb0\x8f\xe7\xa8\x8b\xe5\272\217\350\xae\xbe\xe7\xbd\xae\xe4\xbf\xa1\xe6\201\xaf\346\233\xb4\xe6\x96\260\346\210\220\345\x8a\237\41", $this->createWebUrl("\123\x68\x6f\x70\163\x65\164", array("\157\x70" => "\144\151\x73\x70\154\x61\171", "\157\160\164" => $opt, "\x63\x61\164\x65\151\x64" => $_GPC["\x63\x61\x74\x65\x69\x64"], "\x63\x68\x69\144" => $_GPC["\x63\150\x69\x64"])), "\x73\x75\x63\x63\145\x73\163"); goto i627J; RY3or: $item = pdo_fetch("\x53\x45\x4c\105\x43\124\40\165\156\151\141\143\151\x64\54\x63\x6f\x6e\146\x69\147\40\106\x52\x4f\x4d\x20" . tablename("\163\x75\x64\x75\x38\137\x70\141\147\145\x5f\142\141\163\x65") . "\x20\127\x48\105\x52\x45\x20\x75\x6e\x69\x61\x63\151\144\x20\75\40\72\165\x6e\151\x61\143\151\144", array("\x3a\x75\x6e\x69\x61\143\151\144" => $uniacid)); goto WIngn; pr3OI: pxcaI: goto dZDUN; rS91D: if (file_exists($upath)) { goto x9cGx; } goto KqSUE; EeMa7: $data2["\x70\x61\x79\155\x65\156\164"] = serialize($aaa); goto ixDLI; qZxF4: pdo_update("\x73\165\x64\x75\x38\x5f\160\x61\x67\x65\x5f\x66\x78\137\x67\172", $data3, array("\165\156\151\x61\143\x69\144" => $uniacid)); goto LnR0z; KKZIQ: G6UHQ: goto rg9vK; Najo7: $item["\x63\x6f\x6d\x6d\x50"] = $config["\x63\157\x6d\x6d\120"]; goto CbHLG; rg9vK: if (!is_null($_GPC["\143\x6f\155\155\x50"])) { goto ukj4S; } goto hsn4P; PGd0p: $_GPC["\x63\x6f\155\x6d\x41\x73"] = 1; goto KKZIQ; dzzJY: $item["\x63\157\155\155\x41"] = $config["\143\157\x6d\x6d\101"]; goto XqCWF; f1ucR: $wxappdata = array("\x6b\145\x79" => $_GPC["\153\145\171"], "\x73\145\x63\162\x65\x74" => $_GPC["\163\145\143\x72\145\x74"]); goto ir1eb; ELgIj: $upath = ROOT_PATH . "\103\145\x72\164\x2f" . $uniacid . "\x2f"; goto rS91D; kFoGs: $key_path = ROOT_PATH . "\x43\x65\x72\164\x2f" . $uniacid . "\x2f\141\160\x69\143\x6c\151\x65\156\x74\x5f\153\x65\x79\56\160\x65\155"; goto js1M_; JwW8C: $res1 = pdo_insert("\141\x63\x63\x6f\165\x6e\x74\x5f\x77\170\x61\x70\x70", $wxappdata); goto p8Iyl; jj6j6: goto joUgc; goto qUATI; SSYBi: if (!$datas) { goto rjmhm; } goto Eowbo; DkuY_: $cert_path = ROOT_PATH . "\x43\x65\162\164\x2f" . $uniacid . "\57\141\160\x69\x63\x6c\x69\145\x6e\164\137\143\x65\162\164\x2e\x70\145\155"; goto kFoGs; yYcHG: $_GPC["\143\x6f\x6d\155\101"] = 0; goto AgGfg; FCY3O: $config = serialize($config); goto zEfax; dZDUN: if ($certkey) { goto AB8wL; } goto A2TNd; LnR0z: gaCyG: goto tPH2u; O1g4Y: VipnF: goto EhUAG; pMPaJ: goto C7GKe; goto ZMBqf; x58WT: ukj4S: goto MKJbY; WIngn: $config = unserialize($item["\143\157\156\146\x69\x67"]); goto dzzJY; h9sI1: $aaa["\x77\x65\143\x68\x61\164"] = $wechat; goto EeMa7; XqCWF: $item["\x63\157\x6d\155\101\163"] = $config["\143\157\x6d\155\101\163"]; goto Najo7; OtkQ_: $_GPC["\143\x6f\155\x6d\120\x73"] = 1; goto QhyQh; SUBe8: $data3 = array("\x63\145\162\164\164\x65\x78\x74" => $cert, "\153\x65\x79\x74\x65\x78\164" => $key); goto jjYfj; qUATI: SKxGp: goto kExSx; gf58A: $config["\143\x6f\155\155\x50\163"] = $_GPC["\x63\157\155\155\120\x73"]; goto FCY3O; ir1eb: if (!$wxapp) { goto ThPDw; } goto j8m8i; F_9pX: C7GKe: goto f1ucR; KqSUE: mkdir($upath); goto gM6dL; HOZgm: goto b5odJ; goto PNEtw; imC63: $wechat = array("\x61\x63\143\x6f\165\x6e\x74" => $uniacid, "\155\143\x68\x69\144" => $_GPC["\155\x63\x68\151\x64"], "\x73\x69\x67\156\153\145\x79" => $_GPC["\x73\151\147\x6e\x6b\145\x79"], "\151\144\x65\x6e\x74\151\164\171" => $_GPC["\x69\x64\145\156\x74\x69\164\171"], "\141\143\x63\157\x75\156\164" => $uniacid, "\163\x75\142\x5f\155\x63\x68\151\144" => $_GPC["\163\165\142\x5f\155\x63\x68\151\144"]); goto SSYBi; tPH2u: if ($res1 >= 0 || $res2 >= 0 || $result >= 0) { goto EYRwV; } goto fS5FM; uwXAo: $upath = ROOT_PATH . "\103\145\x72\164\57" . $uniacid . "\x2f"; goto I5r48; nbqEp: message("\350\257\267\345\x85\210\345\241\253\xe5\206\x99\345\237\xba\347\241\x80\344\277\241\xe6\201\257", $this->createWebUrl("\x64\x69\x79", array("\x6f\160" => "\150\x6f\155\145\x73\145\x74", "\157\160\164" => "\144\151\163\x70\154\141\x79", "\x63\x61\164\x65\x69\144" => $_GPC["\143\141\164\x65\x69\x64"], "\143\x68\x69\144" => $_GPC["\143\x68\x69\144"])), "\163\165\x63\143\x65\x73\x73"); goto F_9pX; p8Iyl: Nf9Y4: goto imC63; zfDY0: $paycon = pdo_fetch("\123\105\x4c\105\103\124\40\x2a\40\106\x52\117\115\40" . tablename("\165\156\151\x5f\x73\145\x74\x74\x69\x6e\x67\x73") . "\40\127\x48\x45\x52\105\x20\x75\156\151\x61\143\151\144\40\x3d\40\x3a\x75\x6e\151\141\x63\151\x64", array("\x3a\x75\156\x69\141\x63\x69\144" => $uniacid)); goto DuG1w; lwGjT: $key = $_GPC["\153\x65\x79\x74\x65\170\x74"]; goto SUBe8; Eowbo: $aaa = array(); goto XdtDI; JRZP4: if (!checksubmit("\163\x75\142\155\x69\164")) { goto VipnF; } goto I4X9E; qKr4j: $uniacid = $_W["\x75\x6e\x69\x61\x63\151\144"]; goto gYI2b; EhUAG: return include self::template("\x77\x65\x62\57\x53\150\x6f\160\x73\x65\x74\x2f\x64\x69\163\160\x6c\141\171");
+
+load()->func('tpl');
+global $_GPC, $_W;
+$uniacid = $_W['uniacid'];
+$wxapp = pdo_fetch("SELECT * FROM ".tablename('account_wxapp')." WHERE uniacid = :uniacid" , array(':uniacid' => $uniacid));
+$paycon = pdo_fetch("SELECT * FROM ".tablename('uni_settings')." WHERE uniacid = :uniacid" , array(':uniacid' => $uniacid));
+$datas = unserialize($paycon['payment'])['wechat'];
+
+$item = pdo_fetch("SELECT uniacid,config FROM ".tablename('sudu8_page_base') ." WHERE uniacid = :uniacid", array(':uniacid' => $uniacid));
+$config = unserialize($item['config']);
+$item['commA'] = $config['commA'];
+$item['commAs'] = $config['commAs'];
+$item['commP'] = $config['commP'];
+$item['commPs'] = $config['commPs'];
+$item['xiaofeigu_proportion'] = $config['xiaofeigu_proportion'];
+$item['open_xiaofeigu'] = $config['open_xiaofeigu'];
+
+if (checksubmit('submit')) {
+    //评论
+    if(is_null($_GPC['commA'])){
+        $_GPC['commA'] = 0;
+    }
+    if(is_null($_GPC['commAs'])){
+        $_GPC['commAs'] = 1;
+    }
+    if(is_null($_GPC['commP'])){
+        $_GPC['commP'] = 0;
+    }
+    if(is_null($_GPC['commPs'])){
+        $_GPC['commPs'] = 1;
+    }
+    $config['commA'] = $_GPC['commA'];
+    $config['commAs'] = $_GPC['commAs'];
+    $config['commP'] = $_GPC['commP'];
+    $config['commPs'] = $_GPC['commPs'];
+    $config['xiaofeigu_proportion'] = $_GPC['xiaofeigu_proportion'];
+    $config['open_xiaofeigu'] = $_GPC['open_xiaofeigu'];
+    $config = serialize($config);
+
+    if (empty($item['uniacid'])) {
+        message('请先填写基础信息', $this->createWebUrl('diy', array('op'=>'homeset','opt'=>"display",'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'])), 'success');
+    } else {
+        $data['config'] = $config;
+        $result=pdo_update('sudu8_page_base', $data ,array('uniacid' => $uniacid));
+    }
+
+    $wxappdata = array(
+        'key' => $_GPC['key'],
+        'secret' => $_GPC['secret']
+    );
+    if(!$wxapp){
+        $wxappdata['uniacid']= $uniacid;
+        $res1 = pdo_insert("account_wxapp",$wxappdata);
+    }else{
+        $res1 = pdo_update('account_wxapp', $wxappdata ,array('uniacid' => $uniacid));
+    }
+
+    $wechat = array(
+        'account' => $uniacid,
+        'mchid' => $_GPC['mchid'],
+        'signkey' => $_GPC['signkey'],
+        'identity' => $_GPC['identity'],
+        'account' => $uniacid,
+        'sub_mchid' => $_GPC['sub_mchid']
+    );
+
+    if(!$datas){
+        $data2['uniacid'] = $uniacid;
+        $aaa = array();
+        $aaa['wechat'] = $wechat;
+        $data2['payment'] = serialize($aaa);
+        $res2 = pdo_insert("uni_settings",$data2);
+    }else{
+        $aaa = array();
+        $aaa['wechat'] = $wechat;
+        $data2['payment'] = serialize($aaa);
+        $res2 = pdo_update('uni_settings', $data2 ,array('uniacid' => $uniacid));
+    }
+
+
+    if($res1 || $res2 || $result){
+        message('小程序设置信息更新成功!', $this->createWebUrl('Shopset', array('op'=>'display','opt'=>$opt,'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'])), 'success');
+    }else{
+        message('请先填写基础信息!', $this->createWebUrl('Shopset', array('op'=>'display','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'])), 'error');
+    }
+}
+
+return include self::template('web/Shopset/display');

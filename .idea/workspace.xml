@@ -3,10 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="a65483ce-b1ed-40d1-b499-933103e3c088" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/inc/36dfdssdag.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/inc/36dfdssdag.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/inc/6glrhssvsad.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/inc/6glrhssvsad.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/inc/s_public.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/inc/s_public.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/web/Orderset/orderdo.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/web/Orderset/orderdo.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/do_upgrade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/m_upgrade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/template/web/Shopset/display.html" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/template/web/Shopset/display.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/template/web/Userset/display.html" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/template/web/Userset/display.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/upgrade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/web/Shopset/display.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/web/Shopset/display.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/web/Userset/display.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/web/Userset/display.inc.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/addons/sudu8_page/wxapp.php" beforeDir="false" afterPath="$PROJECT_DIR$/addons/sudu8_page/wxapp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tpl/web/black/common/header-module.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tpl/web/black/common/header-wxapp.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tpl/web/black/sudu8_page/web/Base/4_display.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tpl/web/black/sudu8_page/web/Orderset/4_orderdo.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tpl/web/default/account/display.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tpl/web/default/miniapp/version-home.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tpl/web/default/module/permission.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tpl/web/default/user/login.tpl.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,62 +29,262 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="scoreget.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Saleset/scoreget.inc.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="forms.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Saleset/forms.inc.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="orderdo.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Orderset/orderdo.inc.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="display.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Orderset/display.inc.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Shopset/display.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-500">
+              <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Diy/base.inc.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="xiaofeigu.inc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/xiaofeigu.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="homeset.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Diy/homeset.inc.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="display.inc.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/display.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="117" column="82" selection-start-line="117" selection-start-column="82" selection-end-line="117" selection-end-column="82" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="fxorder.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Distributionset/fxorder.inc.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="display.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/template/web/Userset/display.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="438" column="118" selection-start-line="438" selection-start-column="113" selection-end-line="438" selection-end-column="118" />
+              <folding>
+                <element signature="n#style#0;n#!!top" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#a#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#a#1;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#label#1;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#label#1;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#3;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#3;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#5;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#6;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#label#1;n#div#6;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#7;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#label#1;n#div#7;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#8;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#label#1;n#div#8;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#9;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#9;n#form#0;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#div#0;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#2;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#2;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" />
+                <element signature="n#style#0;n#input#3;n#div#2;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#11831#12019#0" />
+                <element signature="e#11869#12011#0" />
+                <element signature="e#12261#12299#0" />
+                <element signature="e#12338#12376#0" />
+                <element signature="e#12424#12462#0" />
+                <element signature="e#12509#12547#0" />
+                <element signature="e#12974#12999#0" />
+                <element signature="e#13035#13060#0" />
+                <element signature="e#13125#13150#0" />
+                <element signature="e#13186#13211#0" />
+                <element signature="e#13280#13307#0" />
+                <element signature="e#13345#13372#0" />
+                <element signature="e#13413#13447#0" />
+                <element signature="e#13488#13522#0" />
+                <element signature="e#13692#13717#0" />
+                <element signature="e#13753#13778#0" />
+                <element signature="e#13922#13947#0" />
+                <element signature="e#13983#14008#0" />
+                <element signature="e#14139#14164#0" />
+                <element signature="e#14200#14225#0" />
+                <element signature="e#14756#14787#0" />
+                <element signature="e#14831#14862#0" />
+                <element signature="e#14894#15152#0" />
+                <element signature="e#15020#15107#0" />
+                <element signature="e#15085#15102#0" />
+                <element signature="e#15196#15228#0" />
+                <element signature="e#15260#15515#0" />
+                <element signature="e#15386#15473#0" />
+                <element signature="e#15451#15468#0" />
+                <element signature="e#15559#15591#0" />
+                <element signature="e#15635#15665#0" />
+                <element signature="e#15710#15740#0" />
+                <element signature="e#15770#15989#0" />
+                <element signature="e#16019#16238#0" />
+                <element signature="e#16269#16488#0" />
+                <element signature="e#16523#16652#0" />
+                <element signature="e#16553#16598#0" />
+                <element signature="e#16602#16649#0" />
+                <element signature="e#16687#16917#0" />
+                <element signature="e#16743#16803#0" />
+                <element signature="e#16775#16799#0" />
+                <element signature="e#16817#16863#0" />
+                <element signature="e#16867#16912#0" />
+                <element signature="e#17070#19329#0" />
+                <element signature="e#17277#17315#0" />
+                <element signature="e#17354#17392#0" />
+                <element signature="e#17440#17478#0" />
+                <element signature="e#17525#17563#0" />
+                <element signature="e#17990#18015#0" />
+                <element signature="e#18051#18076#0" />
+                <element signature="e#18211#18236#0" />
+                <element signature="e#18272#18297#0" />
+                <element signature="e#18366#18393#0" />
+                <element signature="e#18431#18458#0" />
+                <element signature="e#18628#18653#0" />
+                <element signature="e#18689#18714#0" />
+                <element signature="e#18788#18813#0" />
+                <element signature="e#18849#18874#0" />
+                <element signature="e#19005#19030#0" />
+                <element signature="e#19066#19091#0" />
+                <element signature="e#19221#19252#0" />
+                <element signature="e#19295#19326#0" />
+                <element signature="e#19361#19521#0" />
+                <element signature="e#19549#19615#0" />
+                <element signature="e#19647#19794#0" />
+                <element signature="e#19812#20080#0" />
+                <element signature="e#19927#20049#0" />
+                <element signature="e#19992#20044#0" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="display.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Commentset/display.inc.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="global.func.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/function/global.func.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2026">
+              <caret line="121" column="53" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
+              <folding>
+                <element signature="e#45#52#0" expanded="true" />
+                <element signature="e#48#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="display.inc.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Datashow/display.inc.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="display.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/template/web/Shopset/display.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="179" column="64" selection-start-line="179" selection-start-column="64" selection-end-line="179" selection-end-column="73" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#4;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#2;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#div#3;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#3;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#3;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#3;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="bottomset.inc--new.php" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Desktop/sudu8_page/web/Shopset/bottomset.inc--new.php">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="wxapp.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/addons/sudu8_page/wxapp.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4550">
+              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt; 返回系统</find>
-      <find>password</find>
+      <find>duoorderlist</find>
+      <find>商品评论审核</find>
+      <find>querenxc</find>
+      <find>sudu8_page_base</find>
+      <find>commPs</find>
+      <find>Shopset</find>
+      <find>mchid</find>
+      <find>datas</find>
+      <find>$wxapp</find>
+      <find>shopset</find>
+      <find>开卡记录</find>
+      <find>page_mcategory</find>
+      <find>积分 / 余额</find>
+      <find>register</find>
+      <find>注册时间</find>
+      <find>最终余额</find>
+      <find>czjf</find>
+      <find>czjfa</find>
+      <find>xiaofeigu</find>
+      <find>czyea</find>
+      <find>submit_czjf</find>
+      <find>submit_czye</find>
+      <find>czxf</find>
+      <find>czxfg</find>
+      <find>确认充值消费股</find>
+      <find>Userset</find>
+      <find>$var</find>
+      <find>$user</find>
+      <find>money</find>
+      <find>$msg</find>
     </findStrings>
     <dirStrings>
       <dir>E:\git\mendian_code\addons\sudu8_page</dir>
@@ -87,6 +299,15 @@
         <option value="$PROJECT_DIR$/framework/model/user.mod.php" />
         <option value="$PROJECT_DIR$/web/source/account/display.ctrl.php" />
         <option value="$PROJECT_DIR$/addons/sudu8_page/template/web/common/header.html" />
+        <option value="$USER_HOME$/Desktop/sudu8_page/web/Userset/registerRecord.inc.php" />
+        <option value="$PROJECT_DIR$/addons/sudu8_page/wxapp.php" />
+        <option value="$PROJECT_DIR$/addons/sudu8_page/m_upgrade.php" />
+        <option value="$PROJECT_DIR$/addons/sudu8_page/web/Userset/xiaoweigu.inc.php" />
+        <option value="$PROJECT_DIR$/addons/sudu8_page/web/Userset/xiaofeigu.inc.php" />
+        <option value="$PROJECT_DIR$/addons/sudu8_page/template/web/Shopset/display.html" />
+        <option value="$PROJECT_DIR$/addons/sudu8_page/web/Shopset/display.inc.php" />
+        <option value="$PROJECT_DIR$/addons/sudu8_page/template/web/Userset/display.html" />
+        <option value="$PROJECT_DIR$/addons/sudu8_page/web/Userset/display.inc.php" />
       </list>
     </option>
   </component>
@@ -99,11 +320,17 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="408" />
-    <option name="y" value="131" />
-    <option name="width" value="1852" />
-    <option name="height" value="1100" />
+  <component name="PhpDebugGeneral" xdebug_debug_port="9001" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="www.mendian.com" id="1d08cd26-928e-45f5-9513-57c269f0a631" name="www.mendian.com" />
+    </servers>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1154" />
+    <option name="y" value="142" />
+    <option name="width" value="1355" />
+    <option name="height" value="978" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -134,62 +361,6 @@
               <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Datashow" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Distributionset" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Diy" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Orderset" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Saleset" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Shopset" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mendian_code" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="addons" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sudu8_page" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Storeset" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="mendian_code" type="b2602c69:ProjectViewProjectNode" />
@@ -234,6 +405,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/addons/sudu8_page" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -247,6 +419,9 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="www.mendian.com" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" server_name="www.mendian.com" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -257,15 +432,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563327901422</updated>
-      <workItem from="1563327902927" duration="3203000" />
+      <workItem from="1563327902927" duration="21921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3203000" />
+    <option name="totallyTimeSpent" value="21921000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="408" y="131" width="1852" height="1100" extended-state="1" />
+    <frame x="1154" y="142" width="1355" height="978" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32985657" />
@@ -274,13 +449,13 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32985657" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32985657" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.499391" visible="true" weight="0.17633928" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.499391" visible="true" weight="0.12509653" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49893618" weight="0.11162791" />
       <window_info id="Structure" order="1" sideWeight="0.50060904" side_tool="true" weight="0.14734043" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49626866" weight="0.34533897" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49626866" visible="true" weight="0.12043796" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -294,6 +469,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="3" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/framework/model/user.mod.php">
@@ -321,9 +501,6 @@
           <caret line="156" column="5" selection-start-line="156" selection-start-column="5" selection-end-line="156" selection-end-column="5" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/display.inc.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/news.inc.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -367,13 +544,20 @@
     <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Orderset/display.inc.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/sudu8_page/web/Shopset/bottomset.inc--new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="1" column="1779" selection-start-line="1" selection-start-column="1779" selection-end-line="1" selection-end-column="1779" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Diy/base.inc.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Diy/homeset.inc.php">
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Distributionset/fxorder.inc.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Distributionset/fxorder.inc.php">
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Diy/homeset.inc.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Commentset/display.inc.php">
@@ -382,8 +566,241 @@
     <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Datashow/display.inc.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/sudu8_page/web/Shopset/bottomset.inc--new.php">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$USER_HOME$/Desktop/sudu8_page/web/Userset/registerRecord.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="84" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/wxapp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4550">
+          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/m_upgrade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="1280" lean-forward="true" selection-start-line="1280" selection-end-line="1280" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/upgrade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/xiaoweigu.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="73" lean-forward="true" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/template/web/Shopset/display.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="179" column="64" selection-start-line="179" selection-start-column="64" selection-end-line="179" selection-end-column="73" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#4;n#div#1;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#2;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#3;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#3;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#3;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/xiaofeigu.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Shopset/display.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500">
+          <caret line="37" column="56" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/function/global.func.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2026">
+          <caret line="121" column="53" selection-start-line="121" selection-start-column="53" selection-end-line="121" selection-end-column="53" />
+          <folding>
+            <element signature="e#45#52#0" expanded="true" />
+            <element signature="e#48#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/template/web/Userset/display.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="438" column="118" selection-start-line="438" selection-start-column="113" selection-end-line="438" selection-end-column="118" />
+          <folding>
+            <element signature="n#style#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tr#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#2;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#3;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#4;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#a#1;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#td#6;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#label#1;n#div#1;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#label#1;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#3;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#3;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#5;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#5;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#6;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#label#1;n#div#6;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#7;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#label#1;n#div#7;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#8;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#label#1;n#div#8;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#9;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#9;n#form#0;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#div#0;n#div#1;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#2;n#div#3;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#input#3;n#div#2;n#div#0;n#form#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#11831#12019#0" />
+            <element signature="e#11869#12011#0" />
+            <element signature="e#12261#12299#0" />
+            <element signature="e#12338#12376#0" />
+            <element signature="e#12424#12462#0" />
+            <element signature="e#12509#12547#0" />
+            <element signature="e#12974#12999#0" />
+            <element signature="e#13035#13060#0" />
+            <element signature="e#13125#13150#0" />
+            <element signature="e#13186#13211#0" />
+            <element signature="e#13280#13307#0" />
+            <element signature="e#13345#13372#0" />
+            <element signature="e#13413#13447#0" />
+            <element signature="e#13488#13522#0" />
+            <element signature="e#13692#13717#0" />
+            <element signature="e#13753#13778#0" />
+            <element signature="e#13922#13947#0" />
+            <element signature="e#13983#14008#0" />
+            <element signature="e#14139#14164#0" />
+            <element signature="e#14200#14225#0" />
+            <element signature="e#14756#14787#0" />
+            <element signature="e#14831#14862#0" />
+            <element signature="e#14894#15152#0" />
+            <element signature="e#15020#15107#0" />
+            <element signature="e#15085#15102#0" />
+            <element signature="e#15196#15228#0" />
+            <element signature="e#15260#15515#0" />
+            <element signature="e#15386#15473#0" />
+            <element signature="e#15451#15468#0" />
+            <element signature="e#15559#15591#0" />
+            <element signature="e#15635#15665#0" />
+            <element signature="e#15710#15740#0" />
+            <element signature="e#15770#15989#0" />
+            <element signature="e#16019#16238#0" />
+            <element signature="e#16269#16488#0" />
+            <element signature="e#16523#16652#0" />
+            <element signature="e#16553#16598#0" />
+            <element signature="e#16602#16649#0" />
+            <element signature="e#16687#16917#0" />
+            <element signature="e#16743#16803#0" />
+            <element signature="e#16775#16799#0" />
+            <element signature="e#16817#16863#0" />
+            <element signature="e#16867#16912#0" />
+            <element signature="e#17070#19329#0" />
+            <element signature="e#17277#17315#0" />
+            <element signature="e#17354#17392#0" />
+            <element signature="e#17440#17478#0" />
+            <element signature="e#17525#17563#0" />
+            <element signature="e#17990#18015#0" />
+            <element signature="e#18051#18076#0" />
+            <element signature="e#18211#18236#0" />
+            <element signature="e#18272#18297#0" />
+            <element signature="e#18366#18393#0" />
+            <element signature="e#18431#18458#0" />
+            <element signature="e#18628#18653#0" />
+            <element signature="e#18689#18714#0" />
+            <element signature="e#18788#18813#0" />
+            <element signature="e#18849#18874#0" />
+            <element signature="e#19005#19030#0" />
+            <element signature="e#19066#19091#0" />
+            <element signature="e#19221#19252#0" />
+            <element signature="e#19295#19326#0" />
+            <element signature="e#19361#19521#0" />
+            <element signature="e#19549#19615#0" />
+            <element signature="e#19647#19794#0" />
+            <element signature="e#19812#20080#0" />
+            <element signature="e#19927#20049#0" />
+            <element signature="e#19992#20044#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addons/sudu8_page/web/Userset/display.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="117" column="82" selection-start-line="117" selection-start-column="82" selection-end-line="117" selection-end-column="82" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
