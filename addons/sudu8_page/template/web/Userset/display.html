@@ -35,204 +35,111 @@
 
 		            <td width="10%">订单 / 优惠券</td>
 
+		            <td width="10%">是否医保</td>
+
 		            <td style="padding-left: 40px;width:5%">操作</td>
 
 		        </tr>
 
 		        <tbody id="shujl">
-
 		        {loop $user $item}
-
 		            <tr>
-
 		                <td >
-
-		                    {$item['id']}  
-
+		                    {$item['id']}
 		                </td>
-
 		                <td>
-
 		                    <img src="{$item['avatar']}"> {$item['nickname']}
-
 		                </td>
-
 		                <td>
-
 		                    {$item['realname']}<br>
 		                    {$item['mobile']}
-
 		                </td>
-
 		                <td>
-
 		                    {if $item['vipid']}会员{else}普通用户{/if}<br>
 		                    {php echo date('Y-m-d H:i:s', $item['createtime'])}
-
 		                </td>
-
 		                <td>
-
 		                    积分：{$item['score']}
 		                    <br/>
 		                    余额：{$item['money']}
 							<br/>
 		                    消费股：{$item['xiaofeigu']}
-
 		                </td>
-
 		                <td>
 		                	订单：
 		                	<a class="btn btn-default btn-sm" href="">
 		                   	{$item['orders']}个
-
 		                    </a>
-		                    
 		                    <br/>
-
 		                    优惠券：
 		                    <a class="btn btn-default btn-sm" href="{php echo $this->createWebUrl('Orderset', array('opt' => 'display','op'=>'couponrecord','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'order'=>$item['id'],'uid' => $item['id']))}" >
-
 		                        {$item['coupon']}个
-
 		                    </a>
-
 		                </td>
+                        <td>
+                           <!-- <div class="tDiv">
+                                <div class="switch {if $cat.show_in_nav}active{/if}" title="{if $cat.show_in_nav}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_show_in_nav', {$cat.cat_id})">
+                                    <div class="circle"></div>
+                                </div>
+                                <input type="hidden" value="0" name="">
+                            </div>-->
 
+                        </td>
 		                <td>
                 			<a class="btn btn-default btn-sm" href="{php echo $this->createWebUrl('Userset', array('op' => 'display', 'opt' => 'post', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $item['id']))}" >编辑</a>
 
                 			<a class="btn btn-default btn-sm" onclick="return confirm('此操作不可恢复，确认吗？'); return false;" href="{php echo $this->createWebUrl('Userset', array('op' => 'display', 'opt' => 'delete', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $item['id']))}">删除</a>
             			</td>
-
 		            </tr>
-
-
-
 		        {/loop}
-
 		        </tbody>
-
-
-
-
-
 		    </table>
-
 		    <div id="fenye">
-
 		        {$pager}
-
 		    </div>
-
-		    
-
 		</div>
-
 		{/if}
-
-
-
 		{if $opt == 'couspon'}
-
-		    
-
 		    <div>
-
 		        <table class="table we7-table table-hover article-list vertical-middle">
-
 		            <tr>
-
 		                <td>标题</td>
-
 		                <td style="width:80px">状态</td>
-
 		                <td style="width:80px">操作</td>
-
 		            </tr>
-
 		            <tbody id="shujl">
-
 		            {loop $coupon $item}
-
 		                <tr>
-
 		                    <td>
-
 		                        {$item['title']}
-
 		                    </td>
-
 		                    <td>
-
 		                        {if $item['flag'] == 0}
-
 		                            未使用
-
 		                        {/if}
-
 		                        {if $item['flag'] == 1}
-
 		                            已使用
-
 		                        {/if}
-
 		                        {if $item['flag'] == 2}
-
 		                            已过期
-
 		                        {/if}
-
-
-
 		                    </td>
-
 		                    <td>
-
 		                        {if $item['flag'] == 0}
-
 		                            <a class="btn btn-default btn-sm" href="{php echo $this->createWeburl('Userset', array('id' => $item['id'],'uid' => $item['uid'], 'op' =>'display', 'opt'=>'cousponpass'))}" >
-
 		                                核销
-
 		                            </a>
-
 		                        {/if}
-
 		                    </td>
-
 		                </tr>
-
-
-
 		            {/loop}
-
 		            </tbody>
-
-
-
-
-
 		        </table>
-
 		        <div id="fenye">
-
 		            {$pager}
-
 		        </div>
-
-		        
-
 		    </div>
-
-		    
-
-
-
-
-
 		{/if}
-
 		{if $opt == 'post'}
 			<script type="text/javascript" src="/web/resource/components/datetimepicker/jquery.datetimepicker.js"></script>
 			<link rel="stylesheet" type="text/css" href="/web/resource/components/datetimepicker/jquery.datetimepicker.css">
@@ -256,25 +163,15 @@
 								<a href="" style="color: #44abf7;">{if $item['vipid']}{$item['vipid']}{else}尚未开通会员{/if}</a>
 							</label>
 						</div>
-
-						
-						
 						<div class="form-group">
-
 							<label for="" class="control-label col-sm-2">真实姓名</label>
-
 							<div class="form-controls col-sm-6">
-
 								<input type="text" name="realname" value="{$item['realname']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
 							</div>
-
 						</div>
 						<div class="form-group">
-
 							<label for="" class="control-label col-sm-2">手机号</label>
-
 							<div class="form-controls col-sm-6">
-
 								<input type="text" name="mobile" value="{$item['mobile']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
 							</div>
 						</div>
@@ -284,7 +181,33 @@
 								<input type="text" name="birth" id='birth' value="{$item['birth']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
 							</div>
 						</div>
-						
+
+
+
+
+				<div class="form-group">
+					<label for="" class="control-label col-sm-2" style="margin-right:45px">是否有医保</label>
+					<div class="form-controls col-sm-5" style="padding-right: 30px;">
+						<label style="margin-right: 20px">
+							<input type="radio" name="is_medical_insurance" value="1"   {if $item['is_medical_insurance'] == '1'} checked{/if}  >
+							是
+						</label>
+						<label style="margin-right: 20px">
+							<input type="radio" name="is_medical_insurance" value="0" {if $item['is_medical_insurance'] == '0'} checked{/if}>
+							否
+						</label>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
 						<div class="form-group">
 							<label for="" class="control-label col-sm-2">积分</label>
 							<label class="form-controls col-sm-6 color-000 pt-7">
@@ -308,16 +231,12 @@
 						<a class="hycz" style="color: #44abf7;">充值</a>
 					</label>
 				</div>
-
-
-
 						<div class="form-group">
 							<label for="" class="control-label col-sm-2">注册时间</label>
 							<label class="form-controls col-sm-6 color-000 pt-7">	
 								{$item['createtime']}
 							</label>
 						</div>	
-						
 						<div class="form-group">
 							<div class="col-sm-12">
 								<div class="col-sm-2" style="max-width: 140px;"></div>
@@ -327,9 +246,6 @@
 							</div>
 						</div>
 					</form>
-
-
-
 	<form action="" method="post" class="order_details_alert hycza">
 		<div class="hyczc odac">
 			<div class="odac_head clearfix">
@@ -478,13 +394,6 @@
 
 		</div>
 	</form>
-
-
-
-
-
-
-
 	<script type="text/javascript">
 		$(function(){
 
@@ -500,10 +409,7 @@
 
         });
     })
-
-
-
-		$(document).ready(function(){
+	$(document).ready(function(){
 	var windowheight = $(window).height();
 	$('.aside').css('height',windowheight);
 	var windowwidth = $(window).width();

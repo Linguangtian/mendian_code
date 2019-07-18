@@ -44,11 +44,12 @@ if($opt == 'cousponpass'){
 if($opt == 'post'){
     $id = $_GPC['id'];
 
-    if(!empty($_GPC['mobile']) || !empty($_GPC['birth']) || !empty($_GPC['realname'])){
+    if(!empty($_GPC['mobile']) || !empty($_GPC['birth']) || !empty($_GPC['realname']||!empty($_GPC['is_medical_insurance'])  )){
 
         $mobile = $_GPC['mobile'];
         $birth = $_GPC['birth'];
         $realname = $_GPC['realname'];
+        $is_medical_insurance = $_GPC['is_medical_insurance'];
         if(empty($mobile)){
             message('手机号不能为空！');
         }else{
@@ -64,7 +65,7 @@ if($opt == 'post'){
         }else{
             $data['realname'] = $realname;
         }
-
+        $data['is_medical_insurance'] = $is_medical_insurance;
         $result = pdo_update('sudu8_page_user', $data, array('id'=>$id));
         message('修改成功!', $this->createWebUrl('Userset', array('op'=>'display','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'])), 'success');
     }
