@@ -1,2 +1,206 @@
 <?php
- goto i0yTb; vnAzi: $count = 0; goto aSuQz; xNMnt: $pcid = $cid; goto DKOsv; Jy2SD: $pcid = pdo_fetch("\x53\105\x4c\105\103\124\x20\143\151\144\40\106\122\117\115\x20" . tablename("\x73\165\x64\165\70\x5f\x70\x61\x67\145\x5f\143\x61\x74\x65") . "\x20\127\110\105\x52\x45\40\x75\x6e\x69\141\x63\151\144\40\75\x20\72\x75\x6e\x69\x61\x63\x69\144\x20\141\x6e\x64\40\x69\x64\x20\x3d\x3a\x69\144\x20", array("\x3a\165\156\x69\141\143\x69\x64" => $uniacid, "\72\x69\x64" => $cid)); goto gCMCg; QN7mZ: $pageindex = max(1, intval($_GPC["\160\141\147\145"])); goto lpLHv; g8Bp9: if (!($products["\x70\x72\x6f\x5f\146\x6c\x61\147"] == 1)) { goto xL8gi; } goto tDA5b; VAEe0: goto bqywm; goto Aysv6; EDpUq: if (!($opt == "\164\x79\x70\145\163")) { goto jTfQO; } goto Q28Aj; As0VU: if ($guig == 2) { goto Jdb6A; } goto PIjZC; t1BvT: $rek = pdo_update("\163\165\x64\165\x38\137\160\141\x67\145\x5f\x70\162\x6f\144\165\x63\164\x73", $kdatas, array("\151\x64" => $id, "\165\156\151\x61\143\151\144" => $uniacid)); goto qGyX2; lk9fq: if (!($opt == "\160\x6f\x73\x74")) { goto oy5lG; } goto kmy0m; qsYOW: $typesarr = explode("\x2c", $types); goto Zy1q6; i0yTb: load()->func("\x74\x70\154"); goto CTtOc; xFeap: $res = pdo_insert("\163\x75\144\x75\x38\137\x70\141\147\x65\x5f\x70\x72\157\x64\165\x63\x74\163", $data); goto bJ7rv; PIjZC: $data = array("\x70\x69\144" => $id, "\x74\171\x70\x65\x31" => "\xe9\xbb\230\xe8\xae\244", "\164\x79\160\145\x32" => '', "\164\x79\160\145\x33" => '', "\x6b\x63" => $_GPC["\156\157\x6b\x63"], "\160\x72\151\x63\x65" => $_GPC["\x6e\157\160\x72\151\143\145"], "\x68\156\x75\x6d" => 0, "\x74\150\x75\155\x62" => $_GPC["\156\157\164\x68\165\155\142"], "\x63\157\155\155\x65\x6e\x74" => "\xe8\xa7\x84\xe6\240\xbc"); goto ELzd9; ixvxQ: foreach ($typesarr as $key => &$rec) { goto esOT1; U27Ii: GAe3t: goto WoRov; xl5y1: $ziji = pdo_fetchall("\123\x45\x4c\105\103\124\40" . $str . "\40\106\x52\x4f\x4d\40" . tablename("\x73\165\x64\x75\x38\137\x70\x61\x67\145\137\144\165\157\137\160\162\x6f\x64\165\x63\x74\x73\137\164\171\160\145\x5f\x76\x61\x6c\165\145") . "\x20\x57\x48\x45\x52\105\40\160\151\x64\40\75\x20\72\x70\x69\144\40\147\x72\x6f\165\x70\x20\142\171\x20" . $str, array("\x3a\x70\x69\x64" => $id)); goto bi4hy; BmgEV: $typesjson[$rec] = $xarr; goto U27Ii; YZur2: Qi3V8: goto BmgEV; esOT1: $str = "\x74\171\x70\145" . ($key + 1); goto xl5y1; bi4hy: $xarr = array(); goto kxOSJ; kxOSJ: foreach ($ziji as $key => $res) { array_push($xarr, $res[$str]); oTDJu: } goto YZur2; WoRov: } goto YEVPK; Zy1q6: $counttypes = count($typesarr); goto dx0ai; dx0ai: $typesjson = []; goto ixvxQ; r486X: $uniacid = $_W["\x75\x6e\x69\141\143\x69\x64"]; goto y3Mqa; r4uGV: $start = ($pageindex - 1) * $pagesize; goto RggFt; UTes6: if (!($products["\160\x72\x6f\x5f\146\154\x61\x67"] == 2)) { goto W0G6X; } goto ZMm6i; XrEmN: hx8eJ: goto fSerX; OoKbw: message("\xe6\x96\xb0\xe5\242\236\xe6\210\x90\345\x8a\x9f\41", $this->createWebUrl("\103\157\155\x6d\x65\x6e\164\x73\x65\x74", array("\x6f\160" => "\x64\165\157\x67\157\x6f\144\x73", "\x6f\160\x74" => "\x74\x79\x70\145\163", "\143\x61\164\145\x69\x64" => $_GPC["\x63\141\x74\145\x69\144"], "\143\x68\151\144" => $_GPC["\143\150\x69\144"], "\x69\144" => $id)), "\x73\x75\143\x63\145\x73\163"); goto xboYb; SitJQ: $data = array("\165\x6e\x69\x61\143\x69\144" => $_W["\165\x6e\151\141\143\x69\144"], "\x6e\165\x6d" => $_GPC["\x6e\165\155"], "\143\151\144" => $_GPC["\x63\x69\x64"], "\x70\143\x69\x64" => $pcid, "\164\171\160\145\x5f\x78" => $_GPC["\x74\171\160\x65\x5f\x78"], "\164\x79\x70\x65\137\x79" => $_GPC["\164\x79\160\145\137\171"], "\164\x79\x70\145\x5f\151" => $_GPC["\x74\171\x70\x65\137\x69"], "\x74\171\x70\x65" => "\x73\x68\157\167\x50\162\157\x4d\x6f\162\x65", "\x74\150\165\x6d\x62" => $_GPC["\x74\x68\x75\155\x62"], "\163\150\x61\x72\x65\151\155\147" => $_GPC["\x73\150\x61\162\x65\x69\155\147"], "\164\x69\x74\x6c\145" => $_GPC["\x74\151\164\154\x65"], "\x70\x72\x69\143\x65" => $_GPC["\x70\162\151\x63\x65\161"], "\155\x61\162\x6b\x65\x74\x5f\160\x72\151\x63\x65" => $_GPC["\155\141\x72\x6b\145\164\x5f\x70\x72\151\143\145"], "\144\145\163\143" => $_GPC["\x64\145\163\x63\x73"], "\164\145\170\x74" => serialize($_GPC["\151\155\x67\164\145\x78\x74"]), "\x6c\x61\142\x65\154\x73" => $_GPC["\145\x78\x70\x6c\141\151\x6e\163"], "\x69\163\137\x6d\x6f\x72\x65" => 3, "\146\x78\137\x75\156\151" => $_GPC["\x66\170\137\165\156\x69"], "\143\157\155\155\151\x73\x73\151\157\156\137\164\171\x70\145" => $_GPC["\x63\x6f\155\x6d\151\x73\163\151\x6f\x6e\x5f\164\171\160\145"], "\143\x6f\155\155\151\163\163\151\157\156\x5f\x6f\x6e\145" => $_GPC["\143\157\155\x6d\151\163\163\151\x6f\156\137\157\156\x65"], "\143\x6f\x6d\155\151\x73\163\151\157\156\137\164\167\157" => $_GPC["\x63\x6f\x6d\x6d\x69\x73\163\151\157\156\137\164\x77\157"], "\143\157\155\155\x69\163\163\x69\157\x6e\137\x74\150\x72\x65\x65" => $_GPC["\143\x6f\155\x6d\151\163\x73\x69\157\156\x5f\164\x68\x72\x65\145"], "\x67\145\x74\137\x73\150\141\162\145\137\147\172" => $_GPC["\x67\x65\164\137\163\x68\x61\162\x65\x5f\x67\172"], "\147\x65\x74\137\x73\x68\x61\162\x65\x5f\163\x63\157\162\x65" => $_GPC["\x67\145\164\x5f\163\x68\141\162\145\137\163\143\157\162\x65"], "\147\x65\164\x5f\163\150\x61\x72\145\137\156\x75\155" => $_GPC["\147\145\x74\137\163\x68\141\x72\x65\x5f\x6e\x75\155"], "\146\x6f\162\x6d\163\145\164" => $_GPC["\x66\157\162\x6d\x73\145\164"], "\x70\162\x6f\x64\165\x63\164\137\164\170\x74" => htmlspecialchars_decode($_GPC["\x70\162\157\144\x75\143\164\x5f\164\x78\164"], ENT_QUOTES), "\163\x63\x6f\x72\145" => $_GPC["\163\143\x6f\162\145"], "\x73\x63\x6f\162\x65\x62\x61\143\153" => $_GPC["\x73\143\157\x72\145\x62\x61\x63\x6b"], "\x6b\165\141\151\144\x69" => $_GPC["\x6b\x75\141\151\x64\x69"], "\150\151\x74\163" => $_GPC["\150\x69\x74\x73"]); goto sO1VB; ZMm6i: $proarr = pdo_fetchall("\x53\x45\114\x45\103\x54\40\x2a\x20\x46\x52\x4f\115\40" . tablename("\x73\165\x64\x75\70\x5f\x70\x61\x67\145\137\x64\165\x6f\137\x70\x72\x6f\x64\165\143\164\x73\x5f\x74\x79\160\x65\137\166\x61\x6c\x75\x65") . "\x20\x57\110\105\122\105\40\160\x69\x64\40\75\x20\72\160\151\144\40\157\x72\x64\145\x72\40\142\x79\x20\151\x64\40\144\145\x73\x63", array("\x3a\x70\151\144" => $id)); goto hn7mQ; dvwZU: oy5lG: goto EDpUq; dbDuq: message("\xe6\226\xb0\345\xa2\236\57\344\xbf\xae\xe6\x94\xb9\346\x88\220\xe5\212\x9f\x21", $this->createWebUrl("\103\157\x6d\155\145\x6e\164\163\145\164", array("\157\x70" => "\144\x75\157\x67\x6f\x6f\x64\x73", "\x6f\x70\164" => "\144\x69\x73\160\x6c\x61\171", "\x63\x61\x74\x65\151\x64" => $_GPC["\143\141\x74\x65\x69\144"], "\143\x68\151\x64" => $_GPC["\143\x68\151\x64"])), "\x73\x75\x63\143\x65\163\163"); goto bSCc2; Wt7B2: $pcid = intval($pcid); goto bWrmd; aSuQz: foreach ($proarr as $key => $rec) { goto CqVpK; XYtaH: message("\xe6\226\xb0\xe5\xa2\x9e\x2f\344\277\256\346\224\271\xe6\x88\220\xe5\x8a\237\x21", $this->createWebUrl("\x43\x6f\155\155\145\156\164\163\x65\164", array("\157\x70" => "\x64\x75\x6f\x67\x6f\x6f\144\163", "\157\x70\x74" => "\144\151\163\160\154\x61\171", "\x63\x61\x74\x65\151\x64" => $_GPC["\x63\141\x74\x65\x69\x64"], "\143\x68\x69\x64" => $_GPC["\x63\x68\x69\x64"])), "\x73\165\x63\x63\x65\x73\x73"); goto bJeN_; nRK7A: $type2 = $rec[$typesarr[1]]; goto CrBqo; CVUXx: $type3 = ''; goto weJ0X; y5xpd: if (!($typelen == 3)) { goto QMd3F; } goto NAvGg; weJ0X: J_IKy: goto RcVms; tHD3Q: $count++; goto VYx4h; wJd4p: $type3 = $rec[$typesarr[2]]; goto rA8as; XbtdQ: grY8G: goto n528i; NAvGg: $type1 = $rec[$typesarr[0]]; goto QD0V5; eZ32u: $data = array("\x70\151\144" => $id, "\164\171\160\x65\61" => $type1, "\x74\x79\160\x65\x32" => $type2, "\164\171\x70\x65\x33" => $type3, "\153\143" => $rec["\xe5\xba\x93\345\255\x98"], "\x70\x72\x69\x63\x65" => $rec["\xe4\xbb\xb7\346\xa0\274"], "\150\x6e\x75\155" => $rec["\xe8\264\xa7\xe5\217\xb7"], "\163\x61\x6c\145\x6e\165\155" => $rec["\347\x9c\x9f\xe5\xae\236\351\x94\200\xe9\x87\x8f"], "\x76\163\x61\154\145\156\x75\x6d" => $rec["\350\x99\x9a\346\x8b\x9f\xe9\x94\x80\xe9\x87\x8f"], "\x74\x68\x75\x6d\142" => $rec["\xe8\xa7\204\346\240\274\345\x9b\276\xe7\211\x87"], "\x63\x6f\x6d\155\145\x6e\x74" => $typezz); goto dwDIx; dwDIx: $res = pdo_insert("\163\165\x64\165\x38\x5f\x70\x61\x67\x65\137\144\x75\x6f\137\160\x72\x6f\x64\x75\143\x74\163\x5f\x74\171\x70\145\137\166\141\154\x75\x65", $data); goto Upm5n; YMzHH: $type1 = $rec[$typesarr[0]]; goto gDp60; RcVms: if (!($typelen == 2)) { goto k30mm; } goto FCaFG; CrBqo: $type3 = ''; goto S6Bct; gDp60: $type2 = ''; goto CVUXx; FCaFG: $type1 = $rec[$typesarr[0]]; goto nRK7A; QD0V5: $type2 = $rec[$typesarr[1]]; goto wJd4p; VYx4h: if (!($count == count($proarr))) { goto PFABY; } goto XYtaH; Upm5n: if (!$res) { goto SvV7w; } goto tHD3Q; bJeN_: PFABY: goto Et0CR; Et0CR: SvV7w: goto XbtdQ; S6Bct: k30mm: goto y5xpd; rA8as: QMd3F: goto eZ32u; CqVpK: if (!($typelen == 1)) { goto J_IKy; } goto YMzHH; n528i: } goto saeq3; TF9kn: $products = pdo_fetch("\x53\105\114\105\x43\124\x20\x2a\40\x46\122\x4f\x4d\40" . tablename("\163\165\144\165\x38\x5f\x70\141\x67\145\137\x70\x72\157\144\x75\143\164\x73") . "\40\127\x48\x45\x52\105\40\x75\156\x69\141\143\151\144\40\x3d\x20\72\x75\x6e\151\141\143\x69\x64\x20\141\156\x64\40\151\144\x20\75\x20\72\151\144", array("\72\165\x6e\151\x61\x63\x69\144" => $uniacid, "\x3a\x69\x64" => $id)); goto HhsGT; YEVPK: yb6Fu: goto fRzlp; fSerX: Pkozo: goto Ot44Z; mCHwj: Jdb6A: goto lWwdz; L1az0: if ($pcid == 0) { goto a0HMT; } goto Wt7B2; XX2D9: pdo_delete("\x73\x75\x64\165\70\137\160\x61\x67\x65\x5f\x64\x75\157\137\x70\x72\x6f\x64\165\x63\164\163\137\164\171\x70\145\x5f\x76\x61\154\165\x65", array("\x70\x69\144" => $id)); goto J21Z2; xboYb: d3MVQ: goto VAEe0; Ot44Z: jTfQO: goto md07R; J21Z2: message("\345\x88\240\xe9\x99\244\346\x88\220\xe5\x8a\x9f\x21", $this->createWebUrl("\x43\157\x6d\155\145\x6e\164\163\145\x74", array("\157\x70" => "\x64\165\157\147\157\157\x64\163", "\157\x70\164" => "\x64\151\163\x70\x6c\x61\171", "\x63\x61\164\145\x69\144" => $_GPC["\143\x61\x74\x65\x69\144"], "\143\150\x69\144" => $_GPC["\143\150\x69\144"])), "\x73\x75\143\143\145\163\163"); goto N9WY3; g8PnR: $products = pdo_fetchall("\123\x45\x4c\x45\x43\124\x20\x61\x2e\52\x2c\x62\x2e\156\x61\x6d\145\x20\141\163\x20\143\x6e\141\155\x65\x20\106\122\117\115\x20" . tablename("\x73\165\144\x75\70\x5f\160\141\x67\x65\x5f\x70\x72\x6f\144\x75\143\x74\x73") . "\x20\x61\x73\40\x61\40\114\105\x46\124\40\112\117\x49\116\x20" . tablename("\163\x75\144\x75\x38\137\x70\x61\147\x65\137\x63\x61\164\145") . "\40\141\x73\40\142\x20\x6f\156\40\x61\56\x63\x69\x64\40\x3d\40\142\x2e\151\144\x20\127\110\105\122\105\40\x61\x2e\x75\x6e\x69\141\143\151\x64\40\75\40\x3a\x75\156\151\141\143\x69\x64\40\x61\156\x64\x20\141\x2e\x69\x73\137\155\x6f\x72\145\x20\x3d\x20\63\x20\x4c\111\115\111\124\40" . $start . "\x2c" . $pagesize, array("\72\165\x6e\151\141\x63\151\144" => $uniacid)); goto DY5YC; y5WRs: $typesarr = explode("\54", $types); goto JV3bZ; HhsGT: $products["\164\x79\160\145\x73"] = $products["\x70\162\x6f\137\146\x6c\141\147"]; goto UTes6; axlu0: qHB9C: goto dvwZU; ELzd9: $res = pdo_insert("\x73\165\x64\165\70\137\x70\141\147\145\137\144\x75\157\x5f\160\162\157\x64\165\143\x74\x73\x5f\164\171\x70\145\137\x76\x61\154\x75\145", $data); goto dbDuq; LNH8_: $ops = array("\x64\151\x73\160\154\141\171", "\x64\x65\154\x65\x74\145", "\160\157\x73\164", "\x74\x79\x70\x65\x73"); goto zr3HR; JBHT1: $products = pdo_fetch("\123\105\114\105\x43\124\x20\x2a\40\106\122\117\115\40" . tablename("\163\165\144\165\x38\137\160\x61\x67\145\137\160\162\157\144\x75\143\164\163") . "\40\127\x48\x45\x52\105\x20\165\156\x69\141\x63\151\144\40\x3d\40\x3a\165\156\151\141\143\x69\x64\x20\141\x6e\x64\40\x69\144\40\75\x20\72\151\144", array("\72\165\x6e\x69\x61\x63\151\x64" => $uniacid, "\72\x69\x64" => $id)); goto qXeKt; b0sgB: $guig = $_GPC["\x69\163\x63\150\x65\x63\153"]; goto Zausx; Aysv6: v1J3k: goto nle2L; lWwdz: $typelen = $_GPC["\164\171\160\x65\x6c\145\x6e"]; goto y_lxi; bJ7rv: if (empty($res)) { goto d3MVQ; } goto lvv2L; O_VVj: $typezz = $types; goto y5WRs; qXeKt: $products["\x69\x6d\147\x74\x65\x78\164"] = unserialize($products["\164\145\170\164"]); goto JEe9f; NAr4a: if (!checksubmit("\163\165\x62\155\151\164")) { goto Pkozo; } goto b0sgB; iSGf5: jRNZH: goto JkVtv; Zausx: $kdatas = array("\x70\x72\x6f\137\146\154\141\147" => $guig); goto t1BvT; DKOsv: PT3Zr: goto SitJQ; XLCCz: $cid = intval($_GPC["\143\151\x64"]); goto Jy2SD; bSCc2: goto hx8eJ; goto mCHwj; JV3bZ: $ggarr = stripslashes(html_entity_decode($_GPC["\142\151\x61\x6f\147\x65\x64\x61\164\x61"])); goto d8uNM; PeiSA: message("\xe6\233\264\xe6\x96\xb0\346\x88\x90\xe5\x8a\237\41", $this->createWebUrl("\103\157\155\x6d\x65\x6e\164\163\x65\164", array("\157\160" => "\144\165\x6f\147\157\x6f\x64\163", "\x6f\x70\164" => "\x64\x69\163\160\x6c\141\171", "\143\x61\x74\145\x69\x64" => $_GPC["\143\x61\x74\x65\151\x64"], "\143\x68\151\144" => $_GPC["\x63\150\x69\x64"], "\151\x64" => $id)), "\x73\x75\x63\x63\145\163\163"); goto QWjwI; zr3HR: $opt = in_array($opt, $ops) ? $opt : "\x64\x69\x73\x70\154\x61\171"; goto qdssn; XB_1W: a6Z_x: goto bZJCP; QWjwI: bqywm: goto axlu0; JkVtv: if (!($opt == "\144\x65\154\145\x74\145")) { goto LzuIt; } goto rmc2w; xN6hq: $listV = pdo_fetchAll("\x53\x45\114\105\x43\124\40\151\x64\x2c\143\x69\x64\54\156\x61\x6d\145\x20\106\x52\x4f\x4d\x20" . tablename("\x73\165\x64\x75\70\137\x70\141\147\145\137\x63\x61\x74\x65") . "\x20\127\x48\x45\x52\105\40\x63\151\144\40\75\x20\x3a\143\151\x64\40\x61\x6e\x64\40\x75\156\151\141\143\151\x64\40\x3d\40\72\165\156\151\141\143\x69\144\x20\x61\x6e\x64\x20\164\x79\x70\x65\x3d\x27\x73\x68\157\x77\120\x72\157\x27\x20\x4f\122\x44\105\122\x20\x42\x59\x20\156\x75\155\40\104\x45\x53\x43\x2c\151\x64\x20\104\105\x53\x43", array("\x3a\143\151\144" => 0, "\72\x75\x6e\x69\141\x63\151\144" => $uniacid)); goto yTx9_; N9WY3: LzuIt: goto hnx3X; YpuTI: xL8gi: goto NAr4a; qdssn: if (!($opt == "\x64\151\x73\160\x6c\x61\171")) { goto jRNZH; } goto Fmv3V; gCMCg: $pcid = implode('', $pcid); goto L1az0; pnZ9z: pdo_delete("\163\165\144\165\70\137\x70\141\147\x65\137\x70\x72\x6f\x64\x75\143\164\163", array("\151\144" => $id, "\x75\x6e\151\141\143\x69\x64" => $uniacid)); goto XX2D9; d8uNM: $proarr = json_decode($ggarr, true); goto vnAzi; bZJCP: $forms = pdo_fetchall("\123\105\x4c\105\x43\124\40\52\40\106\x52\x4f\115\40" . tablename("\x73\x75\x64\x75\70\137\160\141\x67\x65\137\146\x6f\x72\155\154\x69\x73\x74") . "\x20\127\x48\x45\x52\105\x20\x75\156\x69\x61\x63\x69\x64\40\75\x20\x3a\x75\156\151\141\x63\151\x64\x20\157\162\x64\x65\162\x20\x62\171\40\151\x64\x20\x64\145\x73\143", array("\x3a\x75\x6e\151\x61\143\x69\x64" => $uniacid)); goto JBHT1; fRzlp: $datajson = []; goto L4JoD; nle2L: $res = pdo_update("\163\x75\x64\x75\x38\137\x70\141\147\145\x5f\x70\x72\157\144\165\x63\x74\x73", $data, array("\151\x64" => $id)); goto PeiSA; DY5YC: foreach ($products as $key => &$value) { $value["\164\x79\160\145\137\x76\x61\x6c\x75\x65\x73"] = pdo_getall("\163\165\144\x75\x38\x5f\160\141\x67\x65\x5f\x64\x75\157\137\160\x72\157\x64\x75\143\164\x73\x5f\x74\171\160\145\137\166\x61\154\165\145", array("\x70\x69\x64" => $value["\x69\144"])); gV3qu: } goto kIF0z; y_lxi: $types = $_GPC["\164\x79\x70\x65\163\x61\x72\162"]; goto O_VVj; Amxzz: foreach ($listV as $key => $val) { goto ZSfqb; HGItw: $listP["\144\141\164\x61"] = $listS; goto zMBdB; mbtNm: $listS = pdo_fetchAll("\123\105\114\x45\x43\124\40\x69\x64\x2c\x63\151\144\54\x6e\x61\155\x65\x20\x46\x52\x4f\x4d\40" . tablename("\163\165\144\165\x38\x5f\160\x61\147\145\137\143\141\x74\145") . "\40\127\x48\x45\x52\x45\40\165\x6e\151\141\143\151\x64\40\75\40\x3a\165\156\x69\141\143\x69\144\40\x61\156\x64\40\143\151\x64\40\75\x20\72\151\144\x20\x61\x6e\144\x20\164\171\160\145\x3d\47\x73\x68\x6f\x77\120\x72\157\47\x20\117\x52\x44\105\x52\40\x42\131\x20\156\x75\155\x20\x44\x45\x53\103\54\151\x64\x20\x44\x45\x53\x43", array("\x3a\165\156\151\x61\143\x69\144" => $uniacid, "\x3a\x69\x64" => $cid)); goto HGItw; ZSfqb: $cid = intval($val["\x69\144"]); goto CfBJ7; CfBJ7: $listP = pdo_fetch("\123\x45\114\x45\x43\124\x20\151\144\x2c\x63\x69\144\54\156\x61\x6d\145\40\106\122\117\115\40" . tablename("\163\165\x64\165\x38\137\x70\141\x67\145\x5f\x63\141\x74\x65") . "\x20\127\110\105\122\x45\40\x75\156\151\x61\143\151\144\x20\x3d\40\x3a\165\156\x69\141\x63\151\144\40\x61\156\144\x20\x69\x64\40\x3d\x20\72\151\144\x20\141\x6e\144\x20\x74\x79\x70\x65\x3d\x27\x73\x68\157\x77\x50\x72\x6f\47\x20\x4f\x52\104\x45\122\40\x42\131\x20\156\165\155\x20\x44\105\x53\x43\54\x69\x64\40\104\105\123\x43", array("\72\165\x6e\x69\x61\143\151\144" => $uniacid, "\x3a\x69\x64" => $cid)); goto mbtNm; K9eRV: k_5VL: goto XQjhk; zMBdB: array_push($listAll, $listP); goto K9eRV; XQjhk: } goto XB_1W; y3Mqa: $opt = $_GPC["\157\x70\x74"]; goto LNH8_; c61at: g8eVn: goto hYQcL; bWrmd: goto PT3Zr; goto IopZV; qGyX2: pdo_delete("\163\x75\144\165\x38\137\x70\x61\147\145\137\144\165\157\x5f\160\162\x6f\x64\x75\143\x74\163\x5f\x74\x79\160\145\x5f\x76\141\154\165\145", array("\160\x69\144" => $id)); goto As0VU; JEe9f: if (!checksubmit("\163\165\x62\155\151\x74")) { goto qHB9C; } goto XLCCz; L4JoD: foreach ($proarr as $key => &$rec) { goto t8FhE; t8FhE: $strs = $rec["\164\171\160\145\61"] . $rec["\164\x79\160\145\62"] . $rec["\164\171\x70\x65\x33"]; goto YtR3y; wEYtm: P0WVi: goto CYUyJ; YtR3y: $strv = $rec["\153\x63"] . "\x2c" . $rec["\160\162\x69\143\145"] . "\54" . $rec["\x68\x6e\165\155"] . "\x2c" . $rec["\166\163\141\x6c\145\156\165\x6d"] . "\x2c" . $rec["\x73\141\154\145\156\x75\x6d"] . "\x2c" . $rec["\164\150\165\155\142"]; goto X7sej; X7sej: $datajson[$strs] = $strv; goto wEYtm; CYUyJ: } goto c61at; hnx3X: $id = $_GPC["\151\144"]; goto lk9fq; saeq3: Lh2gY: goto XrEmN; lvv2L: $id = pdo_insertid(); goto OoKbw; sO1VB: if ($id) { goto v1J3k; } goto xFeap; rmc2w: $id = intval($_GPC["\x69\x64"]); goto pnZ9z; lpLHv: $pagesize = 10; goto r4uGV; IopZV: a0HMT: goto xNMnt; kmy0m: $rechargeConf = pdo_get("\163\165\144\165\70\137\160\141\147\145\137\x72\x65\x63\150\141\162\147\145\143\x6f\x6e\x66", array("\x75\x6e\x69\141\x63\151\144" => $uniacid)); goto xN6hq; hYQcL: W0G6X: goto g8Bp9; kIF0z: fvnwg: goto iSGf5; RggFt: $pager = pagination($total, $pageindex, $pagesize); goto g8PnR; Q28Aj: $id = $_GPC["\x69\x64"]; goto TF9kn; CTtOc: global $_GPC, $_W; goto r486X; yTx9_: $listAll = array(); goto Amxzz; hn7mQ: $types = $proarr[0]["\x63\x6f\x6d\155\x65\x6e\x74"]; goto qsYOW; tDA5b: $proarr = pdo_fetch("\123\x45\114\x45\x43\x54\40\x2a\40\106\x52\x4f\115\40" . tablename("\x73\165\144\165\x38\137\x70\x61\x67\145\137\144\165\x6f\x5f\160\162\157\x64\165\143\164\x73\137\164\x79\x70\145\137\x76\141\x6c\165\145") . "\40\127\x48\105\122\x45\x20\160\x69\144\x20\x3d\40\x3a\x70\x69\x64", array("\72\160\x69\x64" => $id)); goto YpuTI; Fmv3V: $total = pdo_fetchcolumn("\x53\105\114\x45\103\x54\40\143\157\x75\x6e\x74\50\52\51\x20\x46\122\117\115\x20" . tablename("\163\165\144\165\70\137\160\141\147\x65\137\x70\x72\157\x64\x75\143\164\163") . "\x20\x61\163\x20\x61\x20\x4c\105\x46\124\x20\x4a\117\111\x4e\40" . tablename("\x73\x75\144\x75\x38\x5f\160\x61\x67\x65\x5f\x63\141\x74\x65") . "\x20\x61\163\x20\x62\x20\157\156\x20\x61\56\x63\x69\144\40\x3d\x20\x62\x2e\x69\x64\x20\127\x48\x45\x52\x45\40\x61\56\165\x6e\151\141\x63\x69\x64\x20\75\x20\72\x75\x6e\x69\x61\143\151\x64\40\x61\156\144\x20\141\x2e\151\163\x5f\x6d\x6f\x72\x65\40\x3d\x20\x33", array("\x3a\165\156\151\x61\143\x69\x64" => $uniacid)); goto QN7mZ; md07R: return include self::template("\167\x65\x62\x2f\x43\157\x6d\155\145\x6e\x74\163\x65\x74\57\x64\x75\x6f\x67\x6f\157\144\163");
+
+load()->func('tpl');
+global $_GPC, $_W;
+$uniacid = $_W['uniacid'];
+$opt = $_GPC['opt'];
+$ops = array('display','delete','post','types');
+$opt = in_array($opt, $ops) ? $opt : 'display';
+if ($opt == 'display') {
+    $total = pdo_fetchcolumn("SELECT count(*) FROM ".tablename('sudu8_page_products') ." as a LEFT JOIN ".tablename('sudu8_page_cate')." as b on a.cid = b.id WHERE a.uniacid = :uniacid and a.is_more = 3", array(':uniacid' => $uniacid));
+    $pageindex = max(1, intval($_GPC['page']));
+    $pagesize = 10;  
+    $start = ($pageindex-1) * $pagesize;
+    $pager = pagination($total, $pageindex, $pagesize);
+    $products = pdo_fetchall("SELECT a.*,b.name as cname FROM ".tablename('sudu8_page_products') ." as a LEFT JOIN ".tablename('sudu8_page_cate')." as b on a.cid = b.id WHERE a.uniacid = :uniacid and a.is_more = 3 LIMIT ".$start.",".$pagesize, array(':uniacid' => $uniacid));
+}
+if ($opt == 'delete') {
+    $id = intval($_GPC['id']);
+    pdo_delete('sudu8_page_products', array('id' => $id ,'uniacid' => $uniacid));
+    pdo_delete('sudu8_page_duo_products_type_value', array('pid' => $id));
+    message('删除成功!', $this->createWebUrl('Commentset', array('op'=>'duogoods','opt'=>"display",'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'])), 'success');
+}
+$id = $_GPC['id'];
+if($opt == "post"){
+    $listV = pdo_fetchAll("SELECT id,cid,name FROM ".tablename('sudu8_page_cate') ." WHERE cid = :cid and uniacid = :uniacid and type='showPro' ORDER BY num DESC,id DESC", array(':cid' => 0 ,':uniacid' => $uniacid));
+    $listAll = array();
+    foreach($listV as $key=>$val) {
+        $cid = intval($val['id']);
+        $listP = pdo_fetch("SELECT id,cid,name FROM ".tablename('sudu8_page_cate') ." WHERE uniacid = :uniacid and id = :id and type='showPro' ORDER BY num DESC,id DESC", array(':uniacid' => $uniacid,':id' => $cid));
+        $listS = pdo_fetchAll("SELECT id,cid,name FROM ".tablename('sudu8_page_cate') ." WHERE uniacid = :uniacid and cid = :id and type='showPro' ORDER BY num DESC,id DESC", array(':uniacid' => $uniacid,':id' => $cid));
+        $listP['data'] = $listS;
+        array_push($listAll,$listP);
+    }
+    $forms = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_formlist')." WHERE uniacid = :uniacid order by id desc", array(':uniacid' => $uniacid));
+
+    $products = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_products') ." WHERE uniacid = :uniacid and id = :id", array(':uniacid' => $uniacid, ':id'=>$id));
+    $products['imgtext'] = unserialize($products['text']); 
+
+
+    // var_dump($products);
+    // die();
+
+    if (checksubmit('submit')) { 
+
+        $cid = intval($_GPC['cid']);
+        $pcid = pdo_fetch("SELECT cid FROM ".tablename('sudu8_page_cate')." WHERE uniacid = :uniacid and id =:id ", array(':uniacid' => $uniacid,':id'=>$cid));
+        $pcid=implode('',$pcid);
+        if($pcid == 0){
+            $pcid = $cid;
+        }else{
+            $pcid = intval($pcid);
+        }
+
+        $data = array(
+            "uniacid" => $_W['uniacid'],
+            "num" => $_GPC['num'],
+            "cid" => $_GPC['cid'],
+            "pcid" => $pcid,
+            "type_x" => $_GPC['type_x'],
+            "type_y" => $_GPC['type_y'],
+            "type_i" => $_GPC['type_i'],
+            "type" => "showProMore",
+            "thumb" => $_GPC['thumb'],
+
+            'shareimg'=>$_GPC['shareimg'],
+            
+            "title" => $_GPC['title'],
+            "price" => $_GPC['priceq'],
+            "market_price" => $_GPC['market_price'],
+            "desc" => $_GPC['descs'],
+            'text' => serialize($_GPC['imgtext']),
+            'labels' => $_GPC['explains'],
+            'approval_number' => $_GPC['approval_number'],
+            'is_more' => 3,
+
+            'get_share_gz'=>$_GPC['get_share_gz'],
+            'get_share_score'=>$_GPC['get_share_score'],
+            'get_share_num'=>$_GPC['get_share_num'],
+            
+            'formset'=>$_GPC['formset'],
+            "product_txt" => htmlspecialchars_decode($_GPC['product_txt'], ENT_QUOTES),
+            "score" => $_GPC['score'],
+            "kuaidi" => $_GPC['kuaidi'],
+            "hits" => $_GPC["hits"]
+        );
+        if($id){
+            $res = pdo_update('sudu8_page_products', $data, array('id' => $id));
+            message('更新成功!', $this->createWebUrl('Commentset', array('op'=>'duogoods','opt'=>"display",'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id'=>$id)), 'success');
+        }else{
+            $res = pdo_insert('sudu8_page_products', $data);
+            if (!empty($res)) {
+                $id = pdo_insertid();
+                message('新增成功!', $this->createWebUrl('Commentset', array('op'=>'duogoods','opt'=>"types",'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id'=>$id)), 'success');
+            }
+        }
+    }
+}  
+if($opt == "types"){
+    $id = $_GPC['id'];
+    $products = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_products') ." WHERE uniacid = :uniacid and id = :id", array(':uniacid' => $uniacid, ':id'=>$id));
+    $products['types'] = $products['pro_flag'];
+    if($products['pro_flag']==2){
+        $proarr = pdo_fetchall("SELECT * FROM ".tablename('sudu8_page_duo_products_type_value') ." WHERE pid = :pid order by id desc", array(':pid'=>$id));
+        $types = $proarr[0]['comment'];    
+        //构建规格组
+        $typesarr = explode(",", $types);  
+        $counttypes = count($typesarr);
+        // 构建规格组json
+        $typesjson = [];
+        foreach ($typesarr as $key => &$rec) {
+            $str = "type".($key+1);
+            $ziji = pdo_fetchall("SELECT ".$str." FROM ".tablename('sudu8_page_duo_products_type_value') ." WHERE pid = :pid group by ".$str, array(':pid'=>$id));    
+            $xarr = array();
+            foreach ($ziji as $key => $res) {
+                array_push($xarr, $res[$str]);
+            }
+            $typesjson[$rec] = $xarr;
+        }
+        // 构建对应的数值
+        $datajson = [];
+        foreach ($proarr as $key => &$rec) {
+            $strs = $rec['type1'].$rec['type2'].$rec['type3'];
+            $strv = $rec['kc'].",".$rec['price'].",".$rec['hnum'].",".$rec['salenum'].",".$rec['thumb'];
+            $datajson[$strs]=$strv;
+        }
+    }
+    if($products['pro_flag']==1){
+        $proarr = pdo_fetch("SELECT * FROM ".tablename('sudu8_page_duo_products_type_value') ." WHERE pid = :pid", array(':pid'=>$id));
+        // var_dump($proarr);
+        // die();
+    }
+    if (checksubmit('submit')) {
+        //是否启用规则
+        $guig = $_GPC['ischeck'];
+        $kdatas = array(
+            "pro_flag" => $guig
+        );
+        $rek = pdo_update('sudu8_page_products', $kdatas, array('id' => $id ,'uniacid' => $uniacid));
+        // 全部删除已有数据
+        pdo_delete('sudu8_page_duo_products_type_value', array('pid' => $id));
+        if($guig == 2){
+            // 规格组长度
+            $typelen = $_GPC['typelen'];
+            // 规格数组
+            $types = $_GPC['typesarr'];
+            $typezz = $types;
+            $typesarr = explode(",", $types);
+            // 子商品
+            $ggarr = stripslashes(html_entity_decode($_GPC['biaogedata']));
+            $proarr = json_decode($ggarr,true);
+            $count = 0;
+
+            foreach ($proarr as $key => $rec) {
+                if($typelen == 1){
+                    $type1 = $rec[$typesarr[0]];
+                    $type2 = "";
+                    $type3 = "";
+                }
+                if($typelen == 2){
+                    $type1 = $rec[$typesarr[0]];
+                    $type2 = $rec[$typesarr[1]];
+                    $type3 = "";
+                }
+                if($typelen == 3){
+                    $type1 = $rec[$typesarr[0]];
+                    $type2 = $rec[$typesarr[1]];
+                    $type3 = $rec[$typesarr[2]];
+                }
+                $data = array(
+                    "pid" => $id,
+                    "type1" => $type1,
+                    "type2" => $type2,
+                    "type3" => $type3,
+                    "kc" => $rec['库存'],
+                    "price" => $rec['价格'],
+                    "hnum" => $rec['货号'],
+                    "salenum" => $rec['已售数量'],
+                    "thumb" => $rec['规格图片'],
+                    "comment" => $typezz
+                );
+                $res = pdo_insert("sudu8_page_duo_products_type_value",$data);
+                if($res){
+                    $count++;
+                    if($count == count($proarr)){
+                        message('新增/修改成功!', $this->createWebUrl('Commentset', array('op'=>'duogoods','opt'=>"display",'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'])), 'success');
+                    }
+                }
+            }
+        }else{
+            $data = array(
+                "pid" => $id,
+                "type1" => "默认",
+                "type2" => "",
+                "type3" => "",
+                "kc" => $_GPC['nokc'],
+                "price" => $_GPC['noprice'],
+                "hnum" => 0,
+                "thumb" => $_GPC['nothumb'],
+                "comment" => "规格"
+            );
+            $res = pdo_insert("sudu8_page_duo_products_type_value",$data);
+            message('新增/修改成功!', $this->createWebUrl('Commentset', array('op'=>'duogoods','opt'=>"display",'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'])), 'success');
+        }
+    }
+}
+return include self::template('web/Commentset/duogoods');

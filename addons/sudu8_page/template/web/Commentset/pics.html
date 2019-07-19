@@ -29,7 +29,7 @@
 
     <div style="display: inline-block;">
 
-        搜索栏目:
+        搜索分类:
 
     </div>
 
@@ -37,7 +37,7 @@
 
         <select name="sid" style="width: 200px">
 
-            <option value="0">栏目选择</option>
+            <option value="0">分类选择</option>
 
             {loop $cates $item}
 
@@ -87,7 +87,7 @@
 
             <td>ID</td>
 
-            <td>所属栏目</td>
+            <td>所属分类</td>
 
             <td>缩略图</td>
 
@@ -183,7 +183,7 @@ $('.js-clip').each(function(){
 
             <div class="form-group">
 
-                <label for="" class="control-label col-sm-2" style="margin-right:45px">所属栏目</label>
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">所属分类</label>
 
                 <div class="form-controls col-sm-5">
 
@@ -207,21 +207,21 @@ $('.js-clip').each(function(){
 
                 <div class="col-sm-1"></div>
 
-                <div class="form-controls col-sm-3 help-block">选择所属栏目，不选为顶级</div>
+                <div class="form-controls col-sm-3 help-block">选择所属分类，不选为顶级</div>
 
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2" style="margin-right:45px">是否属于多栏目</label>
+                <label class="control-label col-sm-2" style="margin-right:45px">是否属于多分类</label>
                 <div class="form-controls col-sm-5">
                     <select name="mulitcataid" class="form-control" id="multi" onchange="catecheck(this)" >
-                        <option value="1">不属于多栏目</option>
+                        <option value="1">不属于多分类</option>
                         {loop $cates $items}
                         <option value="{$items['id']}" <?php if($item['mulitcataid'] == $items['id']){echo 'selected';} ?>>{$items['name']}</option>
                         {/loop}
                     </select>
                 </div>
                 <div class="col-sm-1"></div>
-                <div class="form-controls col-sm-3 help-block">选择所属栏目</div>
+                <div class="form-controls col-sm-3 help-block">选择所属分类</div>
             </div>
 
             <div class="form-group" id="catelists_sons" style="display: block;">
@@ -302,7 +302,7 @@ $('.js-clip').each(function(){
 
             <div class="form-group">
 
-                <label for="" class="control-label col-sm-2" style="margin-right:45px">推荐到首页栏目</label>
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">推荐到首页分类</label>
 
                 <div class="form-controls col-sm-5">
 
@@ -326,7 +326,7 @@ $('.js-clip').each(function(){
 
                 <div class="col-sm-1"></div>
 
-                <div class="form-controls col-sm-3 help-block">推荐后会在首页该栏目块显示</div>
+                <div class="form-controls col-sm-3 help-block">推荐后会在首页该分类块显示</div>
 
             </div>
 

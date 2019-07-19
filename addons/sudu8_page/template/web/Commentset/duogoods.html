@@ -6,15 +6,32 @@
 <div style="height:55px">
     <h3 style="float: left;margin-top: 0;">产品列表</h3>
     <div class="pull-right">
-        <a href="{php echo $this->createWebUrl('Commentset', array('op' => 'duogoods', 'opt' => 'post', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid']))}"  class="btn btn-primary we7-padding-horizontal" style="margin-bottom: 20px">添加产品</a>
+        <a href="{php echo $this->createWebUrl('Commentsets', array('op' => 'duogoods', 'opt' => 'post', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid']))}"  class="btn btn-primary we7-padding-horizontal" style="margin-bottom: 20px">添加产品</a>
     </div>
 </div>
+
+        <div style="margin-bottom: 15px; height: 50px;">
+            <form class="form-horizontal" action="" method="post">
+                <label for="" class="control-label col-sm-2" style="margin-left:70px; margin-right:20px;">商品名/批准文号</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" name="key" id="key" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
+                </div>
+                <div class="col-sm-1">
+                    <input type="button" onclick="search_goods()" value="搜索" class="btn btn-default btn-sm" style="padding:7px 20px">
+                    <input type="button" onclick="search()" value="搜索" class="btn btn-default btn-sm" style="padding:7px 20px">
+                </div>
+            </form>
+        </div>
+
+
+
+
 <form class="form-horizontal" action="" method="post">
     <table class="table we7-table table-hover article-list vertical-middle">
         <tr>
             <td style="width:100px">排序</td>
             <td>ID</td>
-            <td>所属栏目</td>
+            <td>所属分类</td>
             <td>缩略图</td>
             <td>标题</td>
             <td>参数</td>
@@ -43,7 +60,7 @@
                 {/loop}
             </td>
             <td class="text-right">
-                <a class="btn btn-default btn-sm" href="{php echo $this->createWeburl('commentset', array('opt'=>'post','op'=>'duogoods','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $item['id']));}" >编辑</a>
+                <a class="btn btn-default btn-sm" href="{php echo $this->createWeburl('commentsets', array('opt'=>'post','op'=>'duogoods','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $item['id']));}" >编辑</a>
                 <a class="btn btn-default btn-sm" onclick="return confirm('此操作不可恢复，确认吗？'); return false;" href="{php echo $this->createWeburl('commentset', array('opt'=>'delete','op'=>'duogoods','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $item['id']));}">删除</a>
             </td>
         </tr>
@@ -106,7 +123,7 @@ $('.js-clip').each(function(){
             </div>
 
             <div class="form-group">
-                <label for="" class="control-label col-sm-2" style="margin-right:45px">所属栏目</label>
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">所属分类</label>
                 <div class="form-controls col-sm-5">
                     <select name="cid" class="form-control">
                         {loop $listAll $cateP}
@@ -118,7 +135,7 @@ $('.js-clip').each(function(){
                     </select>
                 </div>
                 <div class="col-sm-1"></div>
-                <div class="form-controls col-sm-3 help-block">选择所属栏目，不选为顶级</div>
+                <div class="form-controls col-sm-3 help-block">选择所属分类，不选为顶级</div>
             </div>
 
             <div class="form-group">
@@ -152,7 +169,7 @@ $('.js-clip').each(function(){
                 <div class="form-controls col-sm-3 help-block">推荐后会在首页竖排区块显示</div>
             </div>
             <div class="form-group">
-                <label for="" class="control-label col-sm-2" style="margin-right:45px">推荐到首页栏目</label>
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">推荐到首页分类</label>
                 <div class="form-controls col-sm-5">
                     <label style="margin-right: 20px">
                         <input type="radio" name="type_i" value="0" {if $products['type_i'] == '0'} checked{/if} />
@@ -164,7 +181,7 @@ $('.js-clip').each(function(){
                     </label>
                 </div>
                 <div class="col-sm-1"></div>
-                <div class="form-controls col-sm-3 help-block">推荐后会在首页该栏目块显示</div>
+                <div class="form-controls col-sm-3 help-block">推荐后会在首页该分类块显示</div>
             </div>
             <div class="form-group" style="display: none">
                 <label for="" class="control-label col-sm-2" style="margin-right:45px">取商品方式</label>
@@ -283,6 +300,20 @@ $('.js-clip').each(function(){
                 <div class="col-sm-1"></div>
                 <div class="form-controls col-sm-3 help-block">多个标签请用英文","隔开</div>
             </div>
+
+
+
+
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">批准文号</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" name="approval_number" id=" " value="{$products['approval_number']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="col-sm-1"></div>
+
+             </div>
+
+
             <div class="form-group">
                 <label for="" class="control-label col-sm-2" style="margin-right:45px">产品详情</label>
                 <div class="form-controls col-sm-8">
@@ -445,12 +476,12 @@ $('.js-clip').each(function(){
 <ul class="nav nav-tabs" style="margin-bottom: 20px">
 
     {if $id}
-    <li {if $opt == 'post'}class="active"{/if}><a href="{php echo $this->createWeburl('commentset', array('opt'=>'post','op'=>'duogoods','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $id));}">基本信息</a></li>
+    <li {if $opt == 'post'}class="active"{/if}><a href="{php echo $this->createWeburl('commentsets', array('opt'=>'post','op'=>'duogoods','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $id));}">基本信息</a></li>
     {else}
-    <li {if $opt == 'post'}class="active"{/if}><a href="{php echo $this->createWeburl('commentset', array('opt'=>'post','op'=>'duogoods','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid']));}">基本信息</a></li>
+    <li {if $opt == 'post'}class="active"{/if}><a href="{php echo $this->createWeburl('commentsets', array('opt'=>'post','op'=>'duogoods','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid']));}">基本信息</a></li>
     {/if}
     {if $id}
-    <li {if $opt == 'types'}class="active"{/if}><a href="{php echo $this->createWeburl('commentset', array('opt'=>'types','op'=>'duogoods','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $id));}">规格/库存</a></li>
+    <li {if $opt == 'types'}class="active"{/if}><a href="{php echo $this->createWeburl('commentsets', array('opt'=>'types','op'=>'duogoods','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $id));}">规格/库存</a></li>
     {/if}
 
 </ul>
@@ -1337,5 +1368,24 @@ $('.js-clip').each(function(){
 </script>
 
 {/if}
+
+
+<script>
+    
+    function search_goods() {
+        var key=$("input[name=key]").val();
+        if(!key){
+            return false;
+        }
+        $.post('../index.php?c=site&a=entry&op=duogoods&cateid=101&do=Commentsets&m=sudu8_page', {key: key}, function (data) {
+
+        });
+
+    }
+    
+</script>
+    
+
+</div>
 </div>
 </div>
