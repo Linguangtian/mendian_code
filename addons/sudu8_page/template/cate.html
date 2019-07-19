@@ -5,8 +5,8 @@
 .label-xcx{background: #605AB0}
 </style>
 <ul class="nav nav-tabs">
-    <li {if $op == 'display'}class="active"{/if}><a href="{php echo $this->createWebUrl('cate', array('op' => 'display'))}">管理栏目</a></li>
-    <li {if $op == 'post'}class="active"{/if}><a href="{php echo $this->createWebUrl('cate', array('op' => 'post'))}">添加栏目</a></li>
+    <li {if $op == 'display'}class="active"{/if}><a href="{php echo $this->createWebUrl('cate', array('op' => 'display'))}">管理分类</a></li>
+    <li {if $op == 'post'}class="active"{/if}><a href="{php echo $this->createWebUrl('cate', array('op' => 'post'))}">添加分类</a></li>
 </ul>
 {if $op == 'display'}
 <form class="form-horizontal" action="" method="post">

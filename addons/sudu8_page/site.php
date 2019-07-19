@@ -69,6 +69,13 @@ class Sudu8_pageModuleSite extends WeModuleSite {
         return $this->__includeinc(__FUNCTION__,$action);
     }
 
+    // 内容管理
+    public function doWebCommentsets(){
+        $action = isset(self::$_GPC['op'])?self::$_GPC['op']:null;
+        return $this->__includeinc(__FUNCTION__,$action);
+    }
+
+
     // 订单管理
     public function doWebOrderset(){
         $action = isset(self::$_GPC['op'])?self::$_GPC['op']:null;
