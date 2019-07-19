@@ -91,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/template/web/common/header.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="163" column="24" lean-forward="true" selection-start-line="161" selection-start-column="14" selection-end-line="163" selection-end-column="24" />
+              <caret line="163" column="24" selection-start-line="163" selection-start-column="21" selection-end-line="163" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -313,8 +313,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="-228" />
-    <option name="y" value="495" />
+    <option name="x" value="28" />
+    <option name="y" value="736" />
     <option name="width" value="1940" />
     <option name="height" value="968" />
   </component>
@@ -396,15 +396,15 @@
       <updated>1563330030948</updated>
       <workItem from="1563330032393" duration="1820000" />
       <workItem from="1563413652070" duration="20182000" />
-      <workItem from="1563500228823" duration="26000" />
+      <workItem from="1563500228823" duration="630000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22028000" />
+    <option name="totallyTimeSpent" value="22632000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="175" y="99" width="1940" height="968" extended-state="0" />
+    <frame x="-228" y="495" width="1940" height="968" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32985657" />
@@ -1103,7 +1103,7 @@
     <entry file="file://$PROJECT_DIR$/template/web/common/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="163" column="24" lean-forward="true" selection-start-line="161" selection-start-column="14" selection-end-line="163" selection-end-column="24" />
+          <caret line="163" column="24" selection-start-line="163" selection-start-column="21" selection-end-line="163" selection-end-column="24" />
         </state>
       </provider>
     </entry>

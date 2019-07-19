@@ -159,9 +159,9 @@
             <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="wi wi-user color-gray"></i><?php  echo self::$_W['username']?> <span class="caret"></span></a>
             <ul class="dropdown-menu color-gray" role="menu">
-                <li>
+              <!--  <li>
                     <a href="./index.php?c=user&amp;a=profile&amp;" target="_blank"><i class="wi wi-account color-gray"></i> 我的账号</a>
-                </li>
+                </li>-->
                 <li class="divider"></li>
                 <li><a href="./index.php?c=cloud&amp;a=upgrade&amp;" target="_blank"><i class="wi wi-update color-gray"></i> 自动更新</a></li>
                 <li><a href="./index.php?c=system&amp;a=updatecache&amp;" target="_blank"><i class="wi wi-cache color-gray"></i> 更新缓存</a></li>
