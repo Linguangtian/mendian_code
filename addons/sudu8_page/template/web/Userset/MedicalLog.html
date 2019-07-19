@@ -1,0 +1,206 @@
+{template 'web/common/header'}
+<div class="page">
+
+    <div class="page_content">
+{if $opt == 'display'}
+<div style="height:55px">
+    {if $user_id}  <h3 style="float: left;margin-top: 0;">病例列表-<span >[<a style="color: #F88C77;">{$user_info['nickname']}</a>]</span></h3>
+   {else} <h3 style="float: left;margin-top: 0;">病例列表</span></h3>
+{/if}
+   <!-- {if $menber_userid}
+    <div class="pull-right">
+        <a href="{php echo $this->createWebUrl('Userset', array('op' => 'medical_log', 'opt' => 'post', 'menber_userid'=>$_GPC['menber_userid']))}"  class="btn btn-primary we7-padding-horizontal" style="margin-bottom: 20px">添加病例</a>
+    </div>
+    {/if}-->
+</div>
+        <div style="margin-bottom: 15px; height: 50px;">
+            <form class="form-horizontal" action="" method="post">
+                <label for="" class="control-label col-sm-1" style="margin-left:70px; margin-right:20px;">病例标题</label>
+
+                <div class="form-controls col-sm-3" style="margin-right: 10px;">
+                    <input type="text" name="key" id="key" value="{$key}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
+                </div>
+                <div class="form-controls col-sm-5">
+                    <label for="" style="display: inline-block;font-size: 12px;vertical-align: 3px">日期</label>
+                    <div style="display: inline-block;">
+                        <input type="text" name="buy_time"  style="display: inline-block;width: 200px;font-size: 12px" value="{$betime}" id="datetimepicker" data-date-format="yyyy-mm-dd hh:ii" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
+                        <span style="margin: 0 10px;font-size: 12px">至</span>
+                        <input type="text" name="buy_time" style="display: inline-block;width: 200px;font-size: 12px" value="{$endtime}" id="end_datetimepicker" data-date-format="yyyy-mm-dd hh:ii" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    <input type="button" onclick="search()" value="搜索" class="btn btn-default btn-sm" style="padding:7px 20px">
+                </div>
+            </form>
+        </div>
+
+        <link rel="stylesheet" type="text/css" href="/web/resource/components/datetimepicker/jquery.datetimepicker.css"/ >
+        <script type="text/javascript" src="/web/resource/components/datetimepicker/jquery.datetimepicker.js"></script>
+    <script type="text/javascript">
+            function search(){
+                var val = $("#key").val();
+                var betime = $("#datetimepicker").val();
+                var endtime = $("#end_datetimepicker").val();
+                /*if(!val){
+                    alert("搜索内容不能为空，请搜索内容！");
+                    return;
+                }*/
+
+                 var newurl = 'index.php?c=site&a=entry&op=Medical_log&opt=display&cateid=37&chid=38&do=Userset&m=sudu8_page&version_id=3'+"&key="+val+'&betime='+betime+"&endtime="+endtime;
+                location.href = newurl;
+            }
+            $(function(){
+                $('#datetimepicker').datetimepicker({
+                    lang:'ch',
+                    format:"Y-m-d H:i:s",
+                    allowBlank:true,
+                    validateOnBlur:false,
+                });
+                $('#end_datetimepicker').datetimepicker({
+                    lang:'ch',
+                    format:"Y-m-d H:i:s",
+                    allowBlank:true,
+                    validateOnBlur:false,
+                });
+
+                $('#change_info_date').datetimepicker({
+                    lang:'ch',
+                    format:"Y-m-d H:i:s",
+                    allowBlank:true,
+                    validateOnBlur:false,
+                });
+            })
+
+
+
+        </script>
+
+
+
+<form class="form-horizontal" action="" method="post">
+    <table class="table we7-table table-hover article-list vertical-middle">
+        <tr>
+            <td style="width:100px">排序</td>
+            <td>用户昵称</td>
+            <td>病例标题</td>
+            <td>医生姓名</td>
+            <td>创建时间</td>
+            <td >操作</td>
+        </tr>
+        {loop $medicallog_list $item}
+        <tr>
+            <td>
+                {$item['ml_id']}
+            </td>
+            <td >
+                {$item['nickname']}
+            </td>
+            <td >
+                {$item['title']}
+            </td>
+            <td>
+                {$item['doctor_name']}
+            </td>
+            <td>
+                {$item['create_time']}
+            </td>
+
+            <td >
+                <a class="btn btn-default btn-sm" href="{php echo $this->createWeburl('Userset', array('opt'=>'post','op'=>'Medical_log','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'ml_id' => $item['ml_id'],'user_id'=>$item['userid']));}" >编辑</a>
+                <a class="btn btn-default btn-sm" onclick="return confirm('此操作不可恢复，确认吗？'); return false;" href="{php echo $this->createWeburl('Userset', array('opt'=>'delete','op'=>'Medical_log','cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'ml_id' => $item['ml_id'],'user_id'=>$user_id));}">删除</a>
+            </td>
+        </tr>
+        {/loop}
+    </table>
+</form>
+{$pager}
+<script>
+$('.js-clip').each(function(){
+    util.clip(this, $(this).data('id'));
+});
+</script>
+{/if}
+
+{if $opt == 'post'}
+
+<form class="form-horizontal" action="" method="post">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">病例编辑</h3>
+        </div>
+        <div class="panel-body">
+
+
+
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">患者昵称</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" value="{$user_info['nickname']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" disabled>
+                </div>
+                <div class="col-sm-1"></div>
+
+            </div>
+
+            
+
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">标题</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" name="title" id="title" value="{$case['title']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block">请填写标题</div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">医师姓名</label>
+                <div class="form-controls col-sm-5">
+                    <input type="text" name="doctor_name"  value="{$case['title']}" class="form-control ng-pristine ng-untouched ng-valid ng-empty"  placeholder="" autocomplete="off">
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <input name="ml_id" value="{$case['ml_id']}" hidden>
+
+            <div class="form-group">
+                <label for="" class="control-label col-sm-2" style="margin-right:45px">描述</label>
+                <div class="form-controls col-sm-5">
+                    <textarea class="form-control" rows="6" name="description" placeholder="">{$case['description']}</textarea>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="form-controls col-sm-3 help-block"></div>
+            </div>
+
+        </div>
+        </div>
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            <input name="token" type="hidden" value="{$_W['token']}" />
+            <input type="submit" class="btn btn-primary col-lg-3" name="submit" value="保存基础信息" />
+            <span style="margin-left:20px;color: #f00;line-height: 34px;"><a href="javascript:history.back(-1)">返回</a></span>
+        </div>
+    </div>
+</form>
+{/if}
+
+
+
+
+<script>
+    
+  /*  function search_goods() {
+        var key=$("input[name=key]").val();
+        if(!key){
+            return false;
+        }
+        $.post('../index.php?c=site&a=entry&op=duogoods&cateid=101&do=Commentsets&m=sudu8_page', {key: key}, function (data) {
+
+        });
+
+    }*/
+    
+</script>
+    
+
+</div>
+</div>
+</div>

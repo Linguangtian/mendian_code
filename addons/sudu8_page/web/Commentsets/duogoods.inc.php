@@ -7,12 +7,19 @@ $opt = $_GPC['opt'];
 $ops = array('display','delete','post','types');
 $opt = in_array($opt, $ops) ? $opt : 'display';
 if ($opt == 'display') {
-    $total = pdo_fetchcolumn("SELECT count(*) FROM ".tablename('sudu8_page_products') ." as a LEFT JOIN ".tablename('sudu8_page_cate')." as b on a.cid = b.id WHERE a.uniacid = :uniacid and a.is_more = 3", array(':uniacid' => $uniacid));
+    $key = $_GPC['key'];
+    $andwhere=' ';
+    if($key){
+        $andwhere.=' and a.title like \'%'.$key.'%\' or a.approval_number like \'%'.$key.'%\' ';
+
+    }
+    $total = pdo_fetchcolumn("SELECT count(*) FROM ".tablename('sudu8_page_products') ." as a LEFT JOIN ".tablename('sudu8_page_cate')." as b on a.cid = b.id WHERE a.uniacid = :uniacid and a.is_more = 3".$andwhere, array(':uniacid' => $uniacid));
     $pageindex = max(1, intval($_GPC['page']));
     $pagesize = 10;
     $start = ($pageindex-1) * $pagesize;
     $pager = pagination($total, $pageindex, $pagesize);
-    $products = pdo_fetchall("SELECT a.*,b.name as cname FROM ".tablename('sudu8_page_products') ." as a LEFT JOIN ".tablename('sudu8_page_cate')." as b on a.cid = b.id WHERE a.uniacid = :uniacid and a.is_more = 3 LIMIT ".$start.",".$pagesize, array(':uniacid' => $uniacid));
+    $products = pdo_fetchall("SELECT a.*,b.name as cname FROM ".tablename('sudu8_page_products') ." as a LEFT JOIN ".tablename('sudu8_page_cate')." as b on a.cid = b.id WHERE a.uniacid = :uniacid and a.is_more = 3 ".$andwhere." LIMIT ".$start.",".$pagesize, array(':uniacid' => $uniacid));
+
 }
 if ($opt == 'delete') {
     $id = intval($_GPC['id']);

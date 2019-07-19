@@ -17,12 +17,25 @@
                     <input type="text" name="key" id="key" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
                 </div>
                 <div class="col-sm-1">
-                    <input type="button" onclick="search_goods()" value="搜索" class="btn btn-default btn-sm" style="padding:7px 20px">
                     <input type="button" onclick="search()" value="搜索" class="btn btn-default btn-sm" style="padding:7px 20px">
                 </div>
             </form>
         </div>
+        <script type="text/javascript">
+            function search(){
+                var val = $("#key").val();
+                if(!val){
+                    alert("搜索内容不能为空，请搜索内容！");
+                    return;
+                }
 
+                 var newurl = './index.php?c=site&a=entry&op=duogoods&cateid=101&do=Commentsets&m=sudu8_page'+"&key="+val;
+                location.href = newurl;
+
+
+
+            }
+        </script>
 
 
 
@@ -894,7 +907,7 @@ $('.js-clip').each(function(){
                                 }else{
                                     arr = ggzjson[keys];
                                     arr.push(ggz);
-                                    
+
                                     var strhtml = "";
                                     for(var i=0; i<arr.length; i++){
                                         strhtml += "<div class='yandd'>"+
@@ -910,7 +923,7 @@ $('.js-clip').each(function(){
 
                                     datasets();
                                 }
-                                
+
                             }
 
                             // 删除标签功能
@@ -962,7 +975,7 @@ $('.js-clip').each(function(){
                                         tablearr.push(ggzarr[0]);
                                         tablearr = tablearr.concat(jg);
                                         var wzdata = [];
-                                        
+
                                         console.log("貌似外层出差")
                                         console.log(sz1);
 
@@ -1372,7 +1385,7 @@ $('.js-clip').each(function(){
 
 <script>
     
-    function search_goods() {
+  /*  function search_goods() {
         var key=$("input[name=key]").val();
         if(!key){
             return false;
@@ -1381,7 +1394,7 @@ $('.js-clip').each(function(){
 
         });
 
-    }
+    }*/
     
 </script>
     

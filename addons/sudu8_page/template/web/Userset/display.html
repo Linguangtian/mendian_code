@@ -4,6 +4,7 @@
 <style>
 .we7-table{font-size: 12px}
 .table img{width:40px;border-radius:40px}
+/*a:hover{color: red;}*/
 </style>
 <div class="page">
 
@@ -42,7 +43,7 @@
 						<label for="mySwitch"></label>
 					</div>-->
 					</td>
-
+					<td width="10%">病例/病史</td>
 		            <td style="padding-left: 40px;width:5%">操作</td>
 
 		        </tr>
@@ -93,10 +94,14 @@
                             </div>-->
 
                         </td>
+						<td  ><a style="color: orangered" href="{php echo $this->createWebUrl('Userset', array('op' => 'Medical_log', 'opt' => 'display', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'user_id' => $item['id']))}">查看</a></td>
+
 		                <td>
                 			<a class="btn btn-default btn-sm" href="{php echo $this->createWebUrl('Userset', array('op' => 'display', 'opt' => 'post', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $item['id']))}" >编辑</a>
 
                 			<a class="btn btn-default btn-sm" onclick="return confirm('此操作不可恢复，确认吗？'); return false;" href="{php echo $this->createWebUrl('Userset', array('op' => 'display', 'opt' => 'delete', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'id' => $item['id']))}">删除</a>
+
+							<a class="btn btn-default btn-sm" href="{php echo $this->createWebUrl('Userset', array('op' => 'Medical_log', 'opt' => 'post', 'cateid'=>$_GPC['cateid'],'chid'=>$_GPC['chid'],'user_id' => $item['id']))}" >添加病例</a>
             			</td>
 		            </tr>
 		        {/loop}
