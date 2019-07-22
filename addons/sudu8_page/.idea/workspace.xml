@@ -17,7 +17,7 @@
       <file leaf-file-name="medical_log.inc.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/Userset/medical_log.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
+            <state relative-caret-position="608">
               <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
             </state>
           </provider>
@@ -292,11 +292,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42578000" />
+    <option name="totallyTimeSpent" value="42791000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="472" y="165" width="1940" height="1010" extended-state="0" />
-    <editor active="true" />
+    <frame x="-21" y="5" width="1940" height="1010" extended-state="1" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32985657" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50373137" side_tool="true" weight="0.20787208" />
@@ -310,7 +309,7 @@
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49893618" weight="0.11162791" />
       <window_info id="Structure" order="1" sideWeight="0.50060904" side_tool="true" weight="0.14734043" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49626866" visible="true" weight="0.107602336" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49626866" weight="0.107602336" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -752,7 +751,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/Userset/medical_log.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
+        <state relative-caret-position="608">
           <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
