@@ -21,7 +21,7 @@
                     <input type="text" name="key" id="key" value="{$key}" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
                 </div>
                 <div class="form-controls col-sm-5">
-                    <label for="" style="display: inline-block;font-size: 12px;vertical-align: 3px">日期</label>
+                    <label for="" style="display: inline-block;font-size: 12px;vertical-align: 3px;margin-right: 5px;">日期</label>
                     <div style="display: inline-block;">
                         <input type="text" name="buy_time"  style="display: inline-block;width: 200px;font-size: 12px" value="{$betime}" id="datetimepicker" data-date-format="yyyy-mm-dd hh:ii" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="" autocomplete="off">
                         <span style="margin: 0 10px;font-size: 12px">至</span>
@@ -123,7 +123,7 @@ $('.js-clip').each(function(){
 
 {if $opt == 'post'}
 
-<form class="form-horizontal" action="" method="post">
+<form class="form-horizontal" action="" method="post" onsubmit="return checksubmit();">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">病例编辑</h3>
@@ -186,17 +186,30 @@ $('.js-clip').each(function(){
 
 
 <script>
-    
-  /*  function search_goods() {
-        var key=$("input[name=key]").val();
-        if(!key){
-            return false;
+
+     function checksubmit() {
+            var  title =$("#title").val();
+            var  doctor_name =$("input[name=doctor_name]").val();
+            if(!title){
+                alert('标题不能为空');
+                return false;
+            }
+            if(!doctor_name){
+                alert('医师姓名不能为空！');
+                return false;
+            }
+
         }
-        $.post('../index.php?c=site&a=entry&op=duogoods&cateid=101&do=Commentsets&m=sudu8_page', {key: key}, function (data) {
+      /*  function search_goods() {
+            var key=$("input[name=key]").val();
+            if(!key){
+                return false;
+            }
+            $.post('../index.php?c=site&a=entry&op=duogoods&cateid=101&do=Commentsets&m=sudu8_page', {key: key}, function (data) {
 
-        });
+            });
 
-    }*/
+        }*/
     
 </script>
     
